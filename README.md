@@ -83,7 +83,7 @@ Korisnicima je na raspolaganju opcija promjene jezika, pri čemu se
 odabrani jezik primjenjuje samo na stranicu za prijavu. Kao prečica može
 da se koristi kombinacija tastera **Ctrl + L** kojom se otvara padajući
 meni za izbor jezika.
-
+![Prijava](images/01_prijava.png)
 Nakon klika na dugme **„Prijava" (Login)** ili pritiskom na taster
 **Enter**, sistem provjerava kredencijale i u slučaju uspjeha:
 evidentira vrijeme prijave I preusmjerava korisnika na početni ekran u
