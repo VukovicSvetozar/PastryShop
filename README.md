@@ -73,17 +73,15 @@ dodjeljuje im odgovarajuće uloge i generiše početnu lozinku. Zaposleni
 dobijaju lozinku i preporuka je da je, radi sigurnosti, promijene pri
 prvoj prijavi. Korisnici se prijavljuju putem svojih jedinstvenih
 kredencijala.
-
 Po pokretanju aplikacije otvara se **ekran za prijavu** sa poljima za
 unos korisničkog imena i lozinke. Navigacija između polja omogućena je
 tasterom **Tab**. Polja su obavezna, a dozvoljen je jedino unos slova i
 cifara. Definisan je minimalni i maksimalni broj unesenih karaktera.
-
-Korisnicima je na raspolaganju opcija promjene jezika, pri čemu se
+  Korisnicima je na raspolaganju opcija promjene jezika, pri čemu se
 odabrani jezik primjenjuje samo na stranicu za prijavu. Kao prečica može
 da se koristi kombinacija tastera **Ctrl + L** kojom se otvara padajući
 meni za izbor jezika.
-![Prijava](images/01_prijava.png)
+ ![Prijava](images/01_prijava.png)
 Nakon klika na dugme **„Prijava" (Login)** ili pritiskom na taster
 **Enter**, sistem provjerava kredencijale i u slučaju uspjeha:
 evidentira vrijeme prijave I preusmjerava korisnika na početni ekran u
@@ -108,6 +106,7 @@ informacijom o razlogu neuspjele operacije. Razlozi mogu biti:
 -   Nekorektne vrijednosti polja -- u tom slučaju, uz data polja
     prikazane su odgovarajuće poruke radi lakše korekcije pogrešnih
     unosa.
+    ![Prijava](images/02_prijava.png)
 
 Na ekranu se nalazi i dugme **„Otkaži" (Cancel)** za izlaz iz
 aplikacije.\
