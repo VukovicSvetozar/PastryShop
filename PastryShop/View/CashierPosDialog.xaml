@@ -1,0 +1,179 @@
+﻿<UserControl x:Class="PastryShop.View.CashierPosDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PastryShop.Converter"
+             FocusVisualStyle="{x:Null}">
+
+    <UserControl.Resources>
+        <local:FilterOptionToImagePathConverter x:Key="FilterOptionToImagePathConverter"/>
+        <local:TypeToVisibilityConverter x:Key="TypeToVisibilityConverter"/>
+        <local:ImagePathToImageConverter x:Key="ImagePathToImageConverter"/>
+        <local:ResourceKeyConverter x:Key="ResourceKeyConverter"/>
+        <local:EnumToResourceKeyConverter x:Key="EnumToResourceKeyConverter"/>
+        <Style x:Key="PosProductsAddButtonStyleWithEvent" TargetType="Button" BasedOn="{StaticResource PosProductsAddButtonStyle}">
+            <EventSetter Event="Click" Handler="OnAddToCartButtonClick"/>
+        </Style>
+    </UserControl.Resources>
+
+    <UserControl.InputBindings>
+        <KeyBinding Gesture="Ctrl+A" Command="{Binding ToggleAvailableCommand}"/>
+        <KeyBinding Gesture="Ctrl+F" Command="{Binding ToggleFeaturedCommand}"/>
+        <KeyBinding Gesture="Ctrl+D" Command="{Binding ToggleDiscountedCommand}"/>
+    </UserControl.InputBindings>
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Style="{DynamicResource PosLeftContainerBorderStyle}">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="8*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="4*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox x:Name="SearchTextBox"
+                        Grid.Column="0" 
+                        Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
+                        Style="{DynamicResource PosSearchTextBoxStyle}" />
+
+                    <Grid Grid.Column="1" Style="{DynamicResource PosFilterGridStyle}">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                            Text="{DynamicResource PosManagementTitleFilterString}" 
+                            Style="{DynamicResource PosFilterTextBlockStyle}" />
+
+                        <ComboBox x:Name="FilterComboBox" 
+                            Grid.Column="1"
+                            SelectedItem="{Binding SelectedFilter}"
+                            ItemsSource="{Binding FilterOptions}"
+                            Style="{DynamicResource PosFilterComboBoxStyle}"
+                            ItemContainerStyle="{DynamicResource PosFilterComboBoxItemStyle}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="{Binding Converter={StaticResource FilterOptionToImagePathConverter}}"
+                                            Style="{DynamicResource PosFilterItemImageStyle}" />
+                                        <TextBlock Text="{Binding Converter={StaticResource ResourceKeyConverter}}" Style="{DynamicResource PosFilterItemTextBlockStyle}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="1" Style="{DynamicResource PosAdditionalFilterGridStyle}">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <ToggleButton Grid.Column="0"
+                        Content="{DynamicResource PosManagementTextAvailableString}" 
+                        IsChecked="{Binding IsAvailable}"
+                        Style="{DynamicResource PosAdditionalFilterToggleButtonStyle}"/>
+
+                    <ToggleButton Grid.Column="1"
+                        Content="{DynamicResource PosManagementTextFeaturedString}"
+                        IsChecked="{Binding IsFeatured}"  
+                        Style="{DynamicResource PosAdditionalFilterToggleButtonStyle}"/>
+
+                    <ToggleButton Grid.Column="2"
+                        Content="{DynamicResource PosManagementTextDiscountedString}"
+                        IsChecked="{Binding IsDiscounted}"
+                        Style="{DynamicResource PosAdditionalFilterToggleButtonStyle}"/>
+
+                </Grid>
+
+                <ScrollViewer Grid.Row="2" Style="{DynamicResource PosProductsScrollViewerStyle}">
+                    <Grid>
+
+                        <ItemsControl ItemsSource="{Binding Products}" Style="{DynamicResource PosProductsItemsControlStyle}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Style="{DynamicResource PosProductsItemsWrapPanelStyle}" KeyboardNavigation.TabNavigation="Continue"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Style="{DynamicResource PosProductsBorderStyle}">
+                                        <StackPanel>
+                                            <Image Source="{Binding ImagePath, Converter={StaticResource ImagePathToImageConverter}, ConverterParameter=Products}" Style="{DynamicResource PosProductsImageStyle}"/>
+                                            <TextBlock 
+                                                Text="{Binding Name}" 
+                                                Style="{DynamicResource PosProductsNameTextBlockStyle}">
+                                                <TextBlock.ToolTip>
+                                                    <ToolTip 
+                                                        Content="{Binding Description}"
+                                                        Style="{DynamicResource PosProductsNameToolTipStyle}"/>
+                                                </TextBlock.ToolTip>
+                                            </TextBlock>
+                                            <DockPanel Style="{DynamicResource PosProductsDockPanelStyle}">
+                                                <TextBlock Style="{DynamicResource PosProductsPriceTextBlockStyle}">
+                                                    <Run Text="{Binding Price, Mode=OneWay}"/>
+                                                    <Run Text="{DynamicResource PosManagementPriceCurrencyString}" FontWeight="Bold" FontSize="10"/>
+                                                </TextBlock>
+                                                <Button x:Name="AddToCartButton"
+                                                    Command="{Binding DataContext.AddToCartCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" 
+                                                    CommandParameter="{Binding}"
+                                                    Style="{DynamicResource PosProductsAddButtonStyleWithEvent}">
+                                                    <TextBlock Text="+" Style="{DynamicResource PosProductsAddTextBlockStyle}"/>
+                                                </Button>
+                                                <Popup PlacementTarget="{Binding ElementName=AddToCartButton}"
+                                                    Placement="Right"
+                                                    StaysOpen="False"
+                                                    AllowsTransparency="True"
+                                                    PopupAnimation="Fade"
+                                                    IsOpen="{Binding IsErrorPopupOpen, Mode=OneWay}">
+                                                    <Border Style="{DynamicResource PosProductsPopupBorderStyle}">
+                                                        <TextBlock 
+                                                            Style="{DynamicResource PosProductsPopupTextBlockStyle}"
+                                                            Text="{Binding AddError, Converter={StaticResource EnumToResourceKeyConverter}, ConverterParameter=PosManagement}">
+                                                        </TextBlock>
+                                                    </Border>
+                                                </Popup>
+                                            </DockPanel>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                        <TextBlock Text="{DynamicResource PosManagementNoDataString}" 
+                            Visibility="{Binding Products.Count, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Zero}"
+                            Style="{DynamicResource PosProductNoDataTextBlockStyle}"/>
+
+                    </Grid>
+                </ScrollViewer>
+
+            </Grid>
+
+        </Border>
+
+        <Border Grid.Column="1" Style="{DynamicResource PosProductCurrentViewBorderStyle}">
+            <ContentControl x:Name="CurrentViewHost" Content="{Binding CurrentView}" Style="{DynamicResource PosProductCurrentViewContentControlStyle}"/>
+        </Border>
+
+    </Grid>
+
+</UserControl>

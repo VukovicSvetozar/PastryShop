@@ -1,0 +1,155 @@
+﻿<Window x:Class="PastryShop.View.ManagerShowUserDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:PastryShop.Converter"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
+        Width="900" Height="700">
+
+    <Window.Resources>
+        <local:TypeToVisibilityConverter x:Key="TypeToVisibilityConverter"/>
+        <local:ImagePathToImageConverter x:Key="ImagePathToImageConverter"/>
+    </Window.Resources>
+
+    <Grid Style="{DynamicResource UserManagementShowUserDetailsContainerGridStyle}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" 
+            Text="{DynamicResource UserManagementShowDetailsTitleString}" 
+            Style="{DynamicResource UserManagementShowUserDetailsHeaderTextBlockStyle}"/>
+
+        <Border Grid.Row="1"
+            Style="{DynamicResource UserManagementShowUserDetailsContentBorderStyle}">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{DynamicResource UserManagementShowUserDetailsImageBorderStyle}">
+                    <Image Source="{Binding UserDTO.ImagePath, Converter={StaticResource ImagePathToImageConverter}, ConverterParameter=Users}" 
+                       Style="{DynamicResource UserManagementShowUserDetailsImageStyle}"/>
+                </Border>
+
+                <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" 
+                    Text="{Binding UserDTO.UserType}"
+                    Style="{DynamicResource UserManagementShowUserDetailsTypeTextBlockStyle}"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2"
+                    Text="{Binding UserDTO.Username}"
+                    Style="{DynamicResource UserManagementShowUserDetailsUsernameTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="0"
+                    Text="{DynamicResource UserManagementShowDetailsFirstNameString}" 
+                    Style="{DynamicResource UserManagementShowUserDetailsTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="4" Grid.Column="1"
+                    Text="{Binding UserDTO.FirstName}"
+                    Style="{DynamicResource UserManagementShowUserDetailsValueTextBlockStyle}"/>
+                <TextBlock Grid.Row="4" Grid.Column="2"
+                    Text="{DynamicResource UserManagementShowDetailsLastNameString}" 
+                    Style="{DynamicResource UserManagementShowUserDetailsTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="4" Grid.Column="3"
+                    Text="{Binding UserDTO.LastName}"
+                    Style="{DynamicResource UserManagementShowUserDetailsValueTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="5" Grid.Column="0"
+                    Text="{DynamicResource UserManagementShowDetailsPhoneNumberString}" 
+                    Style="{DynamicResource UserManagementShowUserDetailsTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="5" Grid.Column="1"
+                    Text="{Binding UserDTO.PhoneNumber}"
+                    Style="{DynamicResource UserManagementShowUserDetailsValueTextBlockStyle}"/>
+                <TextBlock Grid.Row="5" Grid.Column="2"
+                    Text="{DynamicResource UserManagementShowDetailsAddressString}" 
+                    Style="{DynamicResource UserManagementShowUserDetailsTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="5" Grid.Column="3"
+                    Text="{Binding UserDTO.Address}"
+                    Style="{DynamicResource UserManagementShowUserDetailsValueTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="6" Grid.Column="0"
+                    Text="{DynamicResource UserManagementShowDetailsHireDateString}" 
+                    Style="{DynamicResource UserManagementShowUserDetailsTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="6" Grid.Column="1"
+                    Text="{Binding UserDTO.HireDate, StringFormat=\{0:dd.MM.yyyy\}}"
+                    Style="{DynamicResource UserManagementShowUserDetailsValueTextBlockStyle}"/>
+                <TextBlock Grid.Row="6" Grid.Column="2"
+                    Text="{DynamicResource UserManagementShowDetailsLastLoginString}" 
+                    Style="{DynamicResource UserManagementShowUserDetailsTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="6" Grid.Column="3"
+                    Text="{Binding UserDTO.LastLogin, StringFormat=\{0:dd.MM.yyyy HH:mm\}}"
+                    Style="{DynamicResource UserManagementShowUserDetailsValueTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="7" Grid.Column="0"
+                    Text="{DynamicResource UserManagementShowDetailsSalaryString}" 
+                    Style="{DynamicResource UserManagementShowUserDetailsTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="7" Grid.Column="1"
+                    Text="{Binding UserDTO.Salary, StringFormat=C}"
+                    Style="{DynamicResource UserManagementShowUserDetailsValueTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="7" Grid.Column="2"
+                    Text="{DynamicResource UserManagementShowDetailsDepartmentString}" 
+                    Visibility="{Binding UserDTO.Department, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Null}"
+                    Style="{DynamicResource UserManagementShowUserDetailsTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="7" Grid.Column="3"
+                    Text="{Binding UserDTO.Department}"
+                    Visibility="{Binding UserDTO.Department, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Null}"
+                    Style="{DynamicResource UserManagementShowUserDetailsValueTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="7" Grid.Column="2"
+                    Text="{DynamicResource UserManagementShowDetailsCashRegisterIDString}" 
+                    Visibility="{Binding UserDTO.CashRegisterId, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Null}"
+                    Style="{DynamicResource UserManagementShowUserDetailsTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="7" Grid.Column="3"
+                    Text="{Binding UserDTO.CashRegisterId}"
+                    Visibility="{Binding UserDTO.CashRegisterId, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Null}"
+                    Style="{DynamicResource UserManagementShowUserDetailsValueTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="8" Grid.Column="0"
+                    Text="{DynamicResource UserManagementShowDetailsShiftStartString}" 
+                    Visibility="{Binding UserDTO.ShiftStart, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Null}"
+                    Style="{DynamicResource UserManagementShowUserDetailsTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="8" Grid.Column="1"
+                    Text="{Binding UserDTO.ShiftStart, StringFormat='{}{0:yyyy-MM-dd HH:mm}'}"
+                    Visibility="{Binding UserDTO.ShiftStart, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Null}"
+                    Style="{DynamicResource UserManagementShowUserDetailsValueTextBlockStyle}"/>
+                <TextBlock Grid.Row="8" Grid.Column="2"
+                    Text="{DynamicResource UserManagementShowDetailsShiftEndString}" 
+                    Visibility="{Binding UserDTO.ShiftEnd, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Null}"
+                    Style="{DynamicResource UserManagementShowUserDetailsTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="8" Grid.Column="3"
+                    Text="{Binding UserDTO.ShiftEnd, StringFormat='{}{0:yyyy-MM-dd HH:mm}'}"
+                    Visibility="{Binding UserDTO.ShiftEnd, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Null}"
+                    Style="{DynamicResource UserManagementShowUserDetailsValueTextBlockStyle}"/>
+            </Grid>
+
+        </Border>
+
+        <Button Grid.Row="2"
+            Content="{DynamicResource UserManagementShowDetailsCloseButtonString}" 
+            Command="{Binding CloseCommand}" 
+            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+            IsDefault="True" IsCancel="True"
+            Style="{DynamicResource UserManagementShowUserDetailsCloseButtonStyle}"/>
+
+    </Grid>
+
+</Window>

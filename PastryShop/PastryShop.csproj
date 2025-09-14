@@ -1,0 +1,310 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+    <None Remove="Resource\Images\Application\Base_Icon_Language_English.png" />
+    <None Remove="Resource\Images\Application\Base_Icon_Language_Serbian.png" />
+    <None Remove="Resource\Images\Application\Base_Icon_Search.png" />
+    <None Remove="Resource\Images\Application\Base_Icon_Theme_Blue.png" />
+    <None Remove="Resource\Images\Application\Base_Icon_Theme_Dark.png" />
+    <None Remove="Resource\Images\Application\Base_Icon_Theme_Light.png" />
+    <None Remove="Resource\Images\Application\Base_Main_Logo_Blue.png" />
+    <None Remove="Resource\Images\Application\Base_Main_Logo_Dark.png" />
+    <None Remove="Resource\Images\Application\Base_Main_Logo_Light.png" />
+    <None Remove="Resource\Images\Application\Base_Menu_Logout.png" />
+    <None Remove="Resource\Images\Application\Base_Menu_Order.png" />
+    <None Remove="Resource\Images\Application\Base_Menu_Pos.png" />
+    <None Remove="Resource\Images\Application\Base_Menu_Product.png" />
+    <None Remove="Resource\Images\Application\Base_Menu_Profile.png" />
+    <None Remove="Resource\Images\Application\Base_Menu_Report.png" />
+    <None Remove="Resource\Images\Application\Base_Menu_Setting.png" />
+    <None Remove="Resource\Images\Application\Base_Menu_User.png" />
+    <None Remove="Resource\Images\Application\Base_No_Photo.png" />
+    <None Remove="Resource\Images\Application\Base_No_Photo_Product.png" />
+    <None Remove="Resource\Images\Application\Base_No_Photo_User.png" />
+    <None Remove="Resource\Images\Application\Cashier_Button_Cancelled.png" />
+    <None Remove="Resource\Images\Application\Cashier_Button_Card.png" />
+    <None Remove="Resource\Images\Application\Cashier_Button_Cash.png" />
+    <None Remove="Resource\Images\Application\Cashier_Button_PayLater.png" />
+    <None Remove="Resource\Images\Application\Cashier_Menu_Logout_Light.png" />
+    <None Remove="Resource\Images\Application\Cashier_Menu_Order_Dark.png" />
+    <None Remove="Resource\Images\Application\Cashier_Menu_Order_Light.png" />
+    <None Remove="Resource\Images\Application\Cashier_Menu_Pos_Dark.png" />
+    <None Remove="Resource\Images\Application\Cashier_Menu_Pos_Light.png" />
+    <None Remove="Resource\Images\Application\Cashier_Menu_Profile_Light.png" />
+    <None Remove="Resource\Images\Application\Cashier_Menu_Report_Light.png" />
+    <None Remove="Resource\Images\Application\Cashier_Menu_Setting_Light.png" />
+    <None Remove="Resource\Images\Application\Filter_Status_On_Hold.png" />
+    <None Remove="Resource\Images\Application\Icon_Search.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_Product_Change_Availability.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_Product_Change_Availability_White.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_Product_Edit_Data.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_Product_Edit_Data_White.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_Product_Edit_Profile.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_Product_Edit_Profile_White.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_Product_Show_Details.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_Product_Show_Details_White.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_Product_Stocks.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_Product_Stocks_White.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_User_ChangeType.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_User_ChangeType_White.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_User_Deactivate.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_User_Deactivate_White.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_User_Details.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_User_Details_White.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_User_Edit.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_User_Edit_White.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_User_ResetPassword.png" />
+    <None Remove="Resource\Images\Application\Manager_Icon_User_ResetPassword_White.png" />
+    <None Remove="Resource\Images\Application\Report_Total_Orders.png" />
+    <None Remove="Resource\Images\Application\Report_Total_Revenue.png" />
+    <None Remove="Resource\Images\Application\Report_Total_Sold.png" />
+    <None Remove="Resource\Images\logo.png" />
+    <None Remove="Resource\Images\Users\maja.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Resource\Languages\Strings.en.xaml" />
+    <Page Remove="Resource\Languages\Strings.sr.xaml" />
+    <Page Remove="Resource\Styles\LoginStyles.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.7.25103.5738" />
+    <PackageReference Include="LiveChartsCore.SkiaSharpView" Version="2.0.0-rc5.4" />
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.WPF" Version="2.0.0-rc5.4" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="MySql.Data" Version="9.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resource\Images\Application\Base_Icon_Language_English.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_Icon_Language_Serbian.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_Icon_Search.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_Icon_Theme_Blue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_Icon_Theme_Dark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_Icon_Theme_Light.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_Main_Logo_Blue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_Main_Logo_Dark.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_Main_Logo_Light.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_Menu_Logout.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_Menu_Order.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_Menu_Pos.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_Menu_Product.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_Menu_Profile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_Menu_Report.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_Menu_Setting.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_Menu_User.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_No_Photo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_No_Photo_Product.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_No_Photo_User.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Cashier_Button_Cancelled.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Cashier_Button_Card.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Cashier_Button_Cash.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Cashier_Button_PayLater.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Filter_Product_Accessory.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Filter_Product_All.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Filter_Product_Bakery.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Filter_Product_Cake.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Filter_Product_Drink.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Filter_Status_All.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Filter_Status_Cancelled.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Filter_Status_Completed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Filter_Product_Pastry.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Filter_Product_Sweet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Base_Login_Logo.png" />
+    <Resource Include="Resource\Images\Application\Filter_Status_On_Hold.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_Product_Change_Availability.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_Product_Change_Availability_White.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_Product_Edit_Data.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_Product_Edit_Data_White.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_Product_Edit_Profile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_Product_Edit_Profile_White.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_Product_Show_Details.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_Product_Show_Details_White.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_Product_Stocks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_Product_Stocks_White.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_User_ChangeType.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_User_ChangeType_White.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_User_Deactivate.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_User_Deactivate_White.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_User_Details.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_User_Details_White.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_User_Edit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_User_Edit_White.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_User_ResetPassword.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Manager_Icon_User_ResetPassword_White.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Report_Total_Orders.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Report_Total_Revenue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\Application\Report_Total_Sold.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Languages\Strings.en.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Languages\Strings.sr.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Styles\LoginStyles.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Resource\Styles\CashierBlueTheme.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Update="Resource\Styles\CashierDarkTheme.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Update="Resource\Styles\CashierLightTheme.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Update="Resource\Styles\ManagerBlueTheme.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Update="Resource\Styles\ManagerDarkTheme.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Update="Resource\Styles\ManagerLightTheme.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resource\Images\Products\" />
+    <Folder Include="Resource\Images\Users\" />
+  </ItemGroup>
+
+</Project>

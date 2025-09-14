@@ -1,0 +1,32 @@
+﻿<Window x:Class="PastryShop.View.Dialog.BaseChoiceDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:PastryShop.View"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Height="250" Width="400">
+
+    <Border Style="{DynamicResource DialogContainerBorderStyle}">
+
+        <Grid Style="{DynamicResource DialogContainerGridStyle}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Style="{DynamicResource DialogMessageContainerBorderStyle}">
+                <TextBlock Text="{Binding Message}" Style="{DynamicResource DialogMessageTextBlockStyle}"/>
+            </Border>
+
+            <StackPanel Grid.Row="1" Style="{DynamicResource DialogChoiceButtonContainerStackPanelStyle}">
+                <Button Content="{DynamicResource DialogYesButtonString}" IsDefault="True" Command="{Binding YesCommand}" Style="{DynamicResource DialogYesButtonStyle}"/>
+                <Button Content="{DynamicResource DialogNoButtonString}"  IsCancel="True" Style="{DynamicResource DialogNoButtonStyle}"/>
+            </StackPanel>
+
+        </Grid>
+
+    </Border>
+
+</Window>

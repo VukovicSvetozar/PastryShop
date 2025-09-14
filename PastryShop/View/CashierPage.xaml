@@ -1,0 +1,121 @@
+﻿<Window x:Class="PastryShop.View.CashierPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:PastryShop.Converter" 
+        WindowStyle="None"
+        WindowState="Maximized"
+        MinWidth="1110" MinHeight="620">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <local:ImagePathToImageConverter x:Key="ImagePathToImageConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Window.InputBindings>
+        <KeyBinding Key="Escape" Command="{Binding LogoutCommand}"/>
+        <KeyBinding Key="P" Modifiers="Control" Command="{Binding ShowPosViewCommand}"/>
+        <KeyBinding Key="O" Modifiers="Control" Command="{Binding ShowOrderViewCommand}"/>
+        <KeyBinding Key="R" Modifiers="Control" Command="{Binding ShowReportViewCommand}"/>
+        <KeyBinding Key="S" Modifiers="Control" Command="{Binding ShowSettingViewCommand}"/>
+        <KeyBinding Key="M" Modifiers="Control" Command="{Binding ShowProfileViewCommand}"/>
+    </Window.InputBindings>
+
+    <Grid Style="{DynamicResource BaseWindowGridStyle}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Style="{DynamicResource BaseProfileAndMenuBorderStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Style="{DynamicResource BaseProfileStackPanelStyle}">
+                    <Ellipse Style="{DynamicResource BaseProfileImageStyle}">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="{Binding CurrentUser.ImagePath, Converter={StaticResource ImagePathToImageConverter}}"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <TextBlock Text="{Binding CurrentUser.Username}" Style="{DynamicResource BaseProfileUsernameTextStyle}"/>
+                </StackPanel>
+
+                <ScrollViewer Grid.Row="1" Style="{DynamicResource BaseMenuScrollViewerStyle}">
+                    <UniformGrid x:Name="MenuGrid" Style="{DynamicResource BaseMenuUniformGridStyle}">
+                        <Button Style="{DynamicResource BaseMenuButtonStyle}" Command="{Binding ShowPosViewCommand}">
+                            <Viewbox Stretch="Uniform">
+                                <StackPanel HorizontalAlignment="Center">
+                                    <Image Source="/Resource/Images/Application/Base_Menu_Pos.png" Style="{DynamicResource BaseMenuButtonIconStyle}"/>
+                                    <TextBlock Text="{DynamicResource BaseMenuPosString}" Style="{DynamicResource BaseMenuButtonTextStyle}" />
+                                </StackPanel>
+                            </Viewbox>
+                        </Button>
+                        <Button Style="{DynamicResource BaseMenuButtonStyle}" Command="{Binding ShowOrderViewCommand}">
+                            <Viewbox Stretch="Uniform">
+                                <StackPanel HorizontalAlignment="Center">
+                                    <Image Source="/Resource/Images/Application/Base_Menu_Order.png" Style="{DynamicResource BaseMenuButtonIconStyle}"/>
+                                    <TextBlock Text="{DynamicResource BaseMenuOrdersString}" Style="{DynamicResource BaseMenuButtonTextStyle}" />
+                                </StackPanel>
+                            </Viewbox>
+                        </Button>
+                        <Button Style="{DynamicResource BaseMenuButtonStyle}" Command="{Binding ShowReportViewCommand}">
+                            <Viewbox Stretch="Uniform">
+                                <StackPanel HorizontalAlignment="Center">
+                                    <Image Source="/Resource/Images/Application/Base_Menu_Report.png" Style="{DynamicResource BaseMenuButtonIconStyle}"/>
+                                    <TextBlock Text="{DynamicResource BaseMenuReportString}" Style="{DynamicResource BaseMenuButtonTextStyle}" />
+                                </StackPanel>
+                            </Viewbox>
+                        </Button>
+                        <Button Style="{DynamicResource BaseMenuButtonStyle}" Command="{Binding ShowSettingViewCommand}">
+                            <Viewbox Stretch="Uniform">
+                                <StackPanel HorizontalAlignment="Center">
+                                    <Image Source="/Resource/Images/Application/Base_Menu_Setting.png" Style="{DynamicResource BaseMenuButtonIconStyle}"/>
+                                    <TextBlock Text="{DynamicResource BaseMenuSettingString}" Style="{DynamicResource BaseMenuButtonTextStyle}" />
+                                </StackPanel>
+                            </Viewbox>
+                        </Button>
+                        <Button Style="{DynamicResource BaseMenuButtonStyle}" Command="{Binding ShowProfileViewCommand}">
+                            <Viewbox Stretch="Uniform">
+                                <StackPanel HorizontalAlignment="Center">
+                                    <Image Source="/Resource/Images/Application/Base_Menu_Profile.png" Style="{DynamicResource BaseMenuButtonIconStyle}"/>
+                                    <TextBlock Text="{DynamicResource BaseMenuProfileString}" Style="{DynamicResource BaseMenuButtonTextStyle}" />
+                                </StackPanel>
+                            </Viewbox>
+                        </Button>
+                        <Button Style="{DynamicResource BaseMenuButtonStyle}" Command="{Binding LogoutCommand}">
+                            <Viewbox Stretch="Uniform">
+                                <StackPanel HorizontalAlignment="Center">
+                                    <Image Source="/Resource/Images/Application/Base_Menu_Logout.png" Style="{DynamicResource BaseMenuButtonIconStyle}"/>
+                                    <TextBlock Text="{DynamicResource BaseMenuLogoutString}" Style="{DynamicResource BaseMenuButtonTextStyle}" />
+                                </StackPanel>
+                            </Viewbox>
+                        </Button>
+                    </UniformGrid>
+                </ScrollViewer>
+
+            </Grid>
+        </Border>
+
+        <Grid Grid.Column="1" Style="{DynamicResource BaseLogoAndContentGridStyle}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="7*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Style="{DynamicResource BaseLogoGridStyle}">
+                <Image Source="{DynamicResource BaseMainLogoImage}"/>
+            </Grid>
+
+            <Border Grid.Row="1" Style="{DynamicResource BaseContentBorderStyle}">
+                <ContentControl Content="{Binding CurrentView}" Style="{DynamicResource BaseContentControlStyle}"/>
+            </Border>
+
+        </Grid>
+
+    </Grid>
+
+</Window>

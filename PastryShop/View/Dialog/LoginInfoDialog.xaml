@@ -1,0 +1,44 @@
+﻿<Window x:Class="PastryShop.View.Dialog.LoginInfoDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Height="250" Width="400">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resource/Styles/LoginStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Border Style="{DynamicResource DialogContainerBorderStyle}">
+
+        <Grid Style="{DynamicResource DialogContainerGridStyle}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Style="{DynamicResource DialogInfoIconContainerBorderStyle}">
+                <TextBlock Text="{Binding IconText}" Style="{DynamicResource DialogInfoIconTextBlockStyle}"/>
+            </Border>
+
+            <Border Grid.Row="1" Style="{DynamicResource DialogMessageContainerBorderStyle}">
+                <TextBlock Text="{Binding MessageText}" Style="{DynamicResource DialogMessageTextBlockStyle}"/>
+            </Border>
+
+            <Button Grid.Row="2" 
+               Content="{DynamicResource DialogCloseButtonString}"  
+               IsDefault="True" Command="{Binding CloseCommand}" 
+               Style="{DynamicResource DialogYesButtonStyle}"/>
+
+        </Grid>
+
+    </Border>
+
+</Window>

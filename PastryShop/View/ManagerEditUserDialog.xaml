@@ -1,0 +1,140 @@
+﻿<Window x:Class="PastryShop.View.ManagerEditUserDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:PastryShop.Converter"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
+        Width="550" Height="610">
+
+    <Window.Resources>
+        <local:TypeToVisibilityConverter x:Key="TypeToVisibilityConverter"/>
+        <DataTemplate x:Key="ManagerTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                    Text="{DynamicResource UserManagementEditDepartmentString}" 
+                    Style="{DynamicResource UserManagementEditTextBlockStyle}"/>
+                <TextBox Grid.Column="1"
+                    Text="{Binding Department, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                    Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"
+                    Style="{DynamicResource UserManagementEditTextBoxStyle}"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="CashierTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" 
+                    Text="{DynamicResource UserManagementEditCashRegisterIDString}" 
+                    Style="{DynamicResource UserManagementEditTextBlockStyle}"/>
+                <TextBox Grid.Column="1"
+                     Text="{Binding CashRegisterIdText, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                     Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"
+                     Style="{DynamicResource UserManagementEditTextBoxStyle}"/>
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid Style="{DynamicResource UserManagementEditContainerGridStyle}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" 
+            Text="{DynamicResource UserManagementEditTitleString}" 
+            Style="{DynamicResource UserManagementEditTitleTextBlockStyle}"/>
+
+        <Border Grid.Row="1"
+            Style="{DynamicResource UserManagementEditContentBorderStyle}">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" 
+                    Text="{DynamicResource UserManagementEditUsernameString}"        
+                    Style="{DynamicResource UserManagementEditTextBlockStyle}"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding User.Username, UpdateSourceTrigger=PropertyChanged}"  
+                    Style="{DynamicResource UserManagementEditUsernameTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" 
+                    Text="{DynamicResource UserManagementEditSalaryString}" 
+                    Style="{DynamicResource UserManagementEditTextBlockStyle}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" 
+                    Text="{Binding SalaryText, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                    Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"
+                    Style="{DynamicResource UserManagementEditTextBoxStyle}"/>
+
+                <ContentControl Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" 
+                    Content="{Binding}" 
+                    Validation.ErrorTemplate="{x:Null}">
+                    <ContentControl.Style>
+                        <Style TargetType="ContentControl">
+                            <Setter Property="IsTabStop" Value="False"/>
+                            <Setter Property="ContentTemplate" Value="{StaticResource ManagerTemplate}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding User.UserType}" Value="Cashier">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource CashierTemplate}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ContentControl.Style>
+                </ContentControl>
+
+                <TextBlock Grid.Row="3" Grid.Column="0"
+                    Text="{DynamicResource UserManagementEditShiftStartString}" 
+                    Visibility="{Binding User.ShiftStart, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Null}"
+                    Style="{DynamicResource UserManagementEditTextBlockStyle}"/>
+                <xctk:DateTimePicker x:Name="ShiftEditStartPicker"
+                    Grid.Row="3" Grid.Column="1"
+                    Value="{Binding ShiftStartDate, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True}"
+                    Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"
+                    Format="Custom" FormatString="yyyy-MM-dd HH:mm"
+                    Visibility="{Binding User.ShiftStart, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Null}"
+                    Style="{DynamicResource UserManagementEditDateTimePickerStyle}"/>
+
+
+                <TextBlock Grid.Row="4" Grid.Column="0"
+                    Text="{DynamicResource UserManagementEditShiftEndString}" 
+                    Visibility="{Binding User.ShiftEnd, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Null}"
+                    Style="{DynamicResource UserManagementEditTextBlockStyle}"/>
+                <xctk:DateTimePicker x:Name="ShiftEditEndPicker"
+                    Grid.Row="4" Grid.Column="1"
+                    Value="{Binding ShiftEndDate, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True}"
+                    Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"
+                    Format="Custom" FormatString="yyyy-MM-dd HH:mm"
+                    Visibility="{Binding User.ShiftEnd, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Null}"
+                    Style="{DynamicResource UserManagementEditDateTimePickerStyle}"/>
+
+            </Grid>
+
+        </Border>
+
+        <StackPanel Grid.Row="2" Style="{DynamicResource UserManagementEditContainerButtonStackPanelStyle}">
+            <Button Content="{DynamicResource UserManagementEditSaveButtonString}"  Command="{Binding SaveCommand}" IsDefault="True" Style="{DynamicResource UserManagementEditSaveButtonStyle}"/>
+            <Button Content="{DynamicResource UserManagementEditCancelButtonString}"  IsCancel="True" Style="{DynamicResource UserManagementEditCancelButtonStyle}"/>
+        </StackPanel>
+
+    </Grid>
+
+</Window>

@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="PastryShop.View.EditUserSettingDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PastryShop.Converter">
+
+    <UserControl.Resources>
+        <local:FilterOptionToImagePathConverter x:Key="FilterOptionToImagePathConverter"/>
+        <local:EnumToResourceKeyConverter x:Key="EnumToResourceKeyConverter"/>
+    </UserControl.Resources>
+
+    <Grid Style="{DynamicResource EditUserSettingContainerGridStyle}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" 
+            Text="{DynamicResource EditUserSettingTitleString}" 
+            Style="{DynamicResource EditUserSettingTitleTextBlockStyle}"/>
+
+        <Border Grid.Row="1" Style="{DynamicResource EditUserSettingContentBorderStyle}">
+            <WrapPanel Style="{DynamicResource EditUserSettingContentWrapPanelStyle}">
+
+                <StackPanel Style="{DynamicResource EditUserSettingContentLeftStackPanelStyle}">
+                    <TextBlock Text="{DynamicResource EditUserSettingThemeString}" Style="{DynamicResource EditUserSettingThemeTextBlockStyle}"/>
+                    <ComboBox SelectedItem="{Binding SelectedTheme}"
+                        ItemsSource="{Binding ThemeOptions}"
+                        Style="{DynamicResource EditUserSettingComboBoxStyle}"
+                        ItemContainerStyle="{DynamicResource EditUserSettingComboBoxItemStyle}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Converter={StaticResource FilterOptionToImagePathConverter}}"
+                                        Style="{DynamicResource EditUserSettingItemImageStyle}"/>
+                                    <TextBlock Text="{Binding Converter={StaticResource EnumToResourceKeyConverter}, ConverterParameter=EditUserSettingThemeOptions}"
+                                        Style="{DynamicResource EditUserSettingItemTextBlockStyle}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Style="{DynamicResource EditUserSettingContentRightStackPanelStyle}">
+                    <TextBlock Text="{DynamicResource EditUserSettingLanguageString}" Style="{DynamicResource EditUserSettingLanguageTextBlockStyle}"/>
+                    <ComboBox SelectedItem="{Binding SelectedLanguage}"
+                        ItemsSource="{Binding LanguageOptions}"
+                        Style="{DynamicResource EditUserSettingComboBoxStyle}"
+                        ItemContainerStyle="{DynamicResource EditUserSettingComboBoxItemStyle}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Converter={StaticResource FilterOptionToImagePathConverter}}"
+					                    Style="{DynamicResource EditUserSettingItemImageStyle}"/>
+                                    <TextBlock Text="{Binding Converter={StaticResource EnumToResourceKeyConverter}, ConverterParameter=EditUserSettingLanguageOptions}"
+					                    Style="{DynamicResource EditUserSettingItemTextBlockStyle}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+
+            </WrapPanel>
+        </Border>
+
+        <StackPanel Grid.Row="2" Style="{DynamicResource EditUserSettingContainerButtonStackPanelStyle}">
+            <Button Content="{DynamicResource EditUserSettingSaveButtonString}" Command="{Binding SaveCommand}" IsDefault="True" Style="{DynamicResource EditUserSettingSaveButtonStyle}"/>
+        </StackPanel>
+
+    </Grid>
+
+</UserControl>

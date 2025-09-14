@@ -1,0 +1,62 @@
+﻿<Window x:Class="PastryShop.View.Dialog.LoginInputDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:PastryShop.Converter"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Height="250" Width="400">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resource/Styles/LoginStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <local:TypeToVisibilityConverter x:Key="TypeToVisibilityConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Border Style="{DynamicResource DialogContainerBorderStyle}">
+
+        <Grid Style="{DynamicResource DialogContainerGridStyle}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Style="{DynamicResource DialogMessageContainerBorderStyle}">
+                <TextBlock Text="{Binding Message}" Style="{DynamicResource DialogMessageTextBlockStyle}"/>
+            </Border>
+
+            <TextBox Grid.Row="1"
+                x:Name="InputTextBox"
+                Text="{Binding Input, UpdateSourceTrigger=PropertyChanged}"
+                Style="{DynamicResource DialogInputTextBoxStyle}"/>
+
+            <TextBlock Grid.Row="1" 
+                x:Name="TxtPlaceholder"
+                Text="{Binding PlaceHolderText}" 
+                Style="{DynamicResource DialogInputTextBlockStyle}"
+                Visibility="{Binding Input, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=StringEmpty}"/>
+
+            <Popup x:Name="MissingPopup" 
+                IsOpen="{Binding IsInputMissing}"
+                PlacementTarget="{Binding ElementName=InputTextBox}"
+                Style="{DynamicResource DialogInputPopupStyle}">
+                <Border Style="{DynamicResource DialogInputPopupBorderStyle}">
+                    <TextBlock Text="{Binding ErrorMessage}" Style="{DynamicResource DialogInputPopupTextBlockStyle}"/>
+                </Border>
+            </Popup>
+
+            <StackPanel Grid.Row="2" Style="{DynamicResource DialogContainerStackPanelStyle}">
+                <Button Content="{DynamicResource DialogOkButtonString}" IsDefault="True" Style="{DynamicResource DialogYesButtonStyle}" Command="{Binding OkCommand}"/>
+                <Button Content="{DynamicResource DialogCancelButtonString}" IsCancel="True" Style="{DynamicResource DialogNoButtonStyle}" Command="{Binding CancelCommand}"/>
+            </StackPanel>
+
+        </Grid>
+
+    </Border>
+
+</Window>

@@ -1,0 +1,232 @@
+﻿<UserControl x:Class="PastryShop.View.ManagerProductManagementView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PastryShop.Converter"
+             FocusVisualStyle="{x:Null}">
+
+    <UserControl.Resources>
+        <local:FilterOptionToImagePathConverter x:Key="FilterOptionToImagePathConverter"/>
+        <local:TypeToVisibilityConverter x:Key="TypeToVisibilityConverter"/>
+        <local:ResourceKeyConverter x:Key="ResourceKeyConverter"/>
+    </UserControl.Resources>
+
+    <Grid Style="{DynamicResource UserAndProductManagementContainerGridStyle}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" 
+            Text="{DynamicResource ProductManagementTitleString}" 
+            Style="{DynamicResource UserAndProductManagementTitleTextBlockStyle}"/>
+
+        <Grid Grid.Row="1" Style="{DynamicResource UserAndProductManagementContainerSearchAndFilterGridStyle}">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Style="{DynamicResource ProductManagementSearchAndFilterGridStyle}">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox x:Name="SearchTextBox"
+                    Grid.Column="0" 
+                    Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
+                    Style="{DynamicResource ProductManagementSearchTextBoxStyle}"/>
+
+                <Grid Grid.Column="1">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0"
+                        Text="{DynamicResource ProductManagementTitleFilterString}" 
+                        Style="{DynamicResource ProductManagementFilterTextBlockStyle}"/>
+
+                    <ComboBox x:Name="FilterComboBox" 
+                        Grid.Column="1"
+                        SelectedItem="{Binding SelectedFilter}"
+                        ItemsSource="{Binding FilterOptions}"
+                        Style="{DynamicResource ProductManagementFilterComboBoxStyle}"
+                        ItemContainerStyle="{DynamicResource UserAndProductManagementFilterComboBoxItemStyle}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Converter={StaticResource FilterOptionToImagePathConverter}}"
+                                        Style="{DynamicResource UserAndProductManagementFilterItemImageStyle}"/>
+                                    <TextBlock Text="{Binding Converter={StaticResource ResourceKeyConverter}}" Style="{DynamicResource UserAndProductManagementFilterItemTextBlockStyle}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+
+                </Grid>
+
+                <ToggleButton x:Name="btnAdvancedFilter"
+                    Grid.Column="2"
+                    Content="{DynamicResource ProductManagementTitleAdvancedFilterString}" 
+                    Style="{DynamicResource ProductManagementFilterAttributeToggleButtonStyle}"/>
+
+            </Grid>
+
+            <Button Grid.Column="1"
+                Content="{DynamicResource ProductManagementAddButtonString}" 
+                Command="{Binding AddNewProductCommand}" 
+                Style="{DynamicResource ProductManagementAddButtonStyle}"/>
+
+        </Grid>
+
+        <Border Grid.Row="2" Style="{DynamicResource UserAndProductManagementTableBorderStyle}">
+            <Grid>
+
+                <DataGrid ItemsSource="{Binding Products}" 
+                    AutoGenerateColumns="False" 
+                    IsReadOnly="True"
+                    SelectionMode="Single" 
+                    CanUserAddRows="False"
+                    CanUserDeleteRows="False"
+                    CanUserResizeColumns="True"
+                    CanUserSortColumns="True"
+                    AlternationCount="2"
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                    Style="{DynamicResource UserAndProductManagementTableDataGridStyle}"
+                    ColumnHeaderStyle="{DynamicResource UserAndProductManagementTableColumnHeaderStyle}"
+                    RowStyle="{DynamicResource ProductManagementTableRowStyle}"
+                    CellStyle="{DynamicResource UserAndProductManagementTableCellStyle}">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn SortMemberPath="Id" Width="*">
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding DataContext.IDColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Id}" 
+                                        Style="{DynamicResource UserAndProductManagementTableColumnTextBlockStyle}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn SortMemberPath="Name" Width="*">
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding DataContext.NameColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" Style="{DynamicResource UserAndProductManagementTableColumnTextBlockStyle}">
+                                        <TextBlock.ToolTip>
+                                            <ToolTip Style="{DynamicResource UserAndProductManagementToolTipStyle}" Content="{Binding Name}"/>
+                                        </TextBlock.ToolTip>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn SortMemberPath="ProductType" Width="*">
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding DataContext.ProductTypeColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding ProductType}" 
+                                        Style="{DynamicResource UserAndProductManagementTableColumnTextBlockStyle}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn SortMemberPath="Quantity" Width="*">
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding DataContext.QuantityColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Quantity}" 
+                                       Style="{DynamicResource UserAndProductManagementTableColumnTextBlockStyle}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="" Width="2*">
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding DataContext.ActionsColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <Button
+                                             Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=DataContext.ShowProductDetailsCommand}" 
+                                             CommandParameter="{Binding}"
+                                             Style="{DynamicResource UserAndProductManagementIconButtonStyle}">
+                                            <Button.ToolTip>
+                                                <ToolTip Style="{DynamicResource UserAndProductManagementToolTipStyle}" Content="{DynamicResource ProductManagementToolTipDetailsString}"/>
+                                            </Button.ToolTip>
+                                            <Image Source="{DynamicResource ManagerIconProductShowDetails}" Style="{DynamicResource UserAndProductManagementIconImageStyle}"/>
+                                        </Button>
+                                        <Button
+                                            Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=DataContext.EditProductDataCommand}" 
+                                            CommandParameter="{Binding}"
+                                            Style="{DynamicResource UserAndProductManagementIconButtonStyle}">
+                                            <Button.ToolTip>
+                                                <ToolTip Style="{DynamicResource UserAndProductManagementToolTipStyle}" Content="{DynamicResource ProductManagementToolTipEditDataString}"/>
+                                            </Button.ToolTip>
+                                            <Image Source="{DynamicResource ManagerIconProductEditData}" Style="{DynamicResource UserAndProductManagementIconImageStyle}"/>
+                                        </Button>
+                                        <Button
+                                            Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=DataContext.EditProductProfileCommand}" 
+                                            CommandParameter="{Binding}"
+                                            Style="{DynamicResource UserAndProductManagementIconButtonStyle}">
+                                            <Button.ToolTip>
+                                                <ToolTip Style="{DynamicResource UserAndProductManagementToolTipStyle}" Content="{DynamicResource ProductManagementToolTipEditProfileString}"/>
+                                            </Button.ToolTip>
+                                            <Image Source="{DynamicResource ManagerIconProductEditProfile}" Style="{DynamicResource UserAndProductManagementIconImageStyle}"/>
+                                        </Button>
+                                        <Button
+                                             Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=DataContext.ChangeProductAvailabilityCommand}" 
+                                             CommandParameter="{Binding}"
+                                             Style="{DynamicResource UserAndProductManagementIconButtonStyle}">
+                                            <Button.ToolTip>
+                                                <ToolTip Style="{DynamicResource UserAndProductManagementToolTipStyle}" Content="{DynamicResource ProductManagementToolTipChangeAvailabilityString}"/>
+                                            </Button.ToolTip>
+                                            <Image Source="{DynamicResource ManagerIconProductChangeAvailability}" Style="{DynamicResource UserAndProductManagementIconImageStyle}"/>
+                                        </Button>
+                                        <Button
+                                            Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=DataContext.ManagementStockCommand}" 
+                                            CommandParameter="{Binding}"
+                                            Style="{DynamicResource UserAndProductManagementIconButtonStyle}">
+                                            <Button.ToolTip>
+                                                <ToolTip Style="{DynamicResource UserAndProductManagementToolTipStyle}" Content="{DynamicResource ProductManagementToolTipStocksString}"/>
+                                            </Button.ToolTip>
+                                            <Image Source="{DynamicResource ManagerIconProductStocks}" Style="{DynamicResource UserAndProductManagementIconImageStyle}"/>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+                <TextBlock Text="{DynamicResource ProductManagementNoDataString}" 
+                    Visibility="{Binding Products.Count, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Zero}"
+                    Style="{DynamicResource UserAndProductManagementNoDataTextBlockStyle}"/>
+
+            </Grid>
+        </Border>
+
+    </Grid>
+
+</UserControl>

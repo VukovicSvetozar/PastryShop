@@ -1,0 +1,758 @@
+﻿<UserControl x:Class="PastryShop.View.ManagerReportDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:local="clr-namespace:PastryShop.Converter"
+             xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
+             xmlns:lvcs="clr-namespace:LiveChartsCore.SkiaSharpView;assembly=LiveChartsCore.SkiaSharpView"             
+             FocusVisualStyle="{x:Null}">
+
+    <UserControl.Resources>
+        <local:TypeToVisibilityConverter x:Key="TypeToVisibilityConverter"/>
+        <local:ImagePathToImageConverter x:Key="ImagePathToImageConverter"/>
+        <local:WidthToVisibilityConverter x:Key="WidthToVisibilityConverter" Threshold="950"/>
+    </UserControl.Resources>
+
+    <Grid Style="{DynamicResource ReportContainerGridStyle}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="7.5*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+            Text="{DynamicResource ReportTitleString}" 
+            Style="{DynamicResource ReportTitleTextBlockStyle}"/>
+
+        <TabControl Grid.Row="1" Style="{DynamicResource ReportMainTabControlStyle}">
+
+            <TabItem Header="{DynamicResource ReportProductsTitleString}" Style="{DynamicResource ReportMainLeftTabItemStyle}">
+                <Grid Style="{DynamicResource ReportContainerGridStyle}">
+
+                    <Border Style="{DynamicResource ReportContentBorderStyle}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0" Style="{DynamicResource ReportLeftColumnContainerGridStyle}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="6*"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="0" Style="{DynamicResource ReportDateContainerGridStyle}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Column="0"
+                                            Text="{DynamicResource ReportTitleStartDateString}"
+                                            Style="{DynamicResource ReportDateTitleTextBlockStyle}"/>
+                                        <DatePicker Grid.Column="1"
+                                            SelectedDate="{Binding FilterProductDateFrom}"
+                                            Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"    
+                                            Style="{DynamicResource ReportInfoTemplateDatePickerStyle}"
+                                            CalendarStyle="{DynamicResource ReportInfoTemplateCalendarStyle}"/>
+
+                                        <TextBlock Grid.Column="2"
+                                            Text="{DynamicResource ReportTitleEndDateString}" 
+                                            Style="{DynamicResource ReportDateTitleTextBlockStyle}"/>
+                                        <DatePicker Grid.Column="3"
+                                            SelectedDate="{Binding FilterProductDateTo}"
+                                            Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"
+                                            Style="{DynamicResource ReportInfoTemplateDatePickerStyle}"
+                                            CalendarStyle="{DynamicResource ReportInfoTemplateCalendarStyle}"/>
+                                    </Grid>
+
+                                    <Button Grid.Column="1"
+                                        Content="{DynamicResource ReportTitleButtonStatisticsString}"
+                                        Command="{Binding SearchProductReportCommand}"
+                                        Style="{DynamicResource ReportProductSearchButtonStyle}"/>
+
+                                </Grid>                                
+                                
+                                <Grid Grid.Row="1" Style="{DynamicResource ReportInfoContainerGridStyle}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="0" Style="{DynamicResource ReportStatsInfoContainerGridStyle}">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="4*"/>
+                                            <RowDefinition Height="4*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Border Grid.Row="0" Style="{DynamicResource ReportStatsInfoBorderStyle}">
+                                            <Viewbox Style="{DynamicResource ReportSummaryViewboxStyle}">
+                                                <Grid Style="{DynamicResource ReportStatsInfoGridStyle}">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="1*"/>
+                                                        <ColumnDefinition Width="4*"/>
+                                                        <ColumnDefinition Width="2*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="3*"/>
+                                                        <RowDefinition Height="2*"/>
+                                                        <RowDefinition Height="2*"/>
+                                                        <RowDefinition Height="2*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" 
+                                                        Text="{DynamicResource ReportOrdersTitleString}" 
+                                                        Style="{DynamicResource ReportStatsInfoOrderTitleTextBlockStyle}"/>
+                                                    <TextBlock Grid.Column="2" Grid.Row="0"
+                                                        Text="{Binding TotalOrders}"
+                                                        Style="{DynamicResource ReportStatsInfoOrderValueTextBlockStyle}"/>
+
+                                                    <TextBlock Grid.Column="0" Grid.Row="1" Text="✔" Style="{DynamicResource ReportStatsInfoOrderTypeIconCompletedTextBlockStyle}"/>
+                                                    <TextBlock Grid.Column="1" Grid.Row="1" Text="{DynamicResource ReportCompletedTitleString}" Style="{DynamicResource ReportStatsInfoOrderTypeTitleTextBlockStyle}"/>
+                                                    <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding TotalCompletedOrders}" Style="{DynamicResource ReportStatsInfoOrderTypeValueTextBlockStyle}"/>
+
+                                                    <TextBlock Grid.Column="0" Grid.Row="2" Text="✖" Style="{DynamicResource ReportStatsInfoOrderTypeIconCancelledTextBlockStyle}"/>
+                                                    <TextBlock Grid.Column="1" Grid.Row="2" Text="{DynamicResource ReportCancelledTitleString}" Style="{DynamicResource ReportStatsInfoOrderTypeTitleTextBlockStyle}"/>
+                                                    <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding TotalCancelledOrders}" Style="{DynamicResource ReportStatsInfoOrderTypeValueTextBlockStyle}"/>
+
+                                                    <TextBlock Grid.Column="0" Grid.Row="3" Text="⏸" Style="{DynamicResource ReportStatsInfoOrderTypeIconOnHoldTextBlockStyle}"/>
+                                                    <TextBlock Grid.Column="1" Grid.Row="3" Text="{DynamicResource ReportOnHoldTitleString}" Style="{DynamicResource ReportStatsInfoOrderTypeTitleTextBlockStyle}"/>
+                                                    <TextBlock Grid.Column="2" Grid.Row="3" Text="{Binding TotalOnHoldOrders}" Style="{DynamicResource ReportStatsInfoOrderTypeValueTextBlockStyle}"/>
+
+                                                </Grid>
+                                            </Viewbox>
+                                        </Border>
+
+                                        <Border Grid.Row="1" Style="{DynamicResource ReportStatsInfoBorderStyle}">
+                                            <Viewbox Style="{DynamicResource ReportSummaryViewboxStyle}">
+                                                <Grid Style="{DynamicResource ReportStatsInfoGridStyle}">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="1*"/>
+                                                        <ColumnDefinition Width="4*"/>
+                                                        <ColumnDefinition Width="2*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="3*"/>
+                                                        <RowDefinition Height="2*"/>
+                                                        <RowDefinition Height="2*"/>
+                                                        <RowDefinition Height="2*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" 
+                                                        Text="{DynamicResource ReportItemsTitleString}" 
+                                                        Style="{DynamicResource ReportStatsInfoOrderTitleTextBlockStyle}"/>
+                                                    <TextBlock Grid.Column="2" Grid.Row="0" 
+                                                        Text="{Binding TotalItems}"
+                                                        Style="{DynamicResource ReportStatsInfoOrderValueTextBlockStyle}"/>
+
+                                                    <TextBlock Grid.Column="0" Grid.Row="1" Text="🍔" Style="{DynamicResource ReportStatsInfoItemTypeIconTextBlockStyle}"/>
+                                                    <TextBlock Grid.Column="1" Grid.Row="1" Text="{DynamicResource ReportPieTitleFoodString}" Style="{DynamicResource ReportStatsInfoOrderTypeTitleTextBlockStyle}"/>
+                                                    <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding TotalFoodItems}" Style="{DynamicResource ReportStatsInfoOrderTypeValueTextBlockStyle}"/>
+
+                                                    <TextBlock Grid.Column="0" Grid.Row="2" Text="🥤" Style="{DynamicResource ReportStatsInfoItemTypeIconTextBlockStyle}"/>
+                                                    <TextBlock Grid.Column="1" Grid.Row="2" Text="{DynamicResource ReportPieTitleDrinkString}" Style="{DynamicResource ReportStatsInfoOrderTypeTitleTextBlockStyle}"/>
+                                                    <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding TotalDrinkItems}" Style="{DynamicResource ReportStatsInfoOrderTypeValueTextBlockStyle}"/>
+
+                                                    <TextBlock Grid.Column="0" Grid.Row="3" Text="🎁" Style="{DynamicResource ReportStatsInfoItemTypeIconTextBlockStyle}"/>
+                                                    <TextBlock Grid.Column="1" Grid.Row="3" Text="{DynamicResource ReportPieTitleAccessoryString}" Style="{DynamicResource ReportStatsInfoOrderTypeTitleTextBlockStyle}"/>
+                                                    <TextBlock Grid.Column="2" Grid.Row="3" Text="{Binding TotalAccessoryItems}" Style="{DynamicResource ReportStatsInfoOrderTypeValueTextBlockStyle}"/>
+
+                                                </Grid>
+                                            </Viewbox>
+                                        </Border>
+
+                                        <Border Grid.Row="2" Style="{DynamicResource ReportStatsInfoRevenueBorderStyle}">
+                                            <Viewbox Style="{DynamicResource ReportSummaryViewboxStyle}">
+                                                <Grid Style="{DynamicResource ReportStatsInfoRevenueGridStyle}">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="1*"/>
+                                                        <ColumnDefinition Width="4*"/>
+                                                        <ColumnDefinition Width="2*"/>
+                                                    </Grid.ColumnDefinitions>
+ 
+                                                    <TextBlock Grid.Column="1"
+                                                        Text="{DynamicResource ReportProfitTitleString}" 
+                                                        Style="{DynamicResource ReportStatsInfoRevenueTitleTextBlockStyle}"/>
+                                                    <TextBlock Grid.Column="2"                                   
+                                                        Text="{Binding TotalRevenue, Mode=OneWay,StringFormat=N0}"
+                                                        Style="{DynamicResource ReportStatsInfoRevenueValueTextBlockStyle}"/>
+
+                                                </Grid>
+                                            </Viewbox>
+                                        </Border>
+
+                                    </Grid>
+
+                                    <Border Grid.Column="1" Style="{DynamicResource ReportGraphInfoBorderStyle}">
+                                        <Grid Style="{DynamicResource ReportGraphContainerGridStyle}">
+
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="1*"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Viewbox Grid.Row="0" Style="{DynamicResource ReportSummaryViewboxStyle}">
+                                                <lvc:CartesianChart
+                                                    MinWidth="700" MinHeight="270"
+                                                    Series="{Binding WeeklyOrdersAndItemsSeries}"
+                                                    XAxes="{Binding XAxes}"
+                                                    YAxes="{Binding OrdersYAxes}"
+                                                    LegendPosition="Bottom"/>
+
+                                            </Viewbox>
+                                            <Viewbox Grid.Row="1" Style="{DynamicResource ReportSummaryViewboxStyle}">
+                                                <lvc:CartesianChart
+                                                    MinWidth="700" MinHeight="270"
+                                                    Series="{Binding WeeklyRevenueSeries}"
+                                                    XAxes="{Binding XAxes}"
+                                                    YAxes="{Binding RevenueYAxes}"
+                                                    LegendPosition="Bottom"/>
+                                            </Viewbox>
+
+                                        </Grid>
+                                    </Border>
+
+                                </Grid>
+
+                            </Grid>
+
+                            <Grid Grid.Column="1" Style="{DynamicResource ReportRightColumnContainerGridStyle}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="8*"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Row="0" 
+                                    Text="{DynamicResource ReportMostPopularTitleString}" 
+                                    Style="{DynamicResource ReportBestSellersTitleStyle}"/>
+
+                                <ListBox Grid.Row="1" ItemsSource="{Binding Products}"
+                                    Style="{DynamicResource ReportBestSellersListBoxStyle}"
+                                    ItemContainerStyle="{DynamicResource ReportBestSellersListBoxItemStyle}">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Style="{DynamicResource ReportBestSellersListBoxItemGridStyle}">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColImage"/>
+                                                    <ColumnDefinition Width="1*"/>
+                                                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColName"/>
+                                                    <ColumnDefinition Width="1*"/>
+                                                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColProductType"/>
+                                                    <ColumnDefinition Width="1*"/>
+                                                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColTotalSold"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Ellipse Grid.Column="0" Style="{DynamicResource ReportBestSellersEllipseStyle}">
+                                                    <Ellipse.Fill>
+                                                        <ImageBrush ImageSource="{Binding ImagePath, Converter={StaticResource ImagePathToImageConverter}, ConverterParameter=Products}"/>
+                                                    </Ellipse.Fill>
+                                                    <Ellipse.Visibility>
+                                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=UserControl}" Converter="{StaticResource WidthToVisibilityConverter}"/>
+                                                    </Ellipse.Visibility>
+                                                </Ellipse>
+                                                <TextBlock Grid.Column="2" Text="{Binding Name}" Style="{DynamicResource ReportBestSellersNameTextBlockStyle}">
+                                                    <TextBlock.ToolTip>
+                                                        <ToolTip Content="{Binding Name}" Style="{StaticResource ReportBestSellersNameToolTipStyle}"/>
+                                                    </TextBlock.ToolTip>
+                                                </TextBlock>
+                                                <TextBlock Grid.Column="4" Text="{Binding TotalSold}" Style="{DynamicResource ReportBestSellersTotalSoldTextBlockStyle}"/>
+
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+
+                            </Grid>
+
+                        </Grid>
+                    </Border>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="{DynamicResource ReportStocksTitleString}" Style="{DynamicResource ReportMainRightTabItemStyle}">
+
+                <Grid>
+
+                    <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="5.5*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" Style="{DynamicResource ReportStocksContainerGridStyle}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0" Style="{DynamicResource ReportStocksNameProductContainerGridStyle}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0"
+                                    Text="{DynamicResource ReportTitleNameProductString}" 
+                                    Style="{DynamicResource ReportStocksNameProductTitleTextBlockStyle}"/>
+
+                                <ComboBox x:Name="ProductComboBox" 
+                                    Grid.Column="1"
+                                    ItemsSource="{Binding AllProductNames}"
+                                    Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"
+                                    SelectedItem="{Binding SelectedProductName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                    Style="{DynamicResource ReportStocksNameProductComboBoxStyle}"
+                                    ItemContainerStyle="{DynamicResource ReportStocksNameProductComboBoxItemStyle}">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding}" Style="{DynamicResource ReportStocksNameProductComboBoxItemTextBlockStyle}"/>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+
+                            </Grid>
+
+                            <Grid Grid.Column="1" Style="{DynamicResource ReportDateContainerGridStyle}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0"
+                                    Text="{DynamicResource ReportTitleStartDateString}"
+                                    Style="{DynamicResource ReportDateTitleTextBlockStyle}"/>
+                                <DatePicker Grid.Column="1"
+                                    SelectedDate="{Binding FilterStockDateFrom}"
+                                    Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"    
+                                    Style="{DynamicResource ReportInfoTemplateDatePickerStyle}"
+                                    CalendarStyle="{DynamicResource ReportInfoTemplateCalendarStyle}"/>
+
+                                <TextBlock Grid.Column="2"
+                                    Text="{DynamicResource ReportTitleEndDateString}" 
+                                    Style="{DynamicResource ReportDateTitleTextBlockStyle}"/>
+                                <DatePicker Grid.Column="3"
+                                    SelectedDate="{Binding FilterStockDateTo}"
+                                    Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"
+                                    Style="{DynamicResource ReportInfoTemplateDatePickerStyle}"
+                                    CalendarStyle="{DynamicResource ReportInfoTemplateCalendarStyle}"/>
+                            </Grid>
+
+                            <Button Grid.Column="2"
+                                Content="{DynamicResource ReportTitleButtonReportsString}"
+                                Command="{Binding SearchStockReportCommand}"
+                                Style="{DynamicResource ReportStocksSearchButtonStyle}"/>
+
+                        </Grid>
+
+                        <TabControl Grid.Row="1" Style="{DynamicResource ReportStocksContainerTabControlStyle}">
+
+                            <TabItem Header="{DynamicResource ReportTitleWarningString}" Style="{DynamicResource ReportMainRightTabItemStyle}">
+                                <Border Grid.Row="0" Style="{DynamicResource ReportStocksTableBorderStyle}">
+                                    <Grid>
+                                        <DataGrid ItemsSource="{Binding StockWarnings}" 
+                                            AutoGenerateColumns="False" 
+                                            IsReadOnly="True"
+                                            SelectionMode="Single" 
+                                            CanUserAddRows="False"
+                                            CanUserDeleteRows="False"
+                                            CanUserResizeColumns="True"
+                                            CanUserSortColumns="True"
+                                            AlternationCount="2"
+                                            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                            Style="{DynamicResource ReportStocksTableDataGridStyle}"
+                                            ColumnHeaderStyle="{DynamicResource ReportStocksTableColumnHeaderStyle}"
+                                            RowStyle="{DynamicResource ReportStocksTableRowStyle}"
+                                            CellStyle="{DynamicResource ReportStocksTableCellStyle}">
+                                            <DataGrid.Columns>
+                                                <DataGridTemplateColumn SortMemberPath="StockId" Width="1*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.StockIdColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding StockId}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="ProductId" Width="1.3*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.ProductIdColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding ProductId}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="ProductName" Width="2*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.ProductNameColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding ProductName}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="Quantity" Width="1*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.QuantityColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding Quantity}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="ExpirationDate" Width="2*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.ExpirationDateColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding ExpirationDate, StringFormat={}{0:yyyy-MM-dd}}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="ExpirationWarningDays" Width="1*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.ExpirationWarningDaysColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding ExpirationWarningDays}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                        <TextBlock Text="{DynamicResource ReportNoDataString}" 
+                                            Visibility="{Binding StockWarnings.Count, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Zero}"
+                                            Style="{DynamicResource ReportStocksNoDataTextBlockStyle}"/>
+                                    </Grid>
+                                </Border>
+                            </TabItem>
+
+                            <TabItem Header="{DynamicResource ReportTitleTransactionsString}" Style="{DynamicResource ReportMainRightTabItemStyle}" Margin="8 0 8 0">
+                                <Border Grid.Row="0" Style="{DynamicResource ReportStocksTableBorderStyle}">
+                                    <Grid>
+                                        <DataGrid ItemsSource="{Binding StockTransactions}" 
+                                            AutoGenerateColumns="False" 
+                                            IsReadOnly="True"
+                                            SelectionMode="Single" 
+                                            CanUserAddRows="False"
+                                            CanUserDeleteRows="False"
+                                            CanUserResizeColumns="True"
+                                            CanUserSortColumns="True"
+                                            AlternationCount="2"
+                                            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                            Style="{DynamicResource ReportStocksTableDataGridStyle}"
+                                            ColumnHeaderStyle="{DynamicResource ReportStocksTableColumnHeaderStyle}"
+                                            RowStyle="{DynamicResource ReportStocksTableRowStyle}"
+                                            CellStyle="{DynamicResource ReportStocksTableCellStyle}">
+                                            <DataGrid.Columns>
+                                                <DataGridTemplateColumn SortMemberPath="Id" Width="1*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.IDColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding Id}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="TransactionDate" Width="2*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.TransactionDateColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding TransactionDate, StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="TransactionType" Width="1.8*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.TransactionTypeColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding TransactionType}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="QuantityChanged" Width="1.3*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.QuantityChangedColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding QuantityChanged}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="OrderId" Width="1.3*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.OrderIdColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding OrderId}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="UserId" Width="1.3*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.UserIdColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding UserId}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                        <TextBlock Text="{DynamicResource ReportNoDataString}" 
+                                            Visibility="{Binding StockTransactions.Count, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Zero}"
+                                            Style="{DynamicResource ReportStocksNoDataTextBlockStyle}"/>
+                                    </Grid>
+                                </Border>
+                            </TabItem>
+
+                            <TabItem Header="{DynamicResource ReportTitleModificationsString}" Style="{DynamicResource ReportMainRightTabItemStyle}">
+                                <Border Grid.Row="1" Style="{DynamicResource ReportStocksTableBorderStyle}">
+                                    <Grid>
+                                        <DataGrid ItemsSource="{Binding StockModifications}" 
+                                            AutoGenerateColumns="False" 
+                                            IsReadOnly="True"
+                                            SelectionMode="Single" 
+                                            CanUserAddRows="False"
+                                            CanUserDeleteRows="False"
+                                            CanUserResizeColumns="True"
+                                            CanUserSortColumns="True"
+                                            AlternationCount="2"
+                                            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                            Style="{DynamicResource ReportStocksTableDataGridStyle}"
+                                            ColumnHeaderStyle="{DynamicResource ReportStocksTableColumnHeaderStyle}"
+                                            RowStyle="{DynamicResource ReportStocksTableRowStyle}"
+                                            CellStyle="{DynamicResource ReportStocksTableCellStyle}">
+                                            <DataGrid.Columns>
+                                                <DataGridTemplateColumn SortMemberPath="Id" Width="1*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.IDColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding Id}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="ModificationDate" Width="2*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.ModificationDateColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding ModificationDate, StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="ModificationType" Width="2*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.ModificationTypeColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding ModificationType}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="OldValue" Width="1.1*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.OldValueColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding OldValue}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="NewValue" Width="1.1*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.NewValueColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding NewValue}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="UserId" Width="1.2*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.UserIdColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding UserId}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                        <TextBlock Text="{DynamicResource ReportNoDataString}" 
+                                            Visibility="{Binding StockModifications.Count, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Zero}"
+                                            Style="{DynamicResource ReportStocksNoDataTextBlockStyle}"/>
+                                    </Grid>
+                                </Border>
+                            </TabItem>
+
+                            <TabItem Header="{DynamicResource ReportTitleSummaryString}" Style="{DynamicResource ReportMainRightTabItemStyle}">
+                                <Border Grid.Row="2" Style="{DynamicResource ReportStocksTableBorderStyle}">
+                                    <Grid>
+                                        <DataGrid ItemsSource="{Binding StockSummaries}" 
+                                            AutoGenerateColumns="False" 
+                                            IsReadOnly="True"
+                                            SelectionMode="Single" 
+                                            CanUserAddRows="False"
+                                            CanUserDeleteRows="False"
+                                            CanUserResizeColumns="True"
+                                            CanUserSortColumns="True"
+                                            AlternationCount="2"
+                                            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                            Style="{DynamicResource ReportStocksTableDataGridStyle}"
+                                            ColumnHeaderStyle="{DynamicResource ReportStocksTableColumnHeaderStyle}"
+                                            RowStyle="{DynamicResource ReportStocksTableRowStyle}"
+                                            CellStyle="{DynamicResource ReportStocksTableCellStyle}">
+                                            <DataGrid.Columns>
+                                                <DataGridTemplateColumn SortMemberPath="ProductId" Width="*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.ProductIdColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding ProductId}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="TotalQuantity" Width="*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.TotalQuantityColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding TotalQuantity}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="TotalAdded" Width="*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.TotalAddedColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding TotalAdded}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="TotalSold" Width="*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.TotalSoldColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding TotalSold}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn SortMemberPath="TotalModifications" Width="*">
+                                                    <DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding DataContext.TotalModificationsColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.HeaderTemplate>
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding TotalModifications}" Style="{DynamicResource ReportStocksTableColumnTextBlockStyle}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                        <TextBlock Text="{DynamicResource ReportNoDataString}" 
+                                            Visibility="{Binding StockSummaries.Count, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Zero}"
+                                            Style="{DynamicResource ReportStocksNoDataTextBlockStyle}"/>
+                                    </Grid>
+                                </Border>
+                            </TabItem>
+
+                        </TabControl>
+
+                    </Grid>
+
+                </Grid>
+
+            </TabItem>
+
+        </TabControl>
+
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,262 @@
+﻿<Window x:Class="PastryShop.View.ManagerShowProductDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:PastryShop.Converter"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
+        Width="800" Height="600">
+
+    <Window.Resources>
+        <local:TypeToVisibilityConverter x:Key="TypeToVisibilityConverter"/>
+        <local:ImagePathToImageConverter x:Key="ImagePathToImageConverter"/>
+        <local:BoolToLocalizedStringConverter x:Key="BoolToLocalizedStringConverter"/>
+
+        <DataTemplate x:Key="FoodProductProfile">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" 
+                    Text="{DynamicResource ProductManagementShowDetailsFoodTypeString}" 
+                    Style="{DynamicResource ProductManagementShowProductTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="0" Grid.Column="1"
+                     Text="{Binding FoodType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Style="{DynamicResource ProductManagementShowProductValueTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" 
+                    Text="{DynamicResource ProductManagementShowDetailsWeightString}" 
+                    Style="{DynamicResource ProductManagementShowProductTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="1" Grid.Column="1"
+                     Text="{Binding Weight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Style="{DynamicResource ProductManagementShowProductValueTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" 
+                    Text="{DynamicResource ProductManagementShowDetailsCaloriesString}" 
+                    Style="{DynamicResource ProductManagementShowProductTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="2" Grid.Column="1"
+                     Text="{Binding Calories, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Style="{DynamicResource ProductManagementShowProductValueTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" 
+                    Text="{DynamicResource ProductManagementShowDetailsPerishableString}" 
+                    Style="{DynamicResource ProductManagementShowProductTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="3" Grid.Column="1"
+                    Text="{Binding IsPerishable,
+                            Converter={StaticResource BoolToLocalizedStringConverter},
+                            ConverterParameter='ProductManagementShowDetailsYesString;ProductManagementShowDetailsNoString'}"
+                    Style="{DynamicResource ProductManagementShowProductValueTextBlockStyle}"/>
+
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="DrinkProductProfile">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" 
+                    Text="{DynamicResource ProductManagementShowDetailsVolumeString}" 
+                    Style="{DynamicResource ProductManagementShowProductTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="0" Grid.Column="1"
+                     Text="{Binding Volume, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Style="{DynamicResource ProductManagementShowProductValueTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" 
+                    Text="{DynamicResource ProductManagementShowDetailsAlcoholicString}" 
+                    Style="{DynamicResource ProductManagementShowProductTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="1" Grid.Column="1"
+                    Text="{Binding IsAlcoholic,
+                            Converter={StaticResource BoolToLocalizedStringConverter},
+                            ConverterParameter='ProductManagementShowDetailsYesString;ProductManagementShowDetailsNoString'}"
+                    Style="{DynamicResource ProductManagementShowProductValueTextBlockStyle}"/>
+
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="AccessoryProductProfile">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" 
+                    Text="{DynamicResource ProductManagementShowDetailsMaterialString}" 
+                    Style="{DynamicResource ProductManagementShowProductTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="0" Grid.Column="1"
+                     Text="{Binding Material, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Style="{DynamicResource ProductManagementShowProductValueTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" 
+                    Text="{DynamicResource ProductManagementShowDetailsDimensionsString}" 
+                    Style="{DynamicResource ProductManagementShowProductTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="1" Grid.Column="1"
+                     Text="{Binding Dimensions, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Style="{DynamicResource ProductManagementShowProductValueTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" 
+                    Text="{DynamicResource ProductManagementShowDetailsReusableString}" 
+                    Style="{DynamicResource ProductManagementShowProductTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="2" Grid.Column="1"
+                    Text="{Binding IsReusable,
+                            Converter={StaticResource BoolToLocalizedStringConverter},
+                            ConverterParameter='ProductManagementShowDetailsYesString;ProductManagementShowDetailsNoString'}"
+                    Style="{DynamicResource ProductManagementShowProductValueTextBlockStyle}"/>
+
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid Style="{DynamicResource ProductManagementShowProductContainerGridStyle}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" 
+            Text="{DynamicResource ProductManagementShowDetailsTitleString}" 
+            Style="{DynamicResource ProductManagementShowProductHeaderTextBlockStyle}"/>
+
+        <Border Grid.Row="1"
+            Style="{DynamicResource ProductManagementShowProductContentBorderStyle}">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3">
+                    <Image Source="{Binding ProductDTO.ImagePath, Converter={StaticResource ImagePathToImageConverter}, ConverterParameter=Products}" 
+                        Style="{DynamicResource ProductManagementShowProductImageStyle}"/>
+                </Border>
+
+                <StackPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" Style="{DynamicResource ProductManagementShowProductChipStackPanelStyle}">
+                    <Border Visibility="{Binding ProductDTO.IsAvailable, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Bool}" 
+                        Style="{DynamicResource ProductManagementShowProductChipAvailableBorderStyle}">
+                        <TextBlock Text="{DynamicResource ProductManagementShowDetailsAvailableString}" 
+                            Style="{DynamicResource ProductManagementShowProductChipTextBlockStyle}"/>
+                    </Border>
+                    <Border Visibility="{Binding ProductDTO.IsAvailable, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=BoolInverse}" 
+                        Style="{DynamicResource ProductManagementShowProductChipNotAvailableBorderStyle}">
+                        <TextBlock Text="{DynamicResource ProductManagementShowDetailsNotAvailableString}" 
+                            Style="{DynamicResource ProductManagementShowProductChipTextBlockStyle}"/>
+                    </Border>
+                    <Border Visibility="{Binding ProductDTO.IsFeatured, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Bool}" 
+                        Style="{DynamicResource ProductManagementShowProductChipFeaturedBorderStyle}">
+                        <TextBlock Text="{DynamicResource ProductManagementShowDetailsFeaturedString}" 
+                            Style="{DynamicResource ProductManagementShowProductChipTextBlockStyle}"/>
+                    </Border>
+                </StackPanel>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
+                    Text="{Binding ProductDTO.ProductType}"
+                    Style="{DynamicResource ProductManagementShowProductTypeTextBlockStyle}"/>
+                <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+                    Text="{Binding ProductDTO.Name}"
+                    Style="{DynamicResource ProductManagementShowProductNameTextBlockStyle}"/>
+                <TextBlock Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
+                    Text="{Binding ProductDTO.Description}"
+                    Style="{DynamicResource ProductManagementShowProductDescriptionTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="0" Grid.Column="2"
+                    Text="{DynamicResource ProductManagementShowDetailsPriceString}" 
+                    Style="{DynamicResource ProductManagementShowProductTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="0" Grid.Column="3"
+                    Text="{Binding ProductDTO.Price, StringFormat='{}{0:0.##}'}"
+                    Style="{DynamicResource ProductManagementShowProductValueTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="2"
+                    Text="{DynamicResource ProductManagementShowDetailsDiscountString}" 
+                    Style="{DynamicResource ProductManagementShowProductTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="1" Grid.Column="3"
+                    Text="{Binding ProductDTO.Discount, StringFormat='{}{0:0.##}'}"
+                    Style="{DynamicResource ProductManagementShowProductValueTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="2"
+                    Text="{DynamicResource ProductManagementShowDetailsCreatedDateString}" 
+                    Style="{DynamicResource ProductManagementShowProductTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="2" Grid.Column="3"
+                    Text="{Binding ProductDTO.CreatedDate, StringFormat=\{0:dd.MM.yyyy\}}"
+                    Style="{DynamicResource ProductManagementShowProductValueTextBlockStyle}"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="2"
+                    Text="{DynamicResource ProductManagementShowDetailsUpdatedDateString}" 
+                    Style="{DynamicResource ProductManagementShowProductTitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="3" Grid.Column="3"
+                    Text="{Binding ProductDTO.UpdatedDate, StringFormat=\{0:dd.MM.yyyy\}}"
+                    Visibility="{Binding ProductDTO.UpdatedDate, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Null}"
+                    Style="{DynamicResource ProductManagementShowProductValueTextBlockStyle}"/>
+
+                <ContentControl Grid.Row="4" Grid.Column="2" Grid.RowSpan="4" Grid.ColumnSpan="2" 
+                    Content="{Binding ProductDTO}" 
+                    Validation.ErrorTemplate="{x:Null}">
+                    <ContentControl.Style>
+                        <Style TargetType="ContentControl">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ProductDTO.ProductType}" Value="Food">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource FoodProductProfile}"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ProductDTO.ProductType}" Value="Drink">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource DrinkProductProfile}"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ProductDTO.ProductType}" Value="Accessory">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource AccessoryProductProfile}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ContentControl.Style>
+                </ContentControl>
+
+            </Grid>
+
+        </Border>
+
+        <Button Grid.Row="2"
+            IsDefault="True" IsCancel="True"
+            Content="{DynamicResource ProductManagementShowDetailsCloseString}" 
+            Command="{Binding CloseCommand}" 
+            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+            Style="{DynamicResource ProductManagementShowProductCancelButtonStyle}"/>
+
+    </Grid>
+
+</Window>

@@ -1,0 +1,236 @@
+﻿<Window x:Class="PastryShop.View.ManagerStockManagementDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:PastryShop.Data.DTO"
+        xmlns:vm="clr-namespace:PastryShop.ViewModel"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="CanResizeWithGrip"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        SizeChanged="Window_SizeChanged"
+        Height="770" Width="1220" MinHeight="755" MinWidth="1000">
+
+    <Window.InputBindings>
+        <KeyBinding Gesture="Ctrl+S" Command="{Binding SaveChangesCommand}"/>
+        <KeyBinding Gesture="Ctrl+D" Command="{Binding DiscardChangesCommand}"/>
+        <KeyBinding Key="Delete" Command="{Binding DeleteStockCommand}" CommandParameter="{Binding SelectedStock}"/>
+        <KeyBinding Gesture="Ctrl+N" Command="{Binding AddNewStockCommand}"/>
+        <KeyBinding Gesture="Ctrl+T" Command="{Binding ToggleActiveCommand}"/>
+    </Window.InputBindings>
+
+    <Window.Resources>
+        <DataTemplate x:Key="InfoStockTemplate" DataType="{x:Type vm:StockItemViewModel}">
+            <Grid Style="{DynamicResource ProductManagementStockInfoTemplateGridStyle}">
+                <Grid Style="{DynamicResource ProductManagementStockInfoTemplateContentGridStyle}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="170"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.ColumnSpan="2" 
+                        Text="{DynamicResource ProductManagementStockStockDetailsString}"
+                        Style="{DynamicResource ProductManagementStockInfoTemplateTitleTextBlockStyle}"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0"
+                        Text="{DynamicResource ProductManagementStockQuantityString}"
+                        Style="{DynamicResource ProductManagementStockInfoTemplateNameTextBlockStyle}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1"
+                        Text="{Binding QuantityText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True, NotifyOnValidationError=True}"
+                        Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"
+                        Style="{DynamicResource ProductManagementStockInfoTemplateValueTextBoxStyle}"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0"
+                        Text="{DynamicResource ProductManagementStockExpirationDateString}"
+                        Style="{DynamicResource ProductManagementStockInfoTemplateNameTextBlockStyle}"/>
+                    <DatePicker Grid.Row="2" Grid.Column="1"
+                        SelectedDate="{Binding ExpirationDate,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True, NotifyOnValidationError=True}" 
+                        Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"
+                        Style="{DynamicResource ProductManagementStockInfoTemplateDatePickerStyle}"
+                        CalendarStyle="{DynamicResource ProductManagementStockInfoTemplateCalendarStyle}"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0"
+                        Text="{DynamicResource ProductManagementStockWarningDaysString}"
+                        Style="{DynamicResource ProductManagementStockInfoTemplateNameTextBlockStyle}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1"
+                        Text="{Binding ExpirationWarningDaysText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True, NotifyOnValidationError=True}"
+                        Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"
+                        Style="{DynamicResource ProductManagementStockInfoTemplateValueTextBoxStyle}"/>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0"
+                        Text="{DynamicResource ProductManagementStockAddedDateString}"
+                        Style="{DynamicResource ProductManagementStockInfoTemplateNameTextBlockStyle}"/>
+                    <TextBlock Grid.Row="4" Grid.Column="1"
+                        Text="{Binding AddedDate, StringFormat=g}"
+                        Style="{DynamicResource ProductManagementStockInfoTemplateValueTextBlockStyle}"/>
+
+                    <TextBlock Grid.Row="5" Grid.Column="0"
+                        Text="{DynamicResource ProductManagementStockActiveTemplateString}"
+                        Style="{DynamicResource ProductManagementStockInfoTemplateNameTextBlockStyle}"/>
+                    <CheckBox Grid.Row="5" Grid.Column="1"
+                        IsChecked="{Binding IsActive, Mode=TwoWay}"
+                        Style="{DynamicResource ProductManagementStockInfoTemplateCheckBoxStyle}"/>
+                </Grid>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="NullTemplate">
+            <TextBlock Text="{Binding DataContext.DetailMessage, RelativeSource={RelativeSource AncestorType=Window}}"
+                Style="{DynamicResource ProductManagementStockNullTemplateTextBlockStyle}"/>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid Style="{DynamicResource ProductManagementStockWindowGridStyle}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Style="{DynamicResource ProductManagementStockHeaderBorderStyle}">
+            <TextBlock Text="{DynamicResource ProductManagementStockTitleString}" Style="{DynamicResource ProductManagementStockHeaderTextBlockStyle}"/>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Style="{DynamicResource ProductManagementStockInfoGridStyle}">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="0" Text="{Binding ProductName}" Style="{DynamicResource ProductManagementStockInfoProductNameTextBlockStyle}"/>
+                <ToggleButton Grid.Column="1" Content="{DynamicResource ProductManagementStockActiveString}" IsChecked="{Binding IsActive}" Style="{DynamicResource ProductManagementStockActiveToggleButtonStyle}"/>
+
+            </Grid>
+
+            <StackPanel Grid.Column="1" Style="{DynamicResource ProductManagementStockInfoStackPanelStyle}">
+                <TextBlock Text="{DynamicResource ProductManagementStockTotalQuantityString}" Style="{DynamicResource ProductManagementStockInfoTotalQuantityTitleTextBlockStyle}"/>
+                <TextBlock Text="{Binding TotalQuantity}" Style="{DynamicResource ProductManagementStockInfoTotalQuantityValueTextBlockStyle}"/>
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" Style="{DynamicResource ProductManagementStockItemsBorderStyle}">
+                <Grid x:Name="StockItemsGrid" Style="{DynamicResource ProductManagementStockItemsGridStyle}">
+
+                    <ListBox x:Name="StockItemsListBox"
+                         ItemsSource="{Binding StocksView}"
+                         SelectedItem="{Binding SelectedStock, Mode=TwoWay}"
+                         Style="{DynamicResource ProductManagementStockItemsListBoxStyle}"
+                         ItemContainerStyle="{DynamicResource ProductManagementStockItemsListBoxItemStyle}"
+                         Validation.ErrorTemplate="{x:Null}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate >
+                                <Border Style="{DynamicResource ProductManagementStockItemsInfoBorderStyle}">
+                                    <Grid Style="{DynamicResource ProductManagementStockItemsInfoGridStyle}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="45"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="45"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="95"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="95"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Column="0"
+                                            Text="{DynamicResource ProductManagementStockIDString}"
+                                            Style="{DynamicResource ProductManagementStockItemsNameTextBlockStyle}"/>
+                                        <TextBlock Grid.Column="1" 
+                                            Text="{Binding Id}" 
+                                            Style="{DynamicResource ProductManagementStockItemsValueTextBlockStyle}"/>
+
+                                        <TextBlock Grid.Column="2"
+                                            Text="{DynamicResource ProductManagementStockQtyString}"
+                                            Style="{DynamicResource ProductManagementStockItemsNameTextBlockStyle}"/>
+                                        <TextBlock Grid.Column="3" 
+                                            Text="{Binding QuantityText}"
+                                            Validation.ErrorTemplate="{x:Null}"
+                                            Style="{DynamicResource ProductManagementStockItemsValueTextBlockStyle}"/>
+
+                                        <TextBlock Grid.Column="4"
+                                            Text="{DynamicResource ProductManagementStockAddString}"
+                                            Style="{DynamicResource ProductManagementStockItemsNameTextBlockStyle}"/>
+                                        <TextBlock Grid.Column="5" 
+                                            Text="{Binding AddedDate, StringFormat='{}{0:dd/MM/yyyy}'}" 
+                                            Style="{DynamicResource ProductManagementStockItemsValueTextBlockStyle}"/>
+
+                                        <TextBlock Grid.Column="6"
+                                            Text="{DynamicResource ProductManagementStockExpString}"
+                                            Style="{DynamicResource ProductManagementStockItemsNameTextBlockStyle}"/>
+                                        <TextBlock Grid.Column="7" 
+                                            Text="{Binding ExpirationDate, StringFormat='{}{0:dd/MM/yyyy}'}"
+                                            Validation.ErrorTemplate="{x:Null}"
+                                            Style="{DynamicResource ProductManagementStockItemsValueTextBlockStyle}"/>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <StackPanel x:Name="StockButtonItemsStackPanel" Style="{DynamicResource ProductManagementStockButtonItemsStackPanel}">
+                        <Button Content="{DynamicResource ProductManagementStockSaveString}"
+                            Command="{Binding SaveChangesCommand}"
+                            Style="{DynamicResource ProductManagementStockItemsSaveButtonStyle}"/>
+                        <Button Content="{DynamicResource ProductManagementStockDiscardString}"
+                            Command="{Binding DiscardChangesCommand}"
+                            Style="{DynamicResource ProductManagementStockItemsDiscardButtonStyle}"/>
+                        <Button Content="{DynamicResource ProductManagementStockDeleteString}"
+                            Command="{Binding DeleteStockCommand}" CommandParameter="{Binding SelectedStock}"
+                            Style="{DynamicResource ProductManagementStockItemsDeleteButtonStyle}" Validation.ErrorTemplate="{x:Null}"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <ContentControl Grid.Column="1" Content="{Binding SelectedStock}" Validation.ErrorTemplate="{x:Null}">
+                <ContentControl.Style>
+                    <Style TargetType="ContentControl" BasedOn="{StaticResource ProductManagementStockContentControlStyle}">
+                        <Setter Property="ContentTemplate" Value="{StaticResource InfoStockTemplate}"/>
+                        <Setter Property="IsTabStop" Value="False"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding SelectedStock}" Value="{x:Null}">
+                                <Setter Property="ContentTemplate" Value="{StaticResource NullTemplate}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ContentControl.Style>
+            </ContentControl>
+
+        </Grid>
+
+        <StackPanel Grid.Row="3" Style="{DynamicResource ProductManagementStockButtonStackPanelStyle}">
+            <Button Content="{DynamicResource ProductManagementStockAddNewString}"
+                Command="{Binding AddNewStockCommand}"
+                Style="{DynamicResource ProductManagementStockAddButtonStyle}"/>
+            <Button Content="{DynamicResource ProductManagementStockCloseString}" IsCancel="True"
+                Command="{Binding CloseCommand}" 
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                Style="{DynamicResource ProductManagementStockCloseButtonStyle}"/>
+        </StackPanel>
+
+    </Grid>
+
+</Window>

@@ -1,0 +1,71 @@
+﻿<Window x:Class="PastryShop.View.ManagerEditProductDataDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:PastryShop.Converter"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
+        Width="550" Height="600">
+
+    <Grid Style="{DynamicResource ProductManagementDataEditContainerGridStyle}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+            Text="{DynamicResource ProductManagementDataEditTitleString}" 
+            Style="{DynamicResource ProductManagementDataEditTitleTextBlockStyle}"/>
+
+        <Border Grid.Row="1"
+            Style="{DynamicResource ProductManagementDataEditContentBorderStyle}">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" 
+                    Text="{DynamicResource ProductManagementDataEditPriceString}"            
+                    Style="{DynamicResource ProductManagementDataEditTextBlockStyle}"/>
+                <TextBox Grid.Row="0" Grid.Column="1" 
+                    Text="{Binding PriceText, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                    Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"
+                    Style="{DynamicResource ProductManagementDataEditTextBoxStyle}"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" 
+                    Text="{DynamicResource ProductManagementDataEditDiscountString}"         
+                    Style="{DynamicResource ProductManagementDataEditTextBlockStyle}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" 
+                    Text="{Binding DiscountText, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                    Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}"
+                    Style="{DynamicResource ProductManagementDataEditTextBoxStyle}"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" 
+                    Text="{DynamicResource ProductManagementDataEditIsFeaturedString}"   
+                    Style="{DynamicResource ProductManagementDataEditTextBlockStyle}"/>
+                <CheckBox Grid.Row="3" Grid.Column="1" 
+                    IsChecked="{Binding ProductData.IsFeatured, UpdateSourceTrigger=PropertyChanged}"
+                    Style="{DynamicResource ProductManagementDataEditCheckBoxStyle}"/>
+
+            </Grid>
+
+        </Border>
+
+        <StackPanel Grid.Row="2" Style="{DynamicResource ProductManagementDataEditContainerButtonStackPanelStyle}">
+            <Button Content="{DynamicResource ProductManagementDataEditSaveString}" IsDefault="True" Command="{Binding SaveCommand}"  Style="{DynamicResource ProductManagementDataEditEditSaveButtonStyle}"/>
+            <Button Content="{DynamicResource ProductManagementDataEditCancelString}" IsCancel="True" Style="{DynamicResource ProductManagementDataEditEditCancelButtonStyle}"/>
+        </StackPanel>
+
+    </Grid>
+
+</Window>

@@ -1,0 +1,308 @@
+﻿<UserControl x:Class="PastryShop.View.CashierReportDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PastryShop.Converter"
+             xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
+             xmlns:lvcs="clr-namespace:LiveChartsCore.SkiaSharpView;assembly=LiveChartsCore.SkiaSharpView"
+             FocusVisualStyle="{x:Null}">
+
+    <UserControl.Resources>
+        <local:ImagePathToImageConverter x:Key="ImagePathToImageConverter"/>
+        <local:WidthToVisibilityConverter x:Key="WidthToVisibilityConverter" Threshold="950"/>
+    </UserControl.Resources>
+
+    <Grid Style="{DynamicResource ReportContainerGridStyle}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" 
+            Text="{DynamicResource ReportTitleString}" 
+            Style="{DynamicResource ReportTitleTextBlockStyle}"/>
+
+        <Border Grid.Row="1" Style="{DynamicResource ReportContentBorderStyle}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Style="{DynamicResource ReportLeftColumnContainerGridStyle}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="6*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" Style="{DynamicResource ReportSummaryContainerGridStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0" Style="{DynamicResource ReportSummaryBorderStyle}">
+                            <Viewbox Style="{DynamicResource ReportSummaryViewboxStyle}">
+                                <Grid Style="{DynamicResource ReportSummaryGridStyle}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="3*"/>
+                                        <RowDefinition Height="2*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" 
+                                        Source="/Resource/Images/Application/Report_Total_Orders.png"
+                                        Style="{DynamicResource ReportSummaryImageStyle}"/>
+
+                                    <TextBlock Grid.Column="1" Grid.Row="0"
+                                        Text="{Binding TotalOrders}"
+                                        Style="{DynamicResource ReportSummaryValueTextBlockStyle}"/>
+                                    <TextBlock Grid.Column="1" Grid.Row="1"
+                                        Text="{DynamicResource ReportTotalOrdersString}" 
+                                        Style="{DynamicResource ReportSummaryTitleTextBlockStyle}"/>
+
+                                </Grid>
+                            </Viewbox>
+                        </Border>
+
+                        <Border Grid.Column="1" Style="{DynamicResource ReportSummaryBorderStyle}">
+                            <Viewbox Style="{DynamicResource ReportSummaryViewboxStyle}">
+                                <Grid Style="{DynamicResource ReportSummaryGridStyle}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="3*"/>
+                                        <RowDefinition Height="2*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" 
+                                        Source="/Resource/Images/Application/Report_Total_Sold.png"
+                                        Style="{DynamicResource ReportSummaryImageStyle}"/>
+
+                                    <TextBlock Grid.Column="1" Grid.Row="0"
+                                        Text="{Binding TotalItems}"
+                                        Style="{DynamicResource ReportSummaryValueTextBlockStyle}"/>
+                                    <TextBlock Grid.Column="1" Grid.Row="1"
+                                        Text="{DynamicResource ReportTotalItemsString}" 
+                                        Style="{DynamicResource ReportSummaryTitleTextBlockStyle}"/>
+
+                                </Grid>
+                            </Viewbox>
+                        </Border>
+
+                        <Border Grid.Column="2" Style="{DynamicResource ReportSummaryBorderStyle}">
+                            <Viewbox Style="{DynamicResource ReportSummaryViewboxStyle}">
+                                <Grid Style="{DynamicResource ReportSummaryGridStyle}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="3*"/>
+                                        <RowDefinition Height="2*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" 
+                                        Source="/Resource/Images/Application/Report_Total_Revenue.png"
+                                        Style="{DynamicResource ReportSummaryImageStyle}"/>
+
+                                    <TextBlock Grid.Column="1" Grid.Row="0" Style="{DynamicResource ReportSummaryValueTextBlockStyle}">
+                                        <Run Text="{Binding TotalRevenue, Mode=OneWay,StringFormat=N0}"/>
+                                        <Run Text="KM" Style="{DynamicResource ReportSummaryValueSuffixRunStyle}"/>
+                                    </TextBlock>
+                                    <TextBlock Grid.Column="1" Grid.Row="1"
+                                        Text="{DynamicResource ReportTotalRevenueString}" 
+                                        Style="{DynamicResource ReportSummaryTitleTextBlockStyle}"/>
+
+                                </Grid>
+                            </Viewbox>
+                        </Border>
+
+                    </Grid>
+
+                    <Grid Grid.Row="1" Style="{DynamicResource ReportInfoContainerGridStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0" Style="{DynamicResource ReportTodayInfoContainerGridStyle}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="7*"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" 
+                                Text="{DynamicResource ReportTodayTitleString}" 
+                                Style="{DynamicResource ReportTodayInfoTitleTextBlockStyle}"/>
+
+                            <Border Grid.Row="1" Style="{DynamicResource ReportTodayInfoBorderStyle}">
+                                <Viewbox Style="{DynamicResource ReportSummaryViewboxStyle}">
+                                    <Grid Style="{DynamicResource ReportTodayInfoGridStyle}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="4*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="3*"/>
+                                            <RowDefinition Height="2*"/>
+                                            <RowDefinition Height="2*"/>
+                                            <RowDefinition Height="2*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" 
+                                            Text="{DynamicResource ReportOrdersTitleString}" 
+                                            Style="{DynamicResource ReportTodayInfoOrderTitleTextBlockStyle}"/>
+                                        <TextBlock Grid.Column="2" Grid.Row="0" 
+                                            Text="{Binding DailyOrders}"
+                                            Style="{DynamicResource ReportTodayInfoOrderValueTextBlockStyle}"/>
+
+                                        <TextBlock Grid.Column="0" Grid.Row="1" Text="✔" Style="{DynamicResource ReportTodayInfoOrderTypeIconCompletedTextBlockStyle}"/>
+                                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{DynamicResource ReportCompletedTitleString}" Style="{DynamicResource ReportTodayInfoOrderTypeTitleTextBlockStyle}"/>
+                                        <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding DailyCompletedOrders}" Style="{DynamicResource ReportTodayInfoOrderTypeValueTextBlockStyle}"/>
+
+                                        <TextBlock Grid.Column="0" Grid.Row="2" Text="✖" Style="{DynamicResource ReportTodayInfoOrderTypeIconCancelledTextBlockStyle}"/>
+                                        <TextBlock Grid.Column="1" Grid.Row="2" Text="{DynamicResource ReportCancelledTitleString}" Style="{DynamicResource ReportTodayInfoOrderTypeTitleTextBlockStyle}"/>
+                                        <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding DailyCancelledOrders}" Style="{DynamicResource ReportTodayInfoOrderTypeValueTextBlockStyle}"/>
+
+                                        <TextBlock Grid.Column="0" Grid.Row="3" Text="⏸" Style="{DynamicResource ReportTodayInfoOrderTypeIconOnHoldTextBlockStyle}"/>
+                                        <TextBlock Grid.Column="1" Grid.Row="3" Text="{DynamicResource ReportOnHoldTitleString}" Style="{DynamicResource ReportTodayInfoOrderTypeTitleTextBlockStyle}"/>
+                                        <TextBlock Grid.Column="2" Grid.Row="3" Text="{Binding DailyOnHoldOrders}" Style="{DynamicResource ReportTodayInfoOrderTypeValueTextBlockStyle}"/>
+
+                                    </Grid>
+                                </Viewbox>
+                            </Border>
+
+                            <Border Grid.Row="2" Style="{DynamicResource ReportTodayInfoOtherBorderStyle}">
+                                <Viewbox Style="{DynamicResource ReportSummaryViewboxStyle}">
+                                    <Grid Style="{DynamicResource ReportTodayInfoOtherGridStyle}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="4*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="4*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <TextBlock Grid.Column="1" Grid.Row="0"
+                                            Text="{DynamicResource ReportSalesTitleString}" 
+                                            Style="{DynamicResource ReportTodayInfoOtherTitleTextBlockStyle}"/>
+                                        <TextBlock Grid.Column="2" Grid.Row="0"
+                                            Text="{Binding DailyItems}"
+                                            Style="{DynamicResource ReportTodayInfoOtherValueTextBlockStyle}"/>
+
+                                        <TextBlock Grid.Column="1" Grid.Row="1"
+                                            Text="{DynamicResource ReportProfitTitleString}" 
+                                            Style="{DynamicResource ReportTodayInfoOtherTitleTextBlockStyle}"/>
+                                        <TextBlock Grid.Column="2" Grid.Row="1"                                                       
+                                            Text="{Binding DailyRevenue, Mode=OneWay,StringFormat=N0}"
+                                            Style="{DynamicResource ReportTodayInfoOtherValueTextBlockStyle}"/>
+
+                                        <Grid Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3">
+                                            <lvc:PieChart x:Name="DailyOrderStatsPieChart" Series="{Binding DailyOrderStatsPie}" LegendPosition="Hidden"/>
+                                        </Grid>
+
+                                    </Grid>
+                                </Viewbox>
+                            </Border>
+
+                        </Grid>
+
+                        <Border Grid.Column="1" Style="{DynamicResource ReportGraphInfoBorderStyle}">
+                            <Grid Style="{DynamicResource ReportGraphContainerGridStyle}">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+
+                                <Viewbox Grid.Row="0" Style="{DynamicResource ReportSummaryViewboxStyle}">
+                                    <lvc:CartesianChart
+                                        MinWidth="700" MinHeight="270"
+                                        Series="{Binding WeeklyOrdersAndItemsSeries}"
+                                        XAxes="{Binding XAxes}"
+                                        YAxes="{Binding OrdersYAxes}"
+                                        LegendPosition="Bottom"/>
+
+                                </Viewbox>
+                                <Viewbox Grid.Row="1" Style="{DynamicResource ReportSummaryViewboxStyle}">
+                                    <lvc:CartesianChart
+                                        MinWidth="700" MinHeight="270"
+                                        Series="{Binding WeeklyRevenueSeries}"
+                                        XAxes="{Binding XAxes}"
+                                        YAxes="{Binding RevenueYAxes}"
+                                        LegendPosition="Bottom"/>
+                                </Viewbox>
+
+                            </Grid>
+                        </Border>
+
+                    </Grid>
+
+                </Grid>
+
+                <Grid Grid.Column="1" Style="{DynamicResource ReportRightColumnContainerGridStyle}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="8*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" 
+                        Text="{DynamicResource ReportMostPopularTitleString}" 
+                        Style="{DynamicResource ReportBestSellersTitleStyle}"/>
+
+                    <ListBox Grid.Row="1" ItemsSource="{Binding Products}"
+                        Style="{DynamicResource ReportBestSellersListBoxStyle}"
+                        ItemContainerStyle="{DynamicResource ReportBestSellersListBoxItemStyle}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Style="{DynamicResource ReportBestSellersListBoxItemGridStyle}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="ColImage"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="ColName"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="ColProductType"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="ColTotalSold"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Ellipse Grid.Column="0" Style="{DynamicResource ReportBestSellersEllipseStyle}">
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="{Binding ImagePath, Converter={StaticResource ImagePathToImageConverter}, ConverterParameter=Products}"/>
+                                        </Ellipse.Fill>
+                                        <Ellipse.Visibility>
+                                            <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=UserControl}" Converter="{StaticResource WidthToVisibilityConverter}"/>
+                                        </Ellipse.Visibility>
+                                    </Ellipse>
+                                    <TextBlock Grid.Column="2" Text="{Binding Name}" Style="{DynamicResource ReportBestSellersNameTextBlockStyle}">
+                                        <TextBlock.ToolTip>
+                                            <ToolTip Content="{Binding Name}" Style="{StaticResource ReportBestSellersNameToolTipStyle}"/>
+                                        </TextBlock.ToolTip>
+                                    </TextBlock>
+                                    <TextBlock Grid.Column="4" Text="{Binding TotalSold}" Style="{DynamicResource ReportBestSellersTotalSoldTextBlockStyle}"/>
+
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                </Grid>
+
+            </Grid>
+        </Border>
+
+    </Grid>
+
+</UserControl>

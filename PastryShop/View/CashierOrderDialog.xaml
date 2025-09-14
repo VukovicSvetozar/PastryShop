@@ -1,0 +1,314 @@
+﻿<UserControl x:Class="PastryShop.View.CashierOrderDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PastryShop.Converter"
+             FocusManager.IsFocusScope="True"
+             Loaded="OnLoaded"
+             FocusVisualStyle="{x:Null}">
+
+    <UserControl.Resources>
+        <local:TypeToVisibilityConverter x:Key="TypeToVisibilityConverter"/>
+        <local:FilterOptionToImagePathConverter x:Key="FilterOptionToImagePathConverter"/>
+        <local:ResourceKeyConverter x:Key="ResourceKeyConverter"/>
+        <local:ImagePathToImageConverter x:Key="ImagePathToImageConverter"/>
+        <local:WidthToVisibilityConverter x:Key="WidthToVisibilityConverter" Threshold="950"/>
+    </UserControl.Resources>
+
+    <UserControl.InputBindings>
+        <KeyBinding Gesture="Ctrl+L" Command="{Binding CancelledOrderCommand}"/>
+        <KeyBinding Gesture="Ctrl+G" Command="{Binding PayCashCommand}"/>
+        <KeyBinding Gesture="Ctrl+N" Command="{Binding PayCardCommand}"/>
+    </UserControl.InputBindings>
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Style="{DynamicResource OrderLeftContainerBorderStyle}">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" 
+                        Text="{DynamicResource OrderTitleString}" 
+                        Style="{DynamicResource OrderTitleTextBlockStyle}"/>
+
+                    <Grid Grid.Row="1" Style="{DynamicResource OrderFilterGridStyle}">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                            Text="{DynamicResource OrderFilterTitleString}" 
+                            Style="{DynamicResource OrderFilterTextBlockStyle}" />
+
+                        <ComboBox x:Name="FilterComboBox"
+                            Grid.Column="1"
+                            SelectedItem="{Binding SelectedFilter}"
+                            ItemsSource="{Binding FilterOptions}"
+                            Style="{DynamicResource OrderFilterComboBoxStyle}"
+                            ItemContainerStyle="{DynamicResource OrderFilterComboBoxItemStyle}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Style="{DynamicResource OrderFilterStackPanelStyle}">
+                                        <Image Source="{Binding Converter={StaticResource FilterOptionToImagePathConverter}}"
+                                            Style="{DynamicResource OrderFilterItemImageStyle}"/>
+                                        <TextBlock Text="{Binding Converter={StaticResource ResourceKeyConverter}}" Style="{DynamicResource OrderFilterItemTextBlockStyle}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+
+                    </Grid>
+
+                </Grid>
+
+                <Border Grid.Row="1" Style="{DynamicResource OrderTableBorderStyle}">
+                    <Grid>
+
+                        <DataGrid 
+                            ItemsSource="{Binding Orders}"
+                            SelectedItem="{Binding SelectedOrder, Mode=TwoWay}"
+                            AutoGenerateColumns="False"
+                            IsReadOnly="True"
+                            SelectionMode="Single"  
+                            CanUserAddRows="False"
+                            CanUserDeleteRows="False"
+                            CanUserResizeColumns="True"
+                            CanUserSortColumns="True"
+                            AlternationCount="2"
+                            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                            Style="{DynamicResource OrderTableDataGridStyle}"
+                            ColumnHeaderStyle="{DynamicResource OrderTableColumnHeaderStyle}"
+                            RowStyle="{DynamicResource OrderTableRowStyle}"
+                            CellStyle="{DynamicResource OrderTableCellStyle}">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn SortMemberPath="Id" Width="*">
+                                    <DataGridTemplateColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding DataContext.IDColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.HeaderTemplate>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Id}" 
+                                                Style="{DynamicResource OrderTableColumnTextBlockStyle}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn SortMemberPath="OrderDate" Width="*">
+                                    <DataGridTemplateColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding DataContext.DateColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.HeaderTemplate>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding OrderDate, StringFormat={}{0:dd/MM/yyyy HH:mm}}" 
+                                                Style="{DynamicResource OrderTableColumnTextBlockStyle}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn SortMemberPath="TotalPrice" Width="*">
+                                    <DataGridTemplateColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding DataContext.TotalPriceColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.HeaderTemplate>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding TotalPrice, StringFormat={}{0:N2}}" 
+                                                Style="{DynamicResource OrderTableColumnTextBlockStyle}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn SortMemberPath="Status" Width="*">
+                                    <DataGridTemplateColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding DataContext.StatusColumnHeader, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.HeaderTemplate>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Status}"
+                                                Style="{DynamicResource OrderTableColumnTextBlockStyle}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <TextBlock Text="{DynamicResource OrderNoDataString}" 
+                            Visibility="{Binding Orders.Count, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=Zero}"
+                            Style="{DynamicResource OrderNoDataTextBlockStyle}"/>
+
+                    </Grid>
+                </Border>
+
+            </Grid>
+
+        </Border>
+
+        <Grid Grid.Column="1" Margin="0 10 10 0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0">
+                <TextBlock Text="{DynamicResource OrderTitleDetailsString}" Style="{DynamicResource OrderTitleDetailsTextBlockStyle}"/>
+            </Border>
+
+            <Border Grid.Row="1">
+                <ContentControl Content="{Binding SelectedOrder}">
+                    <ContentControl.ContentTemplate>
+                        <DataTemplate>
+                            <Grid>
+
+                                <ListBox x:Name="OrderItemsList" ItemsSource="{Binding DataContext.OrderItems, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Style="{DynamicResource OrderProductsListBoxStyle}"  
+                                    ItemContainerStyle="{DynamicResource OrderProductsListBoxItemStyle}">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Style="{DynamicResource OrderProductsListBoxItemGridStyle}">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColImage"/>
+                                                    <ColumnDefinition Width="1*"/>
+                                                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColName"/>
+                                                    <ColumnDefinition Width="1*"/>
+                                                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColQuantity"/>
+                                                    <ColumnDefinition Width="1*"/>
+                                                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColUnitPrice"/>
+                                                    <ColumnDefinition Width="1*"/>
+                                                    <ColumnDefinition Width="Auto" SharedSizeGroup="ColTotalPrice"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Ellipse Grid.Column="0" Style="{DynamicResource OrderProductsEllipseStyle}">
+                                                    <Ellipse.Fill>
+                                                        <ImageBrush ImageSource="{Binding ProductImagePath, Converter={StaticResource ImagePathToImageConverter}, ConverterParameter=Products}"/>
+                                                    </Ellipse.Fill>
+                                                    <Ellipse.Visibility>
+                                                        <Binding Path="ActualWidth"
+                                                            RelativeSource="{RelativeSource AncestorType=UserControl}"
+                                                            Converter="{StaticResource WidthToVisibilityConverter}"/>
+                                                    </Ellipse.Visibility>
+                                                </Ellipse>
+                                                <TextBlock Grid.Column="2" Text="{Binding ProductName}" Style="{DynamicResource OrderProductsNameTextBlockStyle}">
+                                                    <TextBlock.ToolTip>
+                                                        <ToolTip Content="{Binding ProductName}" Style="{StaticResource OrderProductsNameToolTipStyle}"/>
+                                                    </TextBlock.ToolTip>
+                                                </TextBlock>
+                                                <TextBlock Grid.Column="4" Text="{Binding Quantity}" Style="{DynamicResource OrderProductsQuantityTextBlockStyle}"/>
+                                                <TextBlock Grid.Column="6" Style="{DynamicResource OrderProductsPriceTextBlockStyle}">
+                                                    <Run Text="{Binding UnitPrice, StringFormat={}{0:N2}}"/>
+                                                    <Run Text="KM" Style="{DynamicResource OrderProductsPriceSuffixRunStyle}"/>
+                                                </TextBlock>
+                                                <TextBlock Grid.Column="8" Style="{DynamicResource OrderProductsPriceTextBlockStyle}">
+                                                    <Run Text="{Binding TotalPrice, StringFormat={}{0:N2}}"/>
+                                                    <Run Text="KM" Style="{DynamicResource OrderProductsPriceSuffixRunStyle}"/>
+                                                </TextBlock>
+                                            </Grid>
+                                        </DataTemplate>
+
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+
+                                <TextBlock Text="{DynamicResource OrderSelectItemsString}"
+                                    Style="{DynamicResource OrderEmptyTextBlockStyle}"
+                                    Visibility="{Binding DataContext.SelectedOrder, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource TypeToVisibilityConverter}, ConverterParameter=NullInverse}"/>
+
+                            </Grid>
+                        </DataTemplate>
+                    </ContentControl.ContentTemplate>
+                </ContentControl>
+            </Border>
+
+
+            <Border Grid.Row="2" x:Name="TotalPriceBorder" Style="{DynamicResource OrderTotalPriceBorderStyle}">
+                <Grid VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="TotalPriceTitle" Text="{DynamicResource OrderTitleTotalString}" Style="{DynamicResource OrderTotalPriceTitleTextBlockStyle}"/>
+                    <TextBlock Grid.Column="1" 
+                        Style="{DynamicResource OrderTotalPriceValueTextBlockStyle}">
+                        <Run Text="{Binding SelectedOrder.TotalPrice, Mode=OneWay, StringFormat=N2}" FontSize="20"/>
+                        <Run Text="KM" FontSize="14"/>
+                    </TextBlock>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="3">
+                <Viewbox Stretch="Uniform">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="4*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" 
+                            Text="{DynamicResource OrderSelectPaymentOptionString}"
+                            Style="{DynamicResource OrderProducPayOptionTitleTextBlockStyle}"/>
+
+                        <StackPanel Grid.Row="1" Style="{DynamicResource OrderProductPayStackPanelStyle}">
+                            <Button x:Name="btnCancelled" 
+                                Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=DataContext.CancelledOrderCommand}" 
+                                CommandParameter="{Binding}"
+                                Style="{DynamicResource OrderProductButonStyle}">
+                                <StackPanel Style="{DynamicResource OrderProductButonStackPanelStyle}">
+                                    <Image Source="/Resource/Images/Application/Cashier_Button_Cancelled.png" Style="{DynamicResource OrderProductButtonImageStyle}"/>
+                                    <TextBlock Text="{DynamicResource OrderCancelledString}" Style="{DynamicResource OrderProductButtonTextBlockStyle}"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="btnCash"
+                                Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=DataContext.PayCashCommand}" 
+                                CommandParameter="{Binding}"
+                                Style="{DynamicResource OrderProductMiddleButonStyle}">
+                                <StackPanel Style="{DynamicResource OrderProductButonStackPanelStyle}">
+                                    <Image Source="/Resource/Images/Application/Cashier_Button_Cash.png" Style="{DynamicResource OrderProductButtonImageStyle}"/>
+                                    <TextBlock Text="{DynamicResource OrderCashString}" Style="{DynamicResource OrderProductButtonTextBlockStyle}"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="btnCard"
+                                Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=DataContext.PayCardCommand}" 
+                                CommandParameter="{Binding}"
+                                Style="{DynamicResource OrderProductButonStyle}">
+                                <StackPanel Style="{DynamicResource OrderProductButonStackPanelStyle}">
+                                    <Image Source="/Resource/Images/Application/Cashier_Button_Card.png" Style="{DynamicResource OrderProductButtonImageStyle}"/>
+                                    <TextBlock Text="{DynamicResource OrderCardString}" Style="{DynamicResource OrderProductButtonTextBlockStyle}"/>
+                                </StackPanel>
+                            </Button>
+
+                        </StackPanel>
+
+                    </Grid>
+                </Viewbox>
+            </Border>
+
+        </Grid>
+
+    </Grid>
+
+</UserControl>
