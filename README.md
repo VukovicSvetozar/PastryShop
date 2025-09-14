@@ -746,7 +746,7 @@ Ako je operacija bila uspješna, korpa se prazni i prikazuje se adekvatna
 poruka. Ukoliko je korpa bila prazna prilikom pokušaja plaćanja,
 korisnik dobija odgovarajuće obavještenje.
 
-# Porudžbine.
+## Porudžbine.
 
 U centralnom dijelu ekrana nalazi se padajući meni za filtriranje
 porudžbina na osnovu tipa (Sve, Kompletirane, Otkazane, Na čekanju). Za
@@ -807,7 +807,7 @@ porudžbine, pojavljuje se dijalog o nedozvoljenoj operaciji.
 Za svaku uspješno izvršenu operaciju prikazuju se adekvatne informativne
 poruke.
 
-# Statistika I izvještaji
+## Statistika i izvještaji
 
 Ekran **Izvještaji** omogućava blagajniku brz pregled ključnih metrika
 kroz intuitivne panele i grafičke prikaze.\
@@ -830,12 +830,12 @@ istom periodu.
 
 Na ekranu se nalazi i lista najprodavanijih proizvoda.
 
-### Zajedničke funkcionalnosti
+# Zajedničke funkcionalnosti
 
 Ovo poglavlje opisuje funkcije dostupne i menadžeru i blagajniku:
 postavke jezika i teme, te uređivanje korisničkog profila.
 
-### Postavke (Jezik i Tema)
+## Postavke (Jezik i Tema)
 
 Aplikacija PastryShop omogućava korisnicima potpunu personalizaciju
 izgleda i jezika korisničkog interfejsa. Na taj način se osigurava
@@ -895,7 +895,7 @@ da su podaci ispravni, čuva izmjene u profilu korisnika.
 Poništi (Ctrl + R) -- vraća prethodno aktivne vrijednosti, poništavajući
 sve nedavne izmjene.
 
-### Responzivni dizajn
+## Responzivni dizajn
 
 Pastry Shop aplikacija je dizajnirana sa fokusom na responzivni dizajn,
 osiguravajući ugodno korisničko iskustvo na desktop i laptop uređajima.
