@@ -308,273 +308,152 @@ polja.
 
 # Blagajnik
 
-&nbsp;&nbsp;&nbsp;&nbsp;Uloga blagajnika je da osigura brzo i precizno upravljanje prodajom i naplatom u pekarskom ili slastičarskom objektu. Glavne odgovornosti
-blagajnika su:
+&nbsp;&nbsp;&nbsp;&nbsp;Uloga blagajnika je da osigura brzo i precizno upravljanje prodajom i naplatom u pekarskom ili slastičarskom objektu.  
 
-\* kreiranje i naplata porudžbina,
+&nbsp;&nbsp;&nbsp;&nbsp;Glavne odgovornosti blagajnika su:
 
-\* praćenje i pregled porudžbina,
-
-\* pregled finansijskih i operativnih izvještaja,
-
-\* upravljanje ličnim postavkama i profilom.
-
-(ovo gore sve promijeni)
+- kreiranje i naplata porudžbina,
+- praćenje i pregled porudžbina,
+- pregled finansijskih i operativnih izvještaja,
+- upravljanje ličnim postavkama i profilom.
 
 ### Prijava i pristup
 
-Po uspješnoj prijavi na sistem prikazuje se **početni ekran za
-blagajnika (POS terminal)**.
+Po uspješnoj prijavi na sistem prikazuje se ***početni ekran za blagajnika (POS terminal)***.
 
--   U gornjem dijelu prikazana je profilna slika i korisničko ime
-    blagajnika, što jasno pokazuje koji je korisnički nalog trenutno
-    prijavljen.
+&nbsp;&nbsp;&nbsp;&nbsp;U gornjem dijelu prikazana je *profilna slika* i *korisničko ime* blagajnika, što jasno pokazuje koji je korisnički nalog trenutno prijavljen.
 
--   Na lijevoj strani ekrana nalazi se vertikalni navigacioni meni, koji
-    omogućava brz pristup ključnim modulima sistema. **Svaka opcija može
-    se brzo otvoriti pomoću tastaturnih prečica.**
+&nbsp;&nbsp;&nbsp;&nbsp;Na lijevoj strani ekrana nalazi se vertikalni navigacioni meni, koji omogućava brz pristup ključnim modulima sistema. Svaka opcija može se brzo otvoriti pomoću tastaturnih prečica.
 
-Dostupne su sljedeće funkcionalnosti:
+&nbsp;&nbsp;&nbsp;&nbsp;Dostupne su sljedeće funkcionalnosti:
 
--   **POS (Blagajna):** osnovni ekran za kreiranje i naplatu porudžbina
-    (**Ctrl + P**)
+-   ***POS (Blagajna):*** - osnovni ekran za kreiranje i naplatu porudžbina (*Ctrl + P*),
+-   ***Porudžbine:*** - pregled svih transakcija i detalja o njima (*Ctrl + O*),
+-   ***Izveštaji:*** - finansijski i operativni podaci vezani za rad blagajnika (*Ctrl + R*),
+-   ***Podešavanja:*** - lične postavke naloga, uključujući jezik i temu (*Ctrl + S*),
+-   ***Profil:*** - uređivanje ličnih podataka korisnika poput imena i lozinke (*Ctrl + M*),
+-   ***Odjava:*** - izlazak iz aplikacije i povratak na login ekran (*Escape*).
 
--   **Porudžbine:** pregled svih transakcija i detalja o njima (**Ctrl +
-    O**)
+&nbsp;&nbsp;&nbsp;&nbsp;Glavni dio ekrana prikazuje sadržaj izabranog modula. Sve funkcionalnosti odmah su dostupne, bez potrebe za dodatnom navigacijom.
 
--   **Izveštaji:** finansijski i operativni podaci vezani za rad
-    blagajnika (**Ctrl + R**)
+## POS ekran
 
--   **Podešavanja:** lične postavke naloga, uključujući jezik i temu
-    (**Ctrl + S**)
+### Pretraga
 
--   **Profil:** uređivanje ličnih podataka korisnika poput imena i
-    lozinke (**Ctrl + M**)
-
--   **Odjava:** izlazak iz aplikacije i povratak na login ekran
-    (**Escape**)
-
-Glavni dio ekrana prikazuje sadržaj izabranog modula. Sve
-funkcionalnosti odmah su dostupne, bez potrebe za dodatnom navigacijom.
-
-Aha, sada jasno -- želiš da svaka prečica iz sekcije "Tipkovničke
-prečice" bude i u tekstu, u zagradi na kraju odgovarajuće rečenice,
-uključujući Ctrl+T i F3. Evo ispravljene verzije:
-
-\-\--
-
-POS ekran
-
-Pretraga
-
-U gornjem dijelu ekrana dostupni su alati za filtriranje i brzu pretragu
-proizvoda: padajući meni za izbor tipa proizvoda: hrana, piće, pribor
-(prečica je Ctrl+T), tekstualno polje za pretragu po nazivu ili tipu
-proizvoda (fokus na dato polje se aktivira pritiskom na F3), te tri
-prekidača za filtriranje: Dostupno (Ctrl+A), Istaknuto (Ctrl+F) i
-Sniženo (Ctrl+D). Kombinacijom navedenih opcija korisnik može
+&nbsp;&nbsp;&nbsp;&nbsp;U gornjem dijelu ekrana dostupni su alati za filtriranje i brzu pretragu proizvoda: padajući meni za izbor tipa proizvoda: hrana, piće, pribor (prečica je *Ctrl + T*), tekstualno polje za pretragu po nazivu ili tipu proizvoda (fokus na dato polje se aktivira pritiskom na *F3*), te tri prekidača za filtriranje: Dostupno (*Ctrl + A*), Istaknuto (*Ctrl + F*) i Sniženo (*Ctrl + D*). Kombinacijom navedenih opcija korisnik može
 jednostavno fokusirati prikaz na željene artikle.
 
-Lista proizvoda
+### Lista proizvoda
 
-U centralnom dijelu ekrana prikazani su proizvodi kao kartice koje se
-mogu slobodno skrolovati.
+&nbsp;&nbsp;&nbsp;&nbsp;U centralnom dijelu ekrana prikazani su proizvodi kao kartice koje se mogu slobodno skrolovati.
 
-Svaka kartica sadrži: naziv proizvoda, opis (kao tooltip), cijenu, kao i
-dugme za dodavanje proizvoda u korpu (\"+\").
+&nbsp;&nbsp;&nbsp;&nbsp;Svaka kartica sadrži: *naziv proizvoda, opis* (kao tooltip), *cijenu*, kao i dugme za dodavanje proizvoda u korpu ("+").  
+Pritiskom na „***+***" sistem provjerava da li je proizvod dostupan, da li ga ima na stanju, te sprečava dodavanje istog proizvoda više puta.  
+U slučaju da proizvod nije dostupan za prodaju, da nema dovoljno zaliha ili je već u korpi, prikazuje se kratko obavještenje o tome.
 
-Pritiskom na „+" sistem provjerava da li je proizvod dostupan, da li ga
-ima na stanju, te sprečava dodavanje istog proizvoda više puta.
+&nbsp;&nbsp;&nbsp;&nbsp;Ukoliko je dodavanje uspješno, korpa se odmah osvježava i prikazuje dodati proizvod.
 
-U slučaju da proizvod nije dostupan za prodaju, da nema dovoljno zaliha
-ili je već u korpi, prikazuje se kratko obavještenje o tome.
+### Korpa
 
-Ukoliko je dodavanje uspješno, korpa se odmah osvježava i prikazuje
-dodati proizvod.
+&nbsp;&nbsp;&nbsp;&nbsp;U korpi se prikazuju svi odabrani proizvodi sa *slikom*, *nazivom* i *cijenom*. *Količina* se može mijenjati pomoću *plus/minus* dugmadi, a postoji i dugme za uklanjanje proizvoda iz korpe.
 
-Korpa
+&nbsp;&nbsp;&nbsp;&nbsp;Promjene količine se odmah odražavaju na cijenu proizvoda i ukupan iznos korpe.
 
-Prikazuje redove stavki s opcijama: slika, naziv, jedinčna cijena,
-kontrola količine (plus/minus) i dugme za uklanjanje.
+&nbsp;&nbsp;&nbsp;&nbsp;Pokušaj povećanja količine iznad raspoloživog stanja prikazuje kratkotrajni vizualni indikator (popup) koji signalizira da je dostignut limit zaliha. Uklanjanjem proizvoda iz korpe ukupan iznos se automatski osvježava.
 
-Promjena količine odmah ažurira cijenu stavke i ukupan iznos korpe.
+&nbsp;&nbsp;&nbsp;&nbsp;Za svaku od opcija plaćanja traži se potvrda kroz dijalog.
 
-Pokušaj povećanja preko dostupnog stanja prikazuje kratkotrajni vizualni
-indikator (popup) koji signalizira dostignut limit zaliha.
+&nbsp;&nbsp;&nbsp;&nbsp;Ako je operacija uspješna, korpa se prazni i prikazuje se odgovarajuća informativna poruka o uspjehu.
 
-Uklanjanje stavke briše je iz liste i ažurira ukupni iznos.
+&nbsp;&nbsp;&nbsp;&nbsp;Ako je korpa prazna pri pokušaju plaćanja, korisnik dobija odgovarajuće obavještenje.
 
-Korpa
+### Ukupan iznos i opcije plaćanja
 
-U korpi se prikazuju svi odabrani proizvodi sa slikom, nazivom i
-cijenom. Količina se može mijenjati pomoću plus/minus dugmadi, a postoji
-i dugme za uklanjanje proizvoda iz korep.
+&nbsp;&nbsp;&nbsp;&nbsp;Ispod liste dodatih proizvoda prikazuje se ukupni iznos korpe uz oznaku valute.
 
-Promjene količine se odmah odražavaju na cijenu proizvoda i ukupan iznos
-korpe.
+&nbsp;&nbsp;&nbsp;&nbsp;Blagajniku su dostupne tri opcije plaćanja:
 
-Pokušaj povećanja količine iznad raspoloživog stanja prikazuje
-kratkotrajni vizualni indikator (popup) koji signalizira da je dostignut
-limit zaliha. Uklanjanjem proizvoda iz korpe ukupan iznos se automatski
-osvježava.
+- ***Kasnije*** (*Pay Later*) - plaćanje se odlaže (*Ctrl + L*),
+- ***Keš*** (*Pay Cash*) - plaćanje se vrši gotovinom (*Ctrl + G*),
+- ***Kartica*** (*Pay Card*) - otvara se dijalog za unos broja kartice; nakon potvrde evidentira se plaćanje karticom (*Ctrl + N*).
 
-Za svaku od opcija plaćanja traži se potvrda kroz dijalog.
+&nbsp;&nbsp;&nbsp;&nbsp;Bez obzira na odabranu opciju, svaka transakcija kreira porudžbinu, evidentira plaćanje i smanjuje količine proizvoda u zalihama.
 
-Ako je operacija uspješna, korpa se prazni i prikazuje se odgovarajuća
-informativna poruka o uspjehu.
+&nbsp;&nbsp;&nbsp;&nbsp;Radi dodatne sigurnosti, potrebno je potvrditi operaciju kroz dijalog.
 
-Ako je korpa prazna pri pokušaju plaćanja, korisnik dobija odgovarajuće
-obavještenje.
-
-Ukupan iznos i opcije plaćanja
-
-Ispod liste dodatih proizvoda prikazuje se ukupni iznos korpe uz oznaku
-valute.
-
-Blagajniku su dostupne tri opcije plaćanja:
-
-Kasnije (Pay Later) -- plaćanje se odlaže (Ctrl+L).
-
-Keš (Pay Cash) -- plaćanje se vrši gotovinom (Ctrl+G).
-
-Kartica (Pay Card) -- otvara se dijalog za unos broja kartice; nakon
-potvrde evidentira se plaćanje karticom (Ctrl+N).
-
-Bez obzira na odabranu opciju, svaka transakcija kreira porudžbinu,
-evidentira plaćanje i smanjuje količine proizvoda u zalihama.
-
-Radi dodatne sigurnosti, potrebno je potvrditi operaciju kroz dijalog.
-
-Ako je operacija bila uspješna, korpa se prazni i prikazuje se adekvatna
-poruka. Ukoliko je korpa bila prazna prilikom pokušaja plaćanja,
-korisnik dobija odgovarajuće obavještenje.
+&nbsp;&nbsp;&nbsp;&nbsp;Ako je operacija bila uspješna, korpa se prazni i prikazuje se adekvatna poruka. Ukoliko je korpa bila prazna prilikom pokušaja plaćanja, korisnik dobija odgovarajuće obavještenje.
 
 ## Porudžbine.
 
-U centralnom dijelu ekrana nalazi se padajući meni za filtriranje
-porudžbina na osnovu tipa (Sve, Kompletirane, Otkazane, Na čekanju). Za
-pristup meniju moguće je koristiti prečicu Ctrl + T.
+&nbsp;&nbsp;&nbsp;&nbsp;U centralnom dijelu ekrana nalazi se padajući meni za filtriranje porudžbina na osnovu tipa (Sve, Kompletirane, Otkazane, Na čekanju). Za pristup meniju moguće je koristiti prečicu *Ctrl + T*.
 
-Sve porudžbine koje je blagajnik realizovao u posljednja 24 časa su
-prikazane u tabeli sa kolonama: ID, Datum, Ukupna cijena i Status.
-Tabela podržava sortiranje kolona. U slučaju da nema porudžbina umjesto
-tabele se prikazuje poruka: "Nema podataka".
+&nbsp;&nbsp;&nbsp;&nbsp;Sve porudžbine koje je blagajnik realizovao u posljednja 24 časa su prikazane u tabeli sa kolonama: *ID, Datum, Ukupna cijena* i *Status*. Tabela podržava sortiranje kolona. U slučaju da nema porudžbina umjesto tabele se prikazuje poruka: "Nema podataka".
 
-Na desnoj strani ekrana se nalazi bočni panel za prikaz detalja odabrane
-porudžbine. Odabirom reda u tabeli desni panel učitava i prikazuje
-stavke te porudžbine što uključuje: naziv proizvoda, količinu, cijenu po
-jedinici i ukupnu cijenu stavke.
+&nbsp;&nbsp;&nbsp;&nbsp;Na desnoj strani ekrana se nalazi bočni panel za prikaz detalja odabrane porudžbine. Odabirom reda u tabeli desni panel učitava i prikazuje stavke te porudžbine što uključuje: *naziv proizvoda, količinu, cijenu po jedinici* i *ukupnu cijenu stavke*.
 
-Ispod popisa stavki prikazan je ukupni iznos izabrane porudžbine.
+&nbsp;&nbsp;&nbsp;&nbsp;Ispod popisa stavki prikazan je ukupni iznos izabrane porudžbine.
 
-Za odabranu porudžbinu su omogućene sledeće funkcionalnosti:
+&nbsp;&nbsp;&nbsp;&nbsp;Za odabranu porudžbinu su omogućene sledeće funkcionalnosti:
 
-1\. Otkaži (Cancel) --- Ctrl + L
-
-Dozvoljeno je da se otkažu već kreiran porudžbine.
-
-Prikazuje se dijalog za potvrdu poslije čega se vraćaju zalihe artikala
-za sve stavke porudžbine.
-
-U slučaju da je porudžbina bila na čekanju, njen status postaje
-\"Otkazana\", a u slučaju da je već bila kompletirana status postaje
-\"Refundirana\" i izvršava se povrat sredstava (stanje novca se
-umanjuje).
-
+- ***Otkaži*** (*Cancel*) - *Ctrl + L*
+  
+&nbsp;&nbsp;&nbsp;&nbsp;Dozvoljeno je da se otkažu već kreiran porudžbine. Prikazuje se dijalog za potvrdu poslije čega se vraćaju zalihe artikala za sve stavke porudžbine.
+U slučaju da je porudžbina bila na čekanju, njen status postaje "*Otkazana*", a u slučaju da je već bila kompletirana status postaje "*Refundirana*" i izvršava se povrat sredstava (stanje novca se umanjuje).
 Nije dozvoljeno ponovo otkazati već otkazanu porudžbinu.
 
-2\. Gotovina (Pay Cash) --- Ctrl + G
+- ***Gotovina*** (*Pay Cash*) - *Ctrl + G*
 
-Plaćanje gotovinom primjenjuje se na porudžbine koje su u statusu \"Na
-čekanju\".
+&nbsp;&nbsp;&nbsp;&nbsp;Plaćanje gotovinom primjenjuje se na porudžbine koje su u statusu "*Na čekanju*".
+Ne može se platiti otkazana ili već plaćena porudžbina. Aplikacija sprječava takav pokušaj i prikazuje odgovarajući dijalog.
 
-Ne može se platiti otkazana ili već plaćena porudžbina. Aplikacija
-sprječava takav pokušaj i prikazuje odgovarajući dijalog.
+- ***Kartica*** (*Pay Card*) - *Ctrl + N*
 
-3\. Kartica (Pay Card) --- Ctrl + N
+&nbsp;&nbsp;&nbsp;&nbsp;Plaćanje karticom takođe se primjenjuje na porudžbine koje su u statusu "*Na čekanju*".
 
-Plaćanje karticom takođe se primjenjuje na porudžbine koje su u statusu
-\"Na čekanju\".
-
-Otvara se dijalog za unos broja kartice. Unos je obavezan i podliježe
-validaciji.
-
-Nakon potvrde evidentira se plaćanje i porudžbina se ažurira.
-
-Isto kao kod gotovine, ne može se platiti otkazana ili već plaćena
-porudžbina.
-
-U slučaju da se pokuša izvršiti otkazivanje ili plaćanje bez odabrane
-porudžbine, pojavljuje se dijalog o nedozvoljenoj operaciji.
-
-Za svaku uspješno izvršenu operaciju prikazuju se adekvatne informativne
-poruke.
+Otvara se dijalog za unos broja kartice. Unos je obavezan i podliježe validaciji. Nakon potvrde evidentira se plaćanje i porudžbina se ažurira. Isto kao kod gotovine, ne može se platiti otkazana ili već plaćena porudžbina. U slučaju da se pokuša izvršiti otkazivanje ili plaćanje bez odabrane porudžbine, pojavljuje se dijalog o nedozvoljenoj operaciji. Za svaku uspješno izvršenu operaciju prikazuju se adekvatne informativne poruke.
 
 ## Statistika i izvještaji
 
-Ekran **Izvještaji** omogućava blagajniku brz pregled ključnih metrika
-kroz intuitivne panele i grafičke prikaze.\
-Svi prikazi odnose se na konkretnog blagajnika (prema korisničkom ID-u)
-za tekući period.
+&nbsp;&nbsp;&nbsp;&nbsp;Ekran ***Izvještaji*** omogućava blagajniku brz pregled ključnih metrika kroz intuitivne panele i grafičke prikaze.
+Svi prikazi odnose se na konkretnog blagajnika (prema korisničkom ID-u) za tekući period.
 
-U gornjem dijelu ekrana prikazani su podaci o ukupnom broju porudžbina,
-ukupno ostvarenim stavkama i ukupnom prihodu generisanom tokom rada
-prijavljenog korisnika.
+&nbsp;&nbsp;&nbsp;&nbsp;U gornjem dijelu ekrana prikazani su podaci o ukupnom broju porudžbina, ukupno ostvarenim stavkama i ukupnom prihodu generisanom tokom rada prijavljenog korisnika.
 
-Donji lijevi dio sadrži dnevne statistike: broj današnjih porudžbina
-grupisan po statusima (Kompletirane, Otkazane, Na čekanju), ostvareni
-dnevni prihod i broj prodatih artikala raspoređenih po kategorijama
-(hrana, piće, pribor) prikazanih. U slučaju nedostatka podataka, umjesto
-grafikona prikazuje se poruka *nema porudžbina*.
+&nbsp;&nbsp;&nbsp;&nbsp;Donji lijevi dio sadrži dnevne statistike: broj današnjih porudžbina grupisan po statusima (Kompletirane, Otkazane, Na čekanju), ostvareni dnevni prihod i broj prodatih artikala raspoređenih po kategorijama (hrana, piće, pribor) prikazanih. U slučaju nedostatka podataka, umjesto grafikona prikazuje se poruka *nema porudžbina*.
 
-Linijski grafikon prikazuje sedmični broj stavki i porudžbina vezanih za
-rad blagajnika, dok stubičasti grafikon prikazuje kretanje prihoda u
-istom periodu.
+&nbsp;&nbsp;&nbsp;&nbsp;Linijski grafikon prikazuje sedmični broj stavki i porudžbina vezanih za rad blagajnika, dok stubičasti grafikon prikazuje kretanje prihoda u istom periodu.
 
-Na ekranu se nalazi i lista najprodavanijih proizvoda.
+&nbsp;&nbsp;&nbsp;&nbsp;Na ekranu se nalazi i lista najprodavanijih proizvoda.
 
 # Zajedničke funkcionalnosti
 
-Ovo poglavlje opisuje funkcije dostupne i menadžeru i blagajniku:
+&nbsp;&nbsp;&nbsp;&nbsp;Ovo poglavlje opisuje funkcije dostupne i menadžeru i blagajniku:
 postavke jezika i teme, te uređivanje korisničkog profila.
 
 ## Postavke (Jezik i Tema)
 
-Aplikacija PastryShop omogućava korisnicima potpunu personalizaciju
-izgleda i jezika korisničkog interfejsa. Na taj način se osigurava
-ugodno i intuitivno iskustvo tokom rada.
+&nbsp;&nbsp;&nbsp;&nbsp;Aplikacija PastryShop omogućava korisnicima potpunu personalizaciju izgleda i jezika korisničkog interfejsa. Na taj način se osigurava ugodno i intuitivno iskustvo tokom rada.
 
 Dostupne opcije:
 
-Teme interfejsa: korisnik može birati između svijetle, tamne i plave
-teme.
+&nbsp;&nbsp;&nbsp;&nbsp;Teme interfejsa: korisnik može birati između ***svijetle***, ***tamne*** i ***plave*** teme.
 
-Jezici: trenutno su podržani srpski i engleski jezik.
+&nbsp;&nbsp;&nbsp;&nbsp;Jezici: trenutno su podržani ***srpski*** i ***engleski*** jezik.
 
-Padajući meniji za izbor jezika i teme sadrže odgovarajuće ikonice uz
-svaku opciju, dok su nazivi prilagođeni trenutno aktivnom jeziku
-aplikacije, čime se postiže dodatna jasnoća.
+&nbsp;&nbsp;&nbsp;&nbsp;Padajući meniji za izbor jezika i teme sadrže odgovarajuće ikonice uz svaku opciju, dok su nazivi prilagođeni trenutno aktivnom jeziku aplikacije, čime se postiže dodatna jasnoća.
 
-Klikom na dugme „Sačuvaj" aplikacija upoređuje odabrane postavke jezika
-i teme sa prethodnim vrijednostima i odmah primjenjuje eventualne
-promjene. Omogućeno je promijeniti samo temu, samo jezik, ili oboje
-istovremeno.
+&nbsp;&nbsp;&nbsp;&nbsp;Klikom na dugme ***Sačuvaj*** aplikacija upoređuje odabrane postavke jezika i teme sa prethodnim vrijednostima i odmah primjenjuje eventualne
+promjene. Omogućeno je promijeniti samo temu, samo jezik, ili oboje istovremeno.
 
-Korisnik dobija informativnu poruku o rezultatu („Tema i jezik
-promijenjeni", „Tema promijenjena", „Jezik promijenjen" ili „Nema
-promjena").
+&nbsp;&nbsp;&nbsp;&nbsp;Korisnik dobija informativnu poruku o rezultatu („Tema i jezik promijenjeni", „Tema promijenjena", „Jezik promijenjen" ili „Nema promjena").
 
-Odabrane postavke (tema i jezik) se automatski čuvavaju za datog
-korisnika pa su pri svakoj njegovoj narednoj prijavi dostupne prethodno
-odabrane opcije.
+&nbsp;&nbsp;&nbsp;&nbsp;Odabrane postavke (tema i jezik) se automatski čuvavaju za datog korisnika pa su pri svakoj njegovoj narednoj prijavi dostupne prethodno odabrane opcije.
 
 ##  Profil korisnika
 
-Prilikom otvaranja stranice Profil korisnika, trenutni podaci su već
-učitani, što omogućava pregled i eventualnu izmjenu postojećih
-informacija.
+&nbsp;&nbsp;&nbsp;&nbsp;Prilikom otvaranja stranice Profil korisnika, trenutni podaci su već učitani, što omogućava pregled i eventualnu izmjenu postojećih informacija.
 
-Korisnik može promijeniti sljedeće podatke:
+&nbsp;&nbsp;&nbsp;&nbsp;Korisnik može promijeniti sljedeće podatke:
 
 Korisničko ime: obavezno polje; dozvoljeni znakovi su slova i cifre,
 postoji ograničenje dužine, a ime mora biti jedinstveno.
@@ -600,13 +479,6 @@ sve nedavne izmjene.
 
 ## Responzivni dizajn
 
-Pastry Shop aplikacija je dizajnirana sa fokusom na responzivni dizajn,
-osiguravajući ugodno korisničko iskustvo na desktop i laptop uređajima.
-Interfejs se automatski prilagođava veličini i rezoluciji ekrana, tako
-da sadržaj uvek izgleda i funkcioniše besprekorno.
+&nbsp;&nbsp;&nbsp;&nbsp;Pastry Shop aplikacija je dizajnirana sa fokusom na responzivni dizajn, osiguravajući ugodno korisničko iskustvo na desktop i laptop uređajima. Interfejs se automatski prilagođava veličini i rezoluciji ekrana, tako da sadržaj uvek izgleda i funkcioniše besprekorno.
 
-Na većim ekranima sadržaj koji uključuje liste proizvoda ili navigacione
-ikonice organizovan je u više kolona za maksimalnu iskorišćenost
-prostora, dok se na manjim ekranima automatski prebacuje na manji broj
-kolona. Po potrebi se pojedine slike mogu sakriti na manjim širinama
-ekrana kako bi se uštedio prostor i sačuvao pregledan raspored.
+Na većim ekranima sadržaj koji uključuje liste proizvoda ili navigacione ikonice organizovan je u više kolona za maksimalnu iskorišćenost prostora, dok se na manjim ekranima automatski prebacuje na manji broj kolona. Po potrebi se pojedine slike mogu sakriti na manjim širinama ekrana kako bi se uštedio prostor i sačuvao pregledan raspored.
