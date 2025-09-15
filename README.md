@@ -1,118 +1,62 @@
-## Uvod
+# Uvod
+&nbsp;&nbsp;&nbsp;&nbsp;**PastryShop** je desktop WPF aplikacija osmišljena da pojednostavi i unaprijedi svakodnevno poslovanje malih i srednjih pekara, poslastičarnica i srodnih objekata sa brzim prometom robe.  
+Cilj ovog korisničkog uputstva je da na jasan i praktičan način predstavi početna podešavanja, svakodnevne operacije, kao i napredne funkcije aplikacije, omogućavajući brzo uvođenje u rad i korištenje svih njenih prednosti.
 
-**PastryShop** je desktop WPF aplikacija osmišljena da pojednostavi i
-unaprijedi svakodnevno poslovanje malih i srednjih pekara,
-poslastičarnica i srodnih objekata sa brzim prometom robe.\
-Cilj ovog korisničkog uputstva je da na jasan i praktičan način
-predstavi početna podešavanja, svakodnevne operacije, kao i napredne
-funkcije aplikacije, omogućavajući brzo uvođenje u rad i korištenje svih
-njenih prednosti.
+## Pregled ključnih funkcionalnosti  
+&nbsp;&nbsp;&nbsp;&nbsp;U nastavku su opisane osnovne funkcionalnosti aplikacije.
 
-## Pregled ključnih funkcionalnosti
+**Upravljanje korisničkim nalozima**  
+Jasno definisane uloge i kontrole pristupa doprinose većoj sigurnosti i pouzdanosti rada aplikacije.
 
-**Upravljanje korisničkim nalozima**\
-Jasno definisane uloge i kontrole pristupa doprinose većoj sigurnosti i
-pouzdanosti rada aplikacije.
+**Centralizovano upravljanje proizvodima i zalihama**  
+Sistem podržava upravljanje proizvodima i zalihama, omogućavajući pregled, dodavanje i uređivanje artikala, praćenje količina, serija nabavki i rokova trajanja, čime se olakšava planiranje i kontrola poslovanja.
 
-**Centralizovano upravljanje proizvodima i zalihama**\
-Sistem podržava upravljanje proizvodima i zalihama, omogućavajući
-pregled, dodavanje i uređivanje artikala, praćenje količina, serija
-nabavki i rokova trajanja, čime se olakšava planiranje i kontrola
-poslovanja.
+**Brz i intuitivan POS**  
+Jednostavno kreiranje porudžbina, rad sa artiklima u korpi i brza naplata gotovinom, karticom ili odloženo plaćanje, uz mogućnost poništavanja ranije kreiranih porudžbina.
 
-**Brz i intuitivan POS**\
-Jednostavno kreiranje porudžbina, rad sa artiklima u korpi i brza
-naplata gotovinom, karticom ili odloženim plaćanjem, uz mogućnost
-poništavanja ranije kreiranih porudžbina.
+**Personalizacija**  
+Sistem podržava više jezika, prilagodljive vizuelne teme i izmjenu profila korisnika, omogućavajući bolje podešavanje interfejsa prema individualnim potrebama.
 
-**Personalizacija**\
-Sistem podržava više jezika, prilagodljive vizuelne teme i izmjenu
-profila korisnika, omogućavajući bolje podešavanje interfejsa prema
-individualnim potrebama.
+**Izvještaji i statistika**  
+Omogućen je brz i pregledan uvid u prodaju, zalihe i ključne poslovne pokazatelje kroz intuitivne panele i grafike.
 
-**Izvještaji i statistika**\
-Sistem omogućava brz i pregledan uvid u prodaju, zalihe i ključne
-poslovne pokazatelje kroz intuitivne panele i grafike.
+# Uloge i autentifikacija  
+&nbsp;&nbsp;&nbsp;&nbsp;**PastryShop** unapređuje efikasnost i sigurnost poslovanja kroz jasno definisane korisničke uloge. Ovakav pristup omogućava preciznu podjelu odgovornosti i sprječava neovlašćen pristup važnim funkcijama sistema, čime se smanjuje rizik od grešaka i mogućih zloupotreba.
 
-## Uloge i autentifikacija
-
-**PastryShop** unapređuje efikasnost i sigurnost poslovanja kroz jasno
-definisane korisničke uloge. Ovakav pristup omogućava preciznu podjelu
-odgovornosti i sprječava neovlašćen pristup važnim funkcijama sistema,
-čime se smanjuje rizik od grešaka i mogućih zloupotreba.
-
-## Uloge u sistemu
-
-Aplikacija podržava dvije glavne uloge:
+## Uloge u sistemu  
+&nbsp;&nbsp;&nbsp;&nbsp;Aplikacija razlikuje dvije osnovne uloge korisnika:
 
 **Menadžer**
-
 -   Posjeduje administrativnu kontrolu nad cijelim sistemom.
-
--   Odgovoran je za kreiranje i upravljanje nalozima korisnika
-    (dodavanje novih i deaktivacija postojećih naloga, resetovanje
-    lozinki).
-
--   VršI nadzor nad proizvodima i zalihama.
-
--   Ima pristup izvještajima i statistikama radi praćenja i analize
-    poslovanja.
+-   Odgovoran je za kreiranje i upravljanje nalozima korisnika (dodavanje novih i deaktivacija postojećih naloga, resetovanje lozinki).
+-   Vrši nadzor nad proizvodima i zalihama.
+-   Ima pristup izvještajima i statistikama radi praćenja i analize poslovanja.
 
 **Blagajnik**
+-   Koristi POS interfejs prilagođen za brz i efikasan rad na prodajnom mjestu.
+-   Njegove primarne funkcije obuhvataju kreiranje porudžbina, naplatu i pregled dnevnih transakcija.
 
--   Koristi POS interfejs prilagođen za brz i efikasan rad na prodajnom
-    mjestu.
+## Proces prijave i autentifikacija  
+&nbsp;&nbsp;&nbsp;&nbsp;Menadžer ima mogućnost da kreira korisničke naloge za zaposlene, dodjeljuje im odgovarajuće uloge i generiše početnu lozinku.  
+Zaposleni dobijaju lozinku i preporuka je da je, radi sigurnosti, promijene pri prvoj prijavi. Korisnici se prijavljuju putem svojih jedinstvenih
+kredencijala.  
+Po pokretanju aplikacije otvara se ekran za prijavu sa poljima za unos korisničkog imena i lozinke. Navigacija između polja omogućena je tasterom *Tab*.  
+Polja su obavezna, a dozvoljen je jedino unos slova i cifara. Definisan je minimalni i maksimalni broj unesenih karaktera.
 
--   Njegove primarne funkcije obuhvataju kreiranje porudžbina, naplatu i
-    pregled dnevnih transakcija.
+&nbsp;&nbsp;&nbsp;&nbsp;Korisnicima je na raspolaganju opcija promjene jezika, pri čemu se odabrani jezik primjenjuje samo na stranicu za prijavu. Kao prečica može da se koristi kombinacija tastera *Ctrl + L* kojom se otvara padajući meni za izbor jezika.  
 
-## Proces prijave i autentifikacija
+&nbsp;&nbsp;&nbsp;&nbsp;Nakon klika na dugme **„Prijava" (Login)** ili pritiskom na taster *Enter*, sistem provjerava kredencijale i u slučaju uspjeha:  
+evidentira vrijeme prijave i preusmjerava korisnika na početni ekran u skladu s njegovom ulogom.
+**Menadžeri** se preusmjeravaju na kontrolnu tablu za rad sa korisničkim nalozima.
+**Blagajnici** odmah pristupaju POS ekranu optimizovanom za prodaju i naplatu.  
+Ovakav pristup omogućava da svaki korisnik radi u okruženju precizno prilagođenom njegovim zadacima.  
 
-Menadžer ima mogućnost da kreira korisničke naloge za zaposlene,
-dodjeljuje im odgovarajuće uloge i generiše početnu lozinku. Zaposleni
-dobijaju lozinku i preporuka je da je, radi sigurnosti, promijene pri
-prvoj prijavi. Korisnici se prijavljuju putem svojih jedinstvenih
-kredencijala.
-Po pokretanju aplikacije otvara se **ekran za prijavu** sa poljima za
-unos korisničkog imena i lozinke. Navigacija između polja omogućena je
-tasterom **Tab**. Polja su obavezna, a dozvoljen je jedino unos slova i
-cifara. Definisan je minimalni i maksimalni broj unesenih karaktera.
-  Korisnicima je na raspolaganju opcija promjene jezika, pri čemu se
-odabrani jezik primjenjuje samo na stranicu za prijavu. Kao prečica može
-da se koristi kombinacija tastera **Ctrl + L** kojom se otvara padajući
-meni za izbor jezika.
- ![Prijava](images/01_prijava.png)
-Nakon klika na dugme **„Prijava" (Login)** ili pritiskom na taster
-**Enter**, sistem provjerava kredencijale i u slučaju uspjeha:
-evidentira vrijeme prijave I preusmjerava korisnika na početni ekran u
-skladu s njegovom ulogom.
+&nbsp;&nbsp;&nbsp;&nbsp;U slučaju da prijava nije uspješna, pojavljuje se dijalog upozorenja sa informacijom o razlogu neuspjele operacije.  
+Razlozi mogu biti: netačno korisničko ime ili lozinka; nalog nije aktivan; nekorektne vrijednosti polja i tada su uz data polja prikazane odgovarajuće poruke radi lakše korekcije pogrešnih unosa.
 
-**Menadžeri** se preusmjeravaju na kontrolnu tablu za rad sa korisničkim
-nalozima.
+&nbsp;&nbsp;&nbsp;&nbsp; Na ekranu se nalazi i dugme **„Otkaži" (Cancel)** za izlaz iz aplikacije. Za ovu funkcionalnost omogućena je i prečica *Escape (Esc)*.
 
-**Blagajnici** odmah pristupaju POS ekranu optimizovanom za prodaju i
-naplatu.
-
-Ovakav pristup omogućava da svaki korisnik radi u okruženju precizno
-prilagođenom njegovim zadacima.
-
-U slučaju da prijava nije uspješna, pojavljuje se dijalog upozorenja sa
-informacijom o razlogu neuspjele operacije. Razlozi mogu biti:
-
--   Netačno korisničko ime ili lozinka.
-
--   Nalog nije aktivan.
-
--   Nekorektne vrijednosti polja -- u tom slučaju, uz data polja
-    prikazane su odgovarajuće poruke radi lakše korekcije pogrešnih
-    unosa.
-    ![Prijava](images/02_prijava.png)
-
-Na ekranu se nalazi i dugme **„Otkaži" (Cancel)** za izlaz iz
-aplikacije.\
-Za ovu funkcionalnost omogućena je i prečica **Escape (Esc)**.
-
-### Menadžer
+# Menadžer
 
 Uloga menadžera je da osigura stabilnost i urednost poslovanja, kako bi
 svakodnevni rad u pekarskom ili poslastičarskom objektu tekao nesmetano.
