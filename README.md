@@ -197,210 +197,118 @@ Forma obuhvata osnovna polja koja se popunjavaju za sve proizvode, dok se dodatn
 &nbsp;&nbsp;&nbsp;&nbsp;Dugme ***Dodaj*** pokreće provjeru svih vidljivih polja. Ako su podaci ispravni, novi proizvod se sprema u bazu i prikazuje se informativna poruka o uspjehu. Ako postoje greške, korisnik dobija upozorenje, a neispravna polja bivaju jasno označena.  
 &nbsp;&nbsp;&nbsp;&nbsp;Dugme ***Otkaži*** zatvara formu bez čuvanja promjena.
 
-## Prikaz detalja proizvoda
+### Prikaz detalja proizvoda
 &nbsp;&nbsp;&nbsp;&nbsp;Menadžer ima mogućnost detaljnog ***pregleda odabranog proizvoda***, sa svim relevantnim informacijama prikazanim na jednom mjestu. Pored osnovnih podataka (*naziv, tip, opis, cijena* i *popust*), prikazuju se i *datumi kreiranja* i *posljednje izmjene*, kao i vizuelni prikaz *slike proizvoda* radi lakše identifikacije.  
 
 &nbsp;&nbsp;&nbsp;&nbsp;Prozor sadrži oznake (chipove) koje jasno ističu status proizvoda: *dostupan, nedostupan* ili *istaknut*.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Specifični atributi prikazuju se zavisno od tipa proizvoda: za hranu (*vrsta hrane, težina, kalorije, kvarljivost*), za piće (*zapremina, alkoholno/bezalkoholno*), a za pribor (*materijal, dimenzije, višekratna upotreba*).
 
-## Uređivanje osnovnih podataka proizvoda
-&nbsp;&nbsp;&nbsp;&nbsp;Klikom na odgovarajuću ikonicu za odabrani proizvod otvara se modalni
-prozor za izmjenu njegovi osnovnih podataka. U ovom prozoru menadžer
-može mijenjati cijenu proizvoda, dodavati ili uklanjati popust, te
-označiti proizvod kao istaknuti. Polja prikazuju postojeće vrijednosti i
-omogućavaju direktnu izmjenu.
+### Uređivanje osnovnih podataka proizvoda
+&nbsp;&nbsp;&nbsp;&nbsp;Klikom na odgovarajuću ikonicu za odabrani proizvod otvara se modalni prozor za ***izmjenu*** njegovih ***osnovnih podataka***. U ovom prozoru menadžer može mijenjati **cijenu proizvoda*, dodavati ili uklanjati *popust*, te označiti proizvod kao *istaknuti*. Polja prikazuju postojeće vrijednosti i omogućavaju direktnu izmjenu.
 
-Primjenjuju se ista pravila i ograničenja kao kod dodavanja novog
-proizvoda. Polja vrše automatsku provjeru unosa i onemogućavaju
-spremanje dok vrijednosti nisu ispravne (npr. cijena i popust moraju
-biti numerički podaci, ne smiju biti negativni). Tek nakon unosa
-validnih podataka izmjene se mogu potvrditi klikom na dugme Sačuvaj ili
-pritiskom na Enter, dok dugme Otkaži zatvara prozor bez promjena.
+&nbsp;&nbsp;&nbsp;&nbsp;Primjenjuju se ista pravila i ograničenja kao kod dodavanja novog proizvoda. Polja vrše automatsku provjeru unosa i onemogućavaju
+spremanje dok vrijednosti nisu ispravne (npr. cijena i popust moraju biti numerički podaci, ne smiju biti negativni). Tek nakon unosa validnih podataka izmjene se mogu potvrditi klikom na dugme ***Sačuvaj*** ili pritiskom na *Enter*, dok dugme ***Otkaži*** zatvara prozor bez promjena.
 
-## Uređivanje detalja proizvoda
+### Uređivanje detalja proizvoda
+&nbsp;&nbsp;&nbsp;&nbsp;Dostupna je opcija za ***uređivanje profila proizvoda***. Potrebno je odabrati proizvod i kliknuti na odgovarajuću ikonicu.
 
-Dostupna je opcija za uređivanje profila proizvoda. Potrebno je odabrati
-proizvod i kliknuti na odgovarajuću ikonicu.
+&nbsp;&nbsp;&nbsp;&nbsp;Omogućeno je mijenjanje *naziva, opisa, slike*, kao i specifičnih atributa u zavisnosti od tipa proizvoda.
 
-Omogućeno je mijenjanje naziva, opisa, slike, kao i specifičnih atributa
-u zavisnosti od tipa proizvoda.
-
-Sistem automatski provjerava tačnost unosa i ne dozvoljava čuvanje dok
-podaci nisu validni. Kada su sve vrijednosti ispravne, izmjene se mogu
-potvrditi klikom na dugme Sačuvaj ili pritiskom na Enter.
+&nbsp;&nbsp;&nbsp;&nbsp;Sistem automatski provjerava tačnost unosa i ne dozvoljava čuvanje dok podaci nisu validni. Kada su sve vrijednosti ispravne, izmjene se mogu potvrditi klikom na dugme ***Sačuvaj*** ili pritiskom na *Enter*.
 
 ### Aktiviranje / deaktiviranje proizvoda
+&nbsp;&nbsp;&nbsp;&nbsp;Menadžer može privremeno ***sakriti*** ili ponovo ***prikazati*** proizvod u aktivnoj listi bez brisanja podataka. Prije promjene statusa sistem traži potvrdu radi sprječavanja grešaka.
 
-Menadžer može privremeno sakriti ili ponovo prikazati proizvod u
-aktivnoj listi bez brisanja podataka. Prije promjene statusa sistem
-traži potvrdu radi sprječavanja grešaka.
+&nbsp;&nbsp;&nbsp;&nbsp;Neaktivni proizvod se ne prikazuje u standardnom pregledu i nije dostupan za dodavanje u prodajne transakcije dok se ponovo ne aktivira. Neke radnje, poput uređivanja cijene, popusta ili istaknutog statusa, takođe su onemogućene dok proizvod nije aktivan.
 
-Neaktivni proizvod se ne prikazuje u standardnom pregledu i nije
-dostupan za dodavanje u prodajne transakcije dok se ponovo ne aktivira.
-Neke radnje, poput uređivanja cijene, popusta ili istaknutog statusa,
-takođe su onemogućene dok proizvod nije aktivan.
-
-Deaktiviranje već arhiviranog proizvoda nije dozvoljeno; u tom slučaju
-pojavljuje se dijalog sa upozorenjem.
+&nbsp;&nbsp;&nbsp;&nbsp;Deaktiviranje već arhiviranog proizvoda nije dozvoljeno; u tom slučaju pojavljuje se dijalog sa upozorenjem.
 
 ## Upravljanje zalihama
 
-Klikom na odgovarajuću ikonicu pored željenog proizvoda otvara se prozor
-za upravljanje zalihama, u kojem menadžer može detaljno pratiti i
-ažurirati stanje zaliha. Prikazuju se količine, serije nabavki i rok
-trajanja proizvoda, uz automatske indikatore koji jasno ističu kritične
-stavke.
+&nbsp;&nbsp;&nbsp;&nbsp;Klikom na odgovarajuću ikonicu pored željenog proizvoda otvara se prozor za ***upravljanje zalihama***, u kojem menadžer može detaljno pratiti i ažurirati stanje zaliha. Prikazuju se *količine, serije nabavki* i *rok trajanja* proizvoda, uz automatske indikatore koji jasno ističu kritične stavke.
 
-Na ekranu je istaknuto ime proizvoda čije se zalihe uređuju, kao i
-ukupna količina trenutno dostupnih stavki.
+&nbsp;&nbsp;&nbsp;&nbsp;Na ekranu je istaknuto *ime proizvoda* čije se zalihe uređuju, kao i *ukupna količina* trenutno dostupnih stavki.
 
-Centralni dio ekrana prikazuje sve serije zaliha za izabrani proizvod,
-uključujući ID serije, količinu, datum dodavanja i rok trajanja.
+&nbsp;&nbsp;&nbsp;&nbsp;Centralni dio ekrana prikazuje sve serije zaliha za izabrani proizvod, uključujući *ID serije, količinu, datum dodavanja* i *rok trajanja*.
 
-Menadžer može potvrtiti izvršene promjene koristeći dugme Sačuvaj,
-poništiti izmjene sa dugmetom Odbaci ili ukloniti selektovanu stavku
-klikom na dugme Obriši.
+&nbsp;&nbsp;&nbsp;&nbsp;Menadžer može potvrtiti izvršene promjene koristeći dugme ***Sačuvaj***, poništiti izmjene sa dugmetom ***Odbaci*** ili ukloniti selektovanu stavku klikom na dugme ***Obriši***.
 
-Dostupan je i klizač koji omogućava filtriranje serija zaliha prema
-njihovom statusu (aktivno/neaktivno).
+&nbsp;&nbsp;&nbsp;&nbsp;Dostupan je i klizač koji omogućava ***filtriranje*** serija zaliha prema njihovom statusu (*aktivno / neaktivno*).
 
-Desni panel prikazuje detalje izabrane stavke, uključujući količinu,
-datum isteka, broj dana za upozorenje i datum dodavanja. Polja imaju
-automatsku validaciju:
+&nbsp;&nbsp;&nbsp;&nbsp;Desni panel prikazuje ***detalje*** izabrane stavke, uključujući *količinu, datum isteka, broj dana za upozorenje* i *datum dodavanja*. Polja imaju automatsku validaciju:
 
--   **Količina:** obavezno polje, mora biti cio broj veći od nule.
+-   *Količina:* - obavezno polje, mora biti cio broj veći od nule,
+-   *Datum isteka:* - opciono; ako je unet, mora biti najmanje 1 dan u budućnosti,
+-   *Dani upozorenja:* - opciono; cio broj, ne može biti negativan,
+-   *Datum dodavanja:* - prikazuje datum i vrijeme kada je stavka dodata,
+-   *Aktivno:* - čekboks za aktivaciju ili deaktivaciju stavke.
 
--   **Datum isteka:** opciono; ako je unet, mora biti najmanje 1 dan u
-    budućnosti.
+&nbsp;&nbsp;&nbsp;&nbsp;Ispod panela nalazi se dugme ***Dodaj zalihe*** za kreiranje nove stavke, kao i dugme ***Zatvori*** koje zatvara ekran bez čuvanja promjena.
 
--   **Dani upozorenja:** opciono; cio broj, ne može biti negativan.
+&nbsp;&nbsp;&nbsp;&nbsp;Ako datum isteka postoji i nalazimo se unutar broja dana za upozorenje, data stavka se automatski označava na poseban način (drugačija boja stavke) što omogućava menadžeru prepoznavanje kritičnih zaliha i pravovremenu reakciju.
 
--   **Datum dodavanja:** prikazuje datum i vrijeme kada je stavka
-    dodata.
-
--   **Aktivno:** čekboks za aktivaciju ili deaktivaciju stavke.
-
-**Ispod panela nalazi se dugme Dodaj zalihe** za kreiranje nove stavke,
-kao i dugme Za**tvori** koje zatvara ekran bez čuvanja promjena.
-
-Ako datum isteka postoji i nalazimo se unutar broja dana za upozorenje,
-data stavka se automatski označava na poseban način (drugačija boja
-stavke) što omogućava menadžeru prepoznavanje kritičnih zaliha i
-pravovremenu reakciju.
-
-Ovaj interfejs pruža sveobuhvatnu kontrolu nad zalihama proizvoda,
-omogućavajući precizno praćenje svake serije nabavke. Daje detaljan uvid
-u status svih stavki kako aktivnih tako i svih neaktivnih stavki bilo da
-im je promjenjen status, da je istekao rok ili da su jednostavno
-potrošene. Na taj način menadzer ima mogućnost preciznog vođenje
-evidencije i analize o svim zalihama proizvoda.
+&nbsp;&nbsp;&nbsp;&nbsp;Ovaj interfejs pruža sveobuhvatnu kontrolu nad zalihama proizvoda, omogućavajući precizno praćenje svake serije nabavke. Daje detaljan uvid u status svih stavki kako aktivnih tako i svih neaktivnih stavki bilo da im je promjenjen status, da je istekao rok ili da su jednostavno
+potrošene. Na taj način menadzer ima mogućnost preciznog vođenje evidencije i analize o svim zalihama proizvoda.
 
 ## Statiskika i izvještaji
 
-## Proizvodi
+### Proizvodi
 
-Ova sekcija menadžeru omogućava brz i pregledan uvid u ključne poslovne
-pokazatelje kroz intuitivne panele i grafičke prikaze.
+&nbsp;&nbsp;&nbsp;&nbsp;Ova sekcija menadžeru omogućava brz i pregledan uvid u ključne poslovne pokazatelje kroz intuitivne panele i grafičke prikaze.
 
-Na ekranu se nalaze polja za odabir datuma **„Od"** i **„Do"**, kao i
-dugme **„Statistika"** za generisanje podataka za željeni period. Polja
-za datume su opciona:
+&nbsp;&nbsp;&nbsp;&nbsp;Na ekranu se nalaze polja za odabir datuma ***„Od"*** i ***„Do"***, kao i dugme ***„Statistika"*** za generisanje podataka za željeni period. 
 
--   Prazno polje znači da nema vremenskog ograničenja za taj kraj
-    perioda.
+&nbsp;&nbsp;&nbsp;&nbsp;Polja za datume su opciona:
 
--   Ako je unesen samo datum „Od", prikazuju se podaci od tog datuma pa
-    nadalje.
+-   Prazno polje znači da nema vremenskog ograničenja za taj kraj perioda.
+-   Ako je unesen samo datum „Od", prikazuju se podaci od tog datuma pa nadalje.
+-   Ako je unesen samo datum „Do", prikazuju se podaci zaključno s tim datumom
 
--   Ako je unesen samo datum „Do", prikazuju se podaci zaključno s tim
-    datumom.
+&nbsp;&nbsp;&nbsp;&nbsp;Pritiskom na ***„Statistika"***, sistem prvo provjerava ispravnost unesenih datuma. Ako su validni, podaci se učitavaju i ažuriraju svi paneli, grafikoni i lista najprodavanijih proizvoda. U slučaju neispravnog unosa (npr. datum u budućnosti ili pogrešan interval), polja
+se označavaju greškom i pojavljuje se dijalog upozorenja. Pretraga se neće izvršiti dok se greške ne isprave.
 
-Pritiskom na **„Statistika"**, sistem prvo provjerava ispravnost
-unesenih datuma. Ako su validni, podaci se učitavaju i ažuriraju svi
-paneli, grafikoni i lista najprodavanijih proizvoda. U slučaju
-neispravnog unosa (npr. datum u budućnosti ili pogrešan interval), polja
-se označavaju greškom i pojavljuje se dijalog upozorenja. Pretraga se
-neće izvršiti dok se greške ne isprave.
+&nbsp;&nbsp;&nbsp;&nbsp;Ispod trake za filtriranje nalaze se informativni paneli sa pregledom najvažnijih metrika:
 
-Ispod trake za filtriranje nalaze se informativni paneli sa pregledom
-najvažnijih metrika:
-
--   **Narudžbe:** prikaz ukupnog broja narudžbi, dodatno grupisan po
-    statusima: Završene, Otkazane i Na čekanju.
-
--   **Artikli:** pregled ukupnog broja artikala, razvrstanih po
-    kategorijama: Hrana, Piće i Pribor.
-
+-   **Narudžbe:** prikaz ukupnog broja narudžbi, dodatno grupisan po statusima: *Završene, Otkazane* i *Na čekanju*.
+-   **Artikli:** pregled ukupnog broja artikala, razvrstanih po kategorijama: *Hrana, Piće* i *Pribor*.
 -   **Prihod:** ukupan prihod ostvaren u odabranom periodu.
+-   
+&nbsp;&nbsp;&nbsp;&nbsp;Dostupni su i grafikoni koji olakšavaju praćenje kretanja:
 
-Dostupni su i grafikoni koji olakšavaju praćenje kretanja:
-
--   **Linijski grafikon:** prikazuje tendenciju prodaje artikala i broja
-    narudžbi na nedeljnom nivou.
-
+-   **Linijski grafikon:** prikazuje tendenciju prodaje artikala i broja narudžbi na nedeljnom nivou.
 -   **Stubičasti grafikon:** prikazuje kretanje prihoda u istom periodu.
 
-Na ekranu se takođe nalazi lista **najprodavanijih proizvoda** sa
-sličicama i nazivima, sortirana po broju prodatih artikala.
+&nbsp;&nbsp;&nbsp;&nbsp;Na ekranu se takođe nalazi lista ***najprodavanijih proizvoda*** sa sličicama i nazivima, sortirana po broju prodatih artikala.
 
-## **Zalihe**
+### Zalihe
 
-Sekcija *Zalihe* omogućava menadžeru potpuni pregled stanja proizvoda u
-skladištu i svih promjena koje su izvršene.
+&nbsp;&nbsp;&nbsp;&nbsp;Sekcija *Zalihe* omogućava menadžeru potpuni pregled stanja proizvoda u skladištu i svih promjena koje su izvršene.
 
-Na početku korisnik:
+&nbsp;&nbsp;&nbsp;&nbsp;Na početku korisnik: bira proizvod, definiše vremenski period putem polja „*Od*" i „*Do*", pokreće generisanje izvještaja klikom na dugme ***Izvještaj***.
 
--   bira proizvod,
-
--   definiše vremenski period putem polja „Od" i „Do",
-
--   pokreće generisanje izvještaja klikom na dugme „Izvještaj".
-
-Sistem automatski provjerava validnost unesenih podataka:
-
+&nbsp;&nbsp;&nbsp;&nbsp;Sistem automatski provjerava validnost unesenih podataka:
 -   datum ne smije biti u budućnosti,
-
 -   krajnji datum mora biti nakon početnog,
-
 -   izbor proizvoda je obavezan za detaljne izvještaje.
 
-Nepravilno uneseni datumi ili neizabrani proizvod onemogućavaju
-generisanje izvještaja i prikazuju vizuelni indikator greške pored
+&nbsp;&nbsp;&nbsp;&nbsp;Nepravilno uneseni datumi ili neizabrani proizvod onemogućavaju generisanje izvještaja i prikazuju vizuelni indikator greške pored
 polja.
 
 **Tabovi:**
 
--   **Zalihe** -- prikazuje stavke kojima ističe rok trajanja, nezavisno
-    od izbora proizvoda i perioda. Tabela sadrži ID zaliha, ID
-    proizvoda, naziv proizvoda, količinu, datum isteka i broj dana do
-    upozorenja.
+-   ***Zalihe*** - prikazuje stavke kojima ističe rok trajanja, nezavisno od izbora proizvoda i perioda. Tabela sadrži *ID zaliha, ID proizvoda, naziv proizvoda, količinu, datum isteka* i *broj dana do upozorenja*,
+-   ***Transakcije*** - prikazuje sve promjene stanja zaliha za odabrani proizvod i period. Evidentiraju se *ID transakcije, datum i vrijeme, tip transakcije* (*prijem, prodaja, korekcija*), *promjena količine, broj narudžbine* i *ID korisnika*,
+-   ***Izmjene*** - detaljan pregled svih promjena u zalihama, uključujući *datum, tip izmjene, prethodnu i novu vrijednost*, te *ID korisnika*,
+-   ***Sažetak*** - ukupni pregled za odabrani proizvod i period: *količina na skladištu, dodate i prodate količine*, te *ukupni broj izmjena.
 
--   **Transakcije** -- prikazuje sve promjene stanja zaliha za odabrani
-    proizvod i period. Evidentiraju se ID transakcije, datum i vrijeme,
-    tip transakcije (prijem, prodaja, korekcija), promjena količine,
-    broj narudžbine i ID korisnika.
+&nbsp;&nbsp;&nbsp;&nbsp;Tabele podržavaju sortiranje, a prazni prikazi uvijek obavještavaju korisnika da nema podataka za trenutne kriterijume.
 
--   **Izmjene** -- detaljan pregled svih promjena u zalihama,
-    uključujući datum, tip izmjene, prethodnu i novu vrijednost te ID
-    korisnika.
-
--   **Sažetak** -- ukupni pregled za odabrani proizvod i period:
-    količina na skladištu, dodate i prodate količine te ukupni broj
-    izmjena.
-
-Tabele podržavaju sortiranje, a prazni prikazi uvijek obavještavaju
-korisnika da nema podataka za trenutne kriterijume.
-
-Ovakav tok, od izbora proizvoda i datuma, preko generisanja izvještaja,
-do preglednog prikaza zaliha, transakcija, izmjena i sažetka, omogućava
-menadžeru efikasno praćenje stanja skladišta i donošenje informisanih
-odluka o poslovanju objekta koji koristi PastryShop aplikaciju.
+&nbsp;&nbsp;&nbsp;&nbsp;Ovakav tok, od izbora proizvoda i datuma, preko generisanja izvještaja, do preglednog prikaza zaliha, transakcija, izmjena i sažetka, omogućava menadžeru efikasno praćenje stanja skladišta i donošenje informisanih odluka o poslovanju objekta koji koristi PastryShop aplikaciju.
 
 # Blagajnik
 
-Uloga blagajnika je da osigura brzo i precizno upravljanje prodajom i
-naplatom u pekarskom ili slastičarskom objektu. Glavne odgovornosti
+&nbsp;&nbsp;&nbsp;&nbsp;Uloga blagajnika je da osigura brzo i precizno upravljanje prodajom i naplatom u pekarskom ili slastičarskom objektu. Glavne odgovornosti
 blagajnika su:
 
 \* kreiranje i naplata porudžbina,
