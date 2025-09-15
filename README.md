@@ -1,27 +1,27 @@
 # Uvod
-&nbsp;&nbsp;&nbsp;&nbsp;**PastryShop** je desktop WPF aplikacija osmišljena da pojednostavi i unaprijedi svakodnevno poslovanje malih i srednjih pekara, poslastičarnica i srodnih objekata sa brzim prometom robe.  
+&nbsp;&nbsp;&nbsp;&nbsp;***PastryShop*** je desktop WPF aplikacija osmišljena da pojednostavi i unaprijedi svakodnevno poslovanje malih i srednjih pekara, poslastičarnica i srodnih objekata sa brzim prometom robe.  
 Cilj ovog korisničkog uputstva je da na jasan i praktičan način predstavi početna podešavanja, svakodnevne operacije, kao i napredne funkcije aplikacije, omogućavajući brzo uvođenje u rad i korištenje svih njenih prednosti.
 
 ## Pregled ključnih funkcionalnosti  
 &nbsp;&nbsp;&nbsp;&nbsp;U nastavku su opisane osnovne funkcionalnosti aplikacije.
 
 **Upravljanje korisničkim nalozima**  
-Jasno definisane uloge i kontrole pristupa doprinose većoj sigurnosti i pouzdanosti rada aplikacije.
+&nbsp;&nbsp;&nbsp;&nbsp;Jasno definisane uloge i kontrole pristupa doprinose većoj sigurnosti i pouzdanosti rada aplikacije.
 
 **Centralizovano upravljanje proizvodima i zalihama**  
-Sistem podržava upravljanje proizvodima i zalihama, omogućavajući pregled, dodavanje i uređivanje artikala, praćenje količina, serija nabavki i rokova trajanja, čime se olakšava planiranje i kontrola poslovanja.
+&nbsp;&nbsp;&nbsp;&nbsp;Sistem podržava upravljanje proizvodima i zalihama, omogućavajući pregled, dodavanje i uređivanje artikala, praćenje količina, serija nabavki i rokova trajanja, čime se olakšava planiranje i kontrola poslovanja.
 
 **Brz i intuitivan POS**  
-Jednostavno kreiranje porudžbina, rad sa artiklima u korpi i brza naplata gotovinom, karticom ili odloženo plaćanje, uz mogućnost poništavanja ranije kreiranih porudžbina.
+&nbsp;&nbsp;&nbsp;&nbsp;Jednostavno kreiranje porudžbina, rad sa artiklima u korpi i brza naplata gotovinom, karticom ili odloženo plaćanje, uz mogućnost poništavanja ranije kreiranih porudžbina.
 
 **Personalizacija**  
-Sistem podržava više jezika, prilagodljive vizuelne teme i izmjenu profila korisnika, omogućavajući bolje podešavanje interfejsa prema individualnim potrebama.
+&nbsp;&nbsp;&nbsp;&nbsp;Sistem podržava više jezika, prilagodljive vizuelne teme i izmjenu profila korisnika, omogućavajući bolje podešavanje interfejsa prema individualnim potrebama.
 
 **Izvještaji i statistika**  
-Omogućen je brz i pregledan uvid u prodaju, zalihe i ključne poslovne pokazatelje kroz intuitivne panele i grafike.
+&nbsp;&nbsp;&nbsp;&nbsp;Omogućen je brz i pregledan uvid u prodaju, zalihe i ključne poslovne pokazatelje kroz intuitivne panele i grafike.
 
 # Uloge i autentifikacija  
-&nbsp;&nbsp;&nbsp;&nbsp;**PastryShop** unapređuje efikasnost i sigurnost poslovanja kroz jasno definisane korisničke uloge. Ovakav pristup omogućava preciznu podjelu odgovornosti i sprječava neovlašćen pristup važnim funkcijama sistema, čime se smanjuje rizik od grešaka i mogućih zloupotreba.
+&nbsp;&nbsp;&nbsp;&nbsp;*PastryShop* unapređuje efikasnost i sigurnost poslovanja kroz jasno definisane korisničke uloge. Ovakav pristup omogućava preciznu podjelu odgovornosti i sprječava neovlašćen pristup važnim funkcijama sistema, čime se smanjuje rizik od grešaka i mogućih zloupotreba.
 
 ## Uloge u sistemu  
 &nbsp;&nbsp;&nbsp;&nbsp;Aplikacija razlikuje dvije osnovne uloge korisnika:
@@ -39,321 +39,173 @@ Omogućen je brz i pregledan uvid u prodaju, zalihe i ključne poslovne pokazate
 ## Proces prijave i autentifikacija  
 &nbsp;&nbsp;&nbsp;&nbsp;Menadžer ima mogućnost da kreira korisničke naloge za zaposlene, dodjeljuje im odgovarajuće uloge i generiše početnu lozinku.  
 Zaposleni dobijaju lozinku i preporuka je da je, radi sigurnosti, promijene pri prvoj prijavi. Korisnici se prijavljuju putem svojih jedinstvenih
-kredencijala.  
-Po pokretanju aplikacije otvara se ekran za prijavu sa poljima za unos korisničkog imena i lozinke. Navigacija između polja omogućena je tasterom *Tab*.  
-Polja su obavezna, a dozvoljen je jedino unos slova i cifara. Definisan je minimalni i maksimalni broj unesenih karaktera.
+kredencijala. Po pokretanju aplikacije otvara se ekran za prijavu sa poljima za unos ***korisničkog imena*** i ***lozinke***. Navigacija između polja omogućena je tasterom *Tab*. Polja su obavezna, a dozvoljen je jedino unos slova i cifara. Definisan je minimalni i maksimalni broj unesenih karaktera.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Korisnicima je na raspolaganju opcija promjene jezika, pri čemu se odabrani jezik primjenjuje samo na stranicu za prijavu. Kao prečica može da se koristi kombinacija tastera *Ctrl + L* kojom se otvara padajući meni za izbor jezika.  
+&nbsp;&nbsp;&nbsp;&nbsp;Korisnicima je na raspolaganju ***opcija promjene jezika***, pri čemu se odabrani jezik primjenjuje samo na stranicu za prijavu. Kao prečica može da se koristi kombinacija tastera *Ctrl + L* kojom se otvara padajući meni za izbor jezika.  
 
-&nbsp;&nbsp;&nbsp;&nbsp;Nakon klika na dugme **„Prijava" (Login)** ili pritiskom na taster *Enter*, sistem provjerava kredencijale i u slučaju uspjeha:  
-evidentira vrijeme prijave i preusmjerava korisnika na početni ekran u skladu s njegovom ulogom.
-**Menadžeri** se preusmjeravaju na kontrolnu tablu za rad sa korisničkim nalozima.
-**Blagajnici** odmah pristupaju POS ekranu optimizovanom za prodaju i naplatu.  
+&nbsp;&nbsp;&nbsp;&nbsp;Nakon klika na dugme ***„Prijava"*** *(Login)* ili pritiskom na taster *Enter*, sistem provjerava kredencijale i u slučaju uspjeha: evidentira vrijeme prijave i preusmjerava korisnika na početni ekran u skladu s njegovom ulogom.  
+Menadžeri se preusmjeravaju na kontrolnu tablu za rad sa korisničkim nalozima.  
+Blagajnici odmah pristupaju POS ekranu optimizovanom za prodaju i naplatu.  
 Ovakav pristup omogućava da svaki korisnik radi u okruženju precizno prilagođenom njegovim zadacima.  
 
 &nbsp;&nbsp;&nbsp;&nbsp;U slučaju da prijava nije uspješna, pojavljuje se dijalog upozorenja sa informacijom o razlogu neuspjele operacije.  
 Razlozi mogu biti: netačno korisničko ime ili lozinka; nalog nije aktivan; nekorektne vrijednosti polja i tada su uz data polja prikazane odgovarajuće poruke radi lakše korekcije pogrešnih unosa.
 
-&nbsp;&nbsp;&nbsp;&nbsp; Na ekranu se nalazi i dugme **„Otkaži" (Cancel)** za izlaz iz aplikacije. Za ovu funkcionalnost omogućena je i prečica *Escape (Esc)*.
+&nbsp;&nbsp;&nbsp;&nbsp;Na ekranu se nalazi i dugme ***„Otkaži"*** *(Cancel)* za izlaz iz aplikacije. Za ovu funkcionalnost omogućena je prečica *Escape (Esc)*.
 
 # Menadžer
 
-Uloga menadžera je da osigura stabilnost i urednost poslovanja, kako bi
-svakodnevni rad u pekarskom ili poslastičarskom objektu tekao nesmetano.
+&nbsp;&nbsp;&nbsp;&nbsp;Uloga menadžera je da osigura stabilnost i urednost poslovanja, kako bi svakodnevni rad u pekarskom ili poslastičarskom objektu tekao nesmetano.
 
 **Glavne odgovornosti menadžera su:**
-
 -   upravljanje korisnicima,
-
 -   upravljanje proizvodima,
-
 -   kontrola zaliha,
-
 -   kreiranje izvještaja.
 
-### Prijava i pristup
+## Prijava i pristup
+&nbsp;&nbsp;&nbsp;&nbsp;Po uspješnoj prijavi na sistem prikazuje se početni ekran za menadžere.  
 
-Po uspješnoj prijavi na sistem prikazuje se **početni ekran za
-menadžere**.
+&nbsp;&nbsp;&nbsp;&nbsp;Sa lijeve strane ekrana nalazi se vertikalni ***navigacioni meni*** sa ikonama i nazivima opcija. Ovaj meni omogućava brz pristup ključnim modulima i funkcijama sistema, a svaka opcija ima i odgovarajuću tastaturnu prečicu za dodatnu efikasnost:  
+-   **Zaposleni** - pregled i upravljanje korisničkim nalozima (*Ctrl + U*).
+-   **Proizvodi** - katalogizacija i uređivanje proizvoda (*Ctrl + P*).
+-   **Izvještaj** - pregled i generisanje prodajnih i inventarskih izvještaja (*Ctrl + R*).
+-   **Postavke** - podešavanje jezika i teme aplikacije (*Ctrl + S*).
+-   **Profil** - uređivanje profila korisnika (*Ctrl + M*).
+-   **Odjava** - izlazak iz aplikacije (*Esc*).
 
-Sa **lijeve strane ekrana** nalazi se vertikalni navigacioni meni sa
-ikonama i nazivima opcija.\
-Ovaj meni omogućava brz pristup ključnim modulima i funkcijama sistema,
-a svaka opcija ima i odgovarajuću tastaturnu prečicu za dodatnu
-efikasnost:
-
--   **Zaposleni** -- pregled i upravljanje korisničkim nalozima
-    (**Ctrl + U**).
-
--   **Proizvodi** -- katalogizacija i uređivanje proizvoda (**Ctrl +
-    P**).
-
--   **Izvještaj** -- pregled i generisanje prodajnih i inventarskih
-    izvještaja (**Ctrl + R**).
-
--   **Postavke** -- podešavanje jezika i teme aplikacije (**Ctrl + S**).
-
--   **Profil** -- uređivanje profila korisnika (**Ctrl + M**).
-
--   **Odjava** -- izlazak iz aplikacije (**Esc**).
-
-Sa **desne strane ekrana** nalazi se glavni dio, u kojem se prikazuje
-sadržaj izabranog modula.\
-Ovdje menadžer unosi podatke i ima pregled svih relevantnih informacija
-o poslovanju, kao što su evidencija zaposlenih, stanje zaliha, podaci o
-proizvodima i izvještaji.
+&nbsp;&nbsp;&nbsp;&nbsp;Sa desne strane ekrana nalazi se glavni dio, u kojem se prikazuje ***sadržaj izabranog modula***. Ovdje menadžer unosi podatke i ima pregled svih relevantnih informacija o poslovanju, kao što su evidencija zaposlenih, stanje zaliha, podaci o proizvodima i izvještaji.
 
 ## Upravljanje korisnicima
 
 ### Pregled korisnika
+&nbsp;&nbsp;&nbsp;&nbsp;Menadžer ima pristup svim korisnicima aplikacije, što omogućava jednostavno praćenje i uređivanje njihovih naloga.  
+Dostupna je tabela koja prikazuje ***osnovne informacije*** o svakom korisniku: *ID, korisničko ime, tip korisnika* (*Menadžer* ili *Blagajnik*), kao i dostupne akcije kroz ikone za *detaljan pregled naloga, promjenu statusa, promjenu lozinke* i slične radnje.
 
-Menadžer ima pristup svim korisnicima aplikacije, što omogućava
-jednostavno praćenje i uređivanje njihovih naloga.
+&nbsp;&nbsp;&nbsp;&nbsp;***Polje za pretragu*** omogućava brzo pronalaženje korisnika (*Tab* ili *F3* prebacuje fokus na polje), dok padajući meni omogućava ***filtriranje po statusu*** (*Ctrl + F*).  
 
-Dostupna je tabela koja prikazuje osnovne informacije o svakom
-korisniku: **ID, korisničko ime, tip korisnika (Menadžer ili
-Blagajnik)**, kao i dostupne akcije kroz ikone za detaljan pregled
-naloga, promjenu statusa, promjenu lozinke i slične radnje.
-
-Polje za pretragu omogućava brzo pronalaženje korisnika (**Tab** ili
-**F3** prebacuje fokus na polje), dok padajući meni omogućava
-filtriranje po statusu (**Ctrl + F**).
-
-Korisnici koji imaju status **„neaktivan"** jasno su istaknuti u
-prikazu.
+&nbsp;&nbsp;&nbsp;&nbsp;Korisnici koji imaju status *„neaktivan"* jasno su istaknuti u prikazu.
 
 ### Dodavanje korisnika
+&nbsp;&nbsp;&nbsp;&nbsp;Dugme ***Dodaj*** u gornjem desnom uglu glavnog ekrana otvara prozor sa formularom za kreiranje novog korisničkog naloga (*Ctrl + N*).
 
-Dugme **Dodaj** u gornjem desnom uglu glavnog ekrana otvara prozor sa
-formularom za kreiranje novog korisničkog naloga (**Ctrl + N**).
-
-Formular sadrži **osnovna, zajednička polja** koja se popunjavaju za sve
-korisnike, dok se **specifična polja** pojavljuju u zavisnosti od
-izabranog tipa korisnika.
-
-**Zajednička polja:**
-
--   **Tip korisnika** - padajući meni gdje je neophodno odabrati:
-    Manager ili Cashier.
-
--   **Korisničko ime** - obavezno tekstualno polje koje provjerava
-    jedinstvenost imena, dozvoljava samo važeće znakove uz minimalnu i
-    maksimalnu dužinu,
-
--   **Lozinka** - obaveznu tekstualno polje (maskirano) sa sličnim
-    ograničenjima kao polje za unos korisničkog imena
-
--   **Ime** - tekstualno polje koje dozvoljava jedino unos slova,
-    brojeva i razmaka.
-
--   **Prezime** - ista funkcionalnost i ograničenje kao polje za unos
-    imena
-
--   **Broj telefona** - tekstualno polje koje prihvata samo ispravan
-    format telefonskog broja.
-
--   **Adresa** - slobodno tekstualno polje za unos adrese.
-
--   **Plata** - obavezno numeričko polje koje ne može biti negativno.
-
--   **Putanja do slike / Izaberi sliku** --- dugme za odabir fajla;
-    nakon odabira prikazuje se preview slike. Dozvoljeni formati: .jpg,
-    .jpeg, .png.
-
-## Specijalna polja --- Menadžer
-
-Prikazuju se samo kada je izabran Manager:
-
--   **Odjeljenje** - tekstualno polje koje dozvoljava samo unos slova,
-    brojeva i razmake.
-
-## Specijalna polja --- Blagajnik
-
-Prikazuju se samo kada je izabran Cashier:
-
--   **ID kase** - numeričko polje koje prihvata samo cijele brojeve.
-
--   **Početak smjene -** omogućava prikaz kalendara za odabir datum i
-    vremena; ne može biti u prošlosti.
-
--   **Kraj smjene** - odabrani datum + vrijeme; mora biti poslije
-    početka smjene i trajanje smjene mora biti najmanje jedan sat.
-
-**Dugmad:**
-
-Dugme Dodaj provjerava ispravnost unesenih podataka i, ukoliko su svi
-podaci validni, sprema novi korisnički nalog. U suprotnom se prikazuje
-odgovarajući dijalog upozorenja.
-
-Takođe, poruke o greškama prikazuju se odmah pored nevalidnih polja radi
-lakše korekcije.
-
-Dugme Otkaži zatvara formu bez promjena.
-
-### Prikaz detalja korisnika
-
-Za selektovanog korisnika, klikom na odgovarajuću ikonicu otvara se
-prozor sa detaljnim informacijama o tom korisniku.
-
-Prozor prikazuje osnovne podatke, uključujući profilnu sliku, tip
-korisnika, korisničko ime, ime i prezime, broj telefona i adresu, datum
-zaposlenja, platu i posljednju prijavu u sistem, kao i dodatne podatke
-prema tipu korisnika: odjeljenje za menadžera ili ID kase i smjene za
-blagajnika.
-
-### Uređivanje korisnika
-
-Klikom na odgovarajuću ikonicu za odabranog korisnika otvara se prozor
-za uređivanje osnovnih podataka vezanih za poslovanje. U ovom prozoru
-moguće je mijenjati platu zaposlenog, a u zavisnosti od tipa korisnika,
-dozvoljena je izmjena odjeljenja za menadžera ili ID kase, početka i
-kraja smjene za blagajnika.
-
-Primjenjuju se ista pravila i ograničenja kao kod unosa novog korisnika.
-Polja vrše automatsku provjeru unosa i onemogućavaju spremanje dok
-vrijednosti nisu ispravne. Tek nakon unosa validnih podataka izmjene se
-mogu potvrditi klikom na dugme ili pritiskom na Enter.
-
-### Promjena tipa korisnika (Menadžer ↔ Blagajnik)
-
-Menadžer može promijeniti ulogu odabranog korisnika klikom na
-odgovarajuću ikonicu. Prije izvršenja promjene, sistem traži potvrdu od
-menadžera. Ako se promjena potvrdi, uloga se ažurira, a sistem po
-potrebi popunjava ili resetuje polja specifična za novu ulogu.
-
-Promjena vlastite uloge, kao ni uloge neaktivnog naloga, nije
-dozvoljena. U oba slučaja prikazuje se dijalog sa odgovarajućim
-upozorenjem.
-
-### Aktiviranje / deaktiviranje korisnika
-
-Menadžer može privremeno onemogućiti ili ponovo omogućiti pristup
-korisnikovom nalogu bez brisanja podataka. Prije promjene statusa sistem
-traži potvrdu kako bi se spriječile neželjene greške.
-
-Neaktivni korisnik više ne može pristupiti sistemu i prilikom pokušaja
-prijave dobija odgovarajuću poruku.
-
-Nad nalogom deaktiviranog korisnika je takođe onemogućeno izvođenje
-određenih akcija od strane menadžera, poput resetovanja lozinke ili
-promjene uloge, sve dok nalog ne bude ponovo aktiviran.
-
-Nije dozvoljeno deaktivirati vlastiti nalog; takav pokušaj prikazuje
-dijalog sa jasno navedenim upozorenjem da je data operacija zabranjena.
-
-### Resetovanje lozinke
-
-Menadžer može generisati privremenu lozinku za odabranog korisnika.
-Nakon uspješnog resetovanja, prikazuje se poruka sa privremenom lozinkom
-koju menadžer može proslijediti korisniku.
-
-Prilikom sljedeće prijave, korisnik unosi privremenu lozinku, a zatim je
-obavezan da postavi novu, sopstvenu lozinku za buduće prijave.
-
-Nije dozvoljeno resetovati vlastitu lozinku niti lozinku neaktivnog
-naloga.
-
-## Upravljanje proizvodima
-
-## Prikaz proizvoda
-
-Menadžer ima mogućnost pregleda svih proizvoda koji čine asortiman
-poslovnog objekta, uz jasno organizovan prikaz za lakše upravljanje. U
-pregledu se prikazuju osnovne informacije o svakom artiklu: **ID**,
-naziv, tip proizvoda (Hrana, Piće, Pribor), količina na stanju, kao i
-dostupne akcije kroz ikonice za detaljan pregled, uređivanje podataka o
-odabranom proizvodu, promjenu statusa ili otvaranje prozora za
-upravljanje zalihama.
-
-Polje za pretragu omogućava brzo pronalaženje artikala (**Tab** ili
-**F3** prebacuju fokus na pretragu). Za filtriranje se koriste padajući
-meni za odabir po tipu proizvoda (**Ctrl + F**) i meni **Atributi**
-(**Ctrl + L**), sa opcijama poput *Sniženo*, *Istaknuto* i *Dostupno*.
-
-## Dodavanje novih proizvoda
-
-Dugme **Dodaj** u gornjem desnom uglu glavnog ekrana otvara prozor sa
-formularom za kreiranje novog proizvoda (**Ctrl + N**).\
-Forma obuhvata osnovna polja koja se popunjavaju za sve proizvode, dok
-se dodatna, specifična polja prikazuju u zavisnosti od odabranog tipa
-(Hrana, Piće ili Pribor).
+&nbsp;&nbsp;&nbsp;&nbsp;Formular sadrži *osnovna, zajednička polja* koja se popunjavaju za sve korisnike, dok se *specifična polja* pojavljuju u zavisnosti od izabranog tipa korisnika.
 
 **Zajednička polja**
 
--   **Tip proizvoda** -- padajući meni sa obaveznim izborom: *Hrana*,
-    *Piće* ili *Pribor*.
+-   *Tip korisnika* - padajući meni gdje je neophodno odabrati: *Manager* ili *Cashier*,
+-   *Korisničko ime* - obavezno tekstualno polje koje provjerava jedinstvenost imena, dozvoljava samo važeće znakove uz minimalnu i maksimalnu dužinu,
+-   *Lozinka* - obavezno tekstualno polje (maskirano) sa sličnim ograničenjima kao polje za unos korisničkog imena,
+-   *Ime* - tekstualno polje koje dozvoljava jedino unos slova, brojeva i razmaka,
+-   *Prezime* - ista funkcionalnost i ograničenje kao polje za unos imena,
+-   *Broj telefona* - tekstualno polje koje prihvata samo ispravan format telefonskog broja,
+-   *Adresa* - slobodno tekstualno polje za unos adrese,
+-   *Plata* - obavezno numeričko polje koje ne može biti negativno,
+-   *Putanja do slike (Izaberi sliku)* - dugme za odabir fajla; nakon odabira prikazuje se preview slike. Dozvoljeni formati: *.jpg, jpeg, .png*.
 
--   **Naziv** -- tekstualno polje za unos imena proizvoda uz provjeru
-    minimalnog i maksimalnog broja karaktera.
+**Specijalna polja - Menadžer**  
 
--   **Opis** -- prošireno tekstualno polje za detaljan opis.
+&nbsp;&nbsp;&nbsp;&nbsp;Prikazuju se samo kada je izabran Manager:
 
--   **Cijena** -- numeričko polje koje mora biti popunjeno i ne smije
-    sadržati negativnu vrijednost.
+-   *Odjeljenje* - tekstualno polje koje dozvoljava samo unos slova, brojeva i razmake.
 
--   **Slika proizvoda** -- dugme za odabir fotografije; nakon izbora
-    prikazuje se pregled slike. Podržani formati: *.jpg, .jpeg, .png*.
+**Specijalna polja - Blagajnik**  
 
-**Polja za tip *Hrana***\
-Prikazuju se samo kada je odabran tip *Hrana*:
+&nbsp;&nbsp;&nbsp;&nbsp;Prikazuju se samo kada je izabran Cashier:
 
--   **Vrsta hrane** -- padajući meni sa izborom kategorije (*torte,
-    slatkiši, peciva, pekarski proizvodi*).
+-   *ID kase* - numeričko polje koje prihvata samo cijele brojeve,
+-   *Početak smjene* - omogućava prikaz kalendara za odabir datum i vremena; ne može biti u prošlosti,
+-   *Kraj smjene* - odabrani datum + vrijeme; mora biti poslije početka smjene i trajanje smjene mora biti najmanje jedan sat.
 
--   **Težina** -- numeričko polje (izražava se u gramima).
+&nbsp;&nbsp;&nbsp;&nbsp;Provjerava se ispravnost unesenih podataka i ukoliko su svi podaci validni, sprema novi korisnički nalog.  
+U suprotnom se prikazuje odgovarajući dijalog upozorenja. Takođe, poruke o greškama prikazuju se odmah pored nevalidnih polja radi lakše korekcije.
 
--   **Kalorije** -- numeričko polje koje očekuje cijeli broj.
+### Prikaz detalja korisnika  
+&nbsp;&nbsp;&nbsp;&nbsp;Za selektovanog korisnika, klikom na odgovarajuću ikonicu otvara se prozor sa ***detaljnim informacijama*** o tom korisniku.  
+Prozor prikazuje osnovne podatke, uključujući *profilnu sliku, tip korisnika, korisničko ime, ime i prezime, broj telefona i adresu, datum zaposlenja, platu i posljednju prijavu u sistem*, kao i dodatne podatke prema tipu korisnika: *odjeljenje* za menadžera ili *ID kase* i *smjene* za blagajnika.
 
--   **Lako kvarljivo** -- izborno polje (checkbox) koje označava da
-    proizvod zahtijeva prioritet u zalihama.
+### Uređivanje korisnika  
+&nbsp;&nbsp;&nbsp;&nbsp;Klikom na odgovarajuću ikonicu za odabranog korisnika otvara se prozor za ***uređivanje osnovnih podataka*** vezanih za poslovanje. U ovom prozoru moguće je mijenjati *platu* zaposlenog, a u zavisnosti od tipa korisnika, dozvoljena je izmjena *odjeljenja* za menadžera ili *ID kase, početka i kraja smjene* za blagajnika.  
 
-**Polja za tip *Piće***
+&nbsp;&nbsp;&nbsp;&nbsp;Primjenjuju se ista pravila i ograničenja kao kod unosa novog korisnika. Polja vrše automatsku provjeru unosa i onemogućavaju spremanje dok vrijednosti nisu ispravne. Tek nakon unosa validnih podataka izmjene se mogu potvrditi klikom na dugme ili pritiskom na *Enter*.
 
--   **Zapremina** -- numeričko polje (u mililitrima), vrijednost ne može
-    biti negativna.
+### Promjena tipa korisnika (Menadžer ↔ Blagajnik)
 
--   **Alkoholno** -- izborno polje (checkbox) koje označava da li
-    proizvod sadrži alkohol.
+Menadžer može ***promijeniti ulogu*** odabranog korisnika klikom na odgovarajuću ikonicu. Prije izvršenja promjene, sistem traži potvrdu od menadžera. Ako se promjena potvrdi, uloga se ažurira, a sistem po potrebi popunjava ili resetuje polja specifična za novu ulogu.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Promjena vlastite uloge, kao ni uloge neaktivnog naloga, nije dozvoljena. U oba slučaja prikazuje se dijalog sa odgovarajućim upozorenjem.
+
+### Aktiviranje / deaktiviranje korisnika
+&nbsp;&nbsp;&nbsp;&nbsp;Menadžer može privremeno ***onemogućiti*** ili ponovo ***omogućiti*** pristup korisnikovom nalogu bez brisanja podataka. Prije promjene statusa sistem traži potvrdu kako bi se spriječile neželjene greške.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Neaktivni korisnik više ne može pristupiti sistemu i prilikom pokušaja prijave dobija odgovarajuću poruku.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Nad nalogom deaktiviranog korisnika je takođe onemogućeno izvođenje određenih akcija od strane menadžera, poput resetovanja lozinke ili promjene uloge, sve dok nalog ne bude ponovo aktiviran.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Nije dozvoljeno deaktivirati vlastiti nalog. Takav pokušaj prikazuje dijalog sa jasno navedenim upozorenjem da je data operacija zabranjena.
+
+### Resetovanje lozinke
+&nbsp;&nbsp;&nbsp;&nbsp;Menadžer može ***generisati privremenu lozinku*** za odabranog korisnika. Nakon uspješnog resetovanja, prikazuje se poruka sa privremenom lozinkom koju menadžer može proslijediti korisniku.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Prilikom sljedeće prijave, korisnik unosi privremenu lozinku, a zatim je obavezan da postavi novu, sopstvenu lozinku za buduće prijave.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Nije dozvoljeno resetovati vlastitu lozinku niti lozinku neaktivnog naloga.
+
+## Upravljanje proizvodima
+
+### Prikaz proizvoda
+&nbsp;&nbsp;&nbsp;&nbsp;Menadžer ima mogućnost pregleda svih proizvoda koji čine asortiman poslovnog objekta, uz jasno organizovan prikaz za lakše upravljanje. U pregledu se prikazuju ***osnovne informacije*** o svakom artiklu: *ID, naziv, tip proizvoda* (*Hrana, Piće, Pribor*), *količina na stanju*, kao i dostupne akcije kroz ikonice za *detaljan pregled*, *uređivanje podataka* o odabranom proizvodu, *promjenu statusa* ili otvaranje prozora za *upravljanje zalihama*.
+
+&nbsp;&nbsp;&nbsp;&nbsp;***Polje za pretragu*** omogućava brzo pronalaženje artikala (*Tab* ili *F3* prebacuju fokus na pretragu). Za ***filtriranje*** se koriste padajući meni za odabir ***po tipu proizvoda*** (*Ctrl + F*) i ***meni Atributi*** (*Ctrl + L*), sa opcijama poput *Sniženo*, *Istaknuto* i *Dostupno*.
+
+### Dodavanje novih proizvoda
+&nbsp;&nbsp;&nbsp;&nbsp;Dugme ***Dodaj*** u gornjem desnom uglu glavnog ekrana otvara prozor sa formularom za kreiranje novog proizvoda (*Ctrl + N*).  
+Forma obuhvata osnovna polja koja se popunjavaju za sve proizvode, dok se dodatna, specifična polja prikazuju u zavisnosti od odabranog tipa (Hrana, Piće ili Pribor).
+
+**Zajednička polja**
+
+-   *Tip proizvoda* - padajući meni sa obaveznim izborom: *Hrana*, *Piće* ili *Pribor*,
+-   *Naziv* - tekstualno polje za unos imena proizvoda uz provjeru minimalnog i maksimalnog broja karaktera,
+-   *Opis* - prošireno tekstualno polje za detaljan opis,
+-   *Cijena* - numeričko polje koje mora biti popunjeno i ne smije sadržati negativnu vrijednost,
+-   *Slika proizvoda* - dugme za odabir fotografije; nakon izbora prikazuje se pregled slike. Podržani formati: *.jpg, .jpeg, .png*.
+
+**Polja za tip Hrana**
+
+&nbsp;&nbsp;&nbsp;&nbsp;Prikazuju se samo kada je odabran tip *Hrana*:
+
+-   *Vrsta hrane* - padajući meni sa izborom kategorije (*torte, slatkiši, peciva, pekarski proizvodi*),
+-   *Težina* - numeričko polje (izražava se u gramima),
+-   *Kalorije* - numeričko polje koje očekuje cijeli broj,
+-   *Lako kvarljivo* - izborno polje (checkbox) koje označava da proizvod zahtijeva prioritet u zalihama.
+
+**Polja za tip Piće**
+
+&nbsp;&nbsp;&nbsp;&nbsp;Prikazuju se samo kada je odabran tip *Piće*:
+
+-   **Zapremina* -numeričko polje (u mililitrima), vrijednost ne može biti negativna,
+-   **Alkoholno* - izborno polje (checkbox) koje označava da li proizvod sadrži alkohol.
 
 **Polja za tip *Pribor***
 
--   **Materijal** -- obavezno tekstualno polje (npr. plastika, metal).
+&nbsp;&nbsp;&nbsp;&nbsp;Prikazuju se samo kada je odabran tip *Pribor*:
 
--   **Dimenzije** -- tekstualno polje za unos u formatu "broj" ili "broj
-    × broj", pri čemu brojevi mogu biti cijeli ili decimalni, a razmak
-    je dozvoljen.
+-   *Materijal* - obavezno tekstualno polje (npr. plastika, metal),
+-   *Dimenzije* - tekstualno polje za unos u formatu "*broj*" ili "*broj × broj*", pri čemu brojevi mogu biti cijeli ili decimalni, a razmak je dozvoljen,
+-   *Višekratno* - izborno polje (checkbox) koje označava mogućnost ponovne upotrebe.
 
--   **Višekratno** -- izborno polje (checkbox) koje označava mogućnost
-    ponovne upotrebe.
-
-**Dugmad**
-
--   **Dodaj** -- pokreće provjeru svih vidljivih polja. Ako su podaci
-    ispravni, novi proizvod se sprema u bazu i prikazuje se informativna
-    poruka o uspjehu. Ako postoje greške, korisnik dobija upozorenje, a
-    neispravna polja bivaju jasno označena.
-
--   **Otkaži** -- zatvara formu bez čuvanja promjena.
+&nbsp;&nbsp;&nbsp;&nbsp;Dugme ***Dodaj*** pokreće provjeru svih vidljivih polja. Ako su podaci ispravni, novi proizvod se sprema u bazu i prikazuje se informativna poruka o uspjehu. Ako postoje greške, korisnik dobija upozorenje, a neispravna polja bivaju jasno označena.  
+&nbsp;&nbsp;&nbsp;&nbsp;Dugme ***Otkaži*** zatvara formu bez čuvanja promjena.
 
 ## Prikaz detalja proizvoda
+&nbsp;&nbsp;&nbsp;&nbsp;Menadžer ima mogućnost detaljnog ***pregleda odabranog proizvoda***, sa svim relevantnim informacijama prikazanim na jednom mjestu. Pored osnovnih podataka (*naziv, tip, opis, cijena* i *popust*), prikazuju se i *datumi kreiranja* i *posljednje izmjene*, kao i vizuelni prikaz *slike proizvoda* radi lakše identifikacije.  
 
-Menadžer ima mogućnost detaljnog pregleda odabranog proizvoda, sa svim
-relevantnim informacijama prikazanim na jednom mjestu. Pored osnovnih
-podataka (naziv, tip, opis, cijena i popust), prikazuju se i datumi
-kreiranja i posljednje izmjene, kao i vizuelni prikaz slike proizvoda
-radi lakše identifikacije.
+&nbsp;&nbsp;&nbsp;&nbsp;Prozor sadrži oznake (chipove) koje jasno ističu status proizvoda: *dostupan, nedostupan* ili *istaknut*.
 
-Prozor sadrži oznake (chipove) koje jasno ističu status proizvoda:
-dostupan, nedostupan ili istaknut.
-
-Specifični atributi prikazuju se zavisno od tipa proizvoda: za hranu
-(vrsta hrane, težina, kalorije, kvarljivost), za piće (zapremina,
-alkoholno/bezalkoholno), a za pribor (materijal, dimenzije, višekratna
-upotreba).
+&nbsp;&nbsp;&nbsp;&nbsp;Specifični atributi prikazuju se zavisno od tipa proizvoda: za hranu (*vrsta hrane, težina, kalorije, kvarljivost*), za piće (*zapremina, alkoholno/bezalkoholno*), a za pribor (*materijal, dimenzije, višekratna upotreba*).
 
 ## Uređivanje osnovnih podataka proizvoda
-
-Klikom na odgovarajuću ikonicu za odabrani proizvod otvara se modalni
+&nbsp;&nbsp;&nbsp;&nbsp;Klikom na odgovarajuću ikonicu za odabrani proizvod otvara se modalni
 prozor za izmjenu njegovi osnovnih podataka. U ovom prozoru menadžer
 može mijenjati cijenu proizvoda, dodavati ili uklanjati popust, te
 označiti proizvod kao istaknuti. Polja prikazuju postojeće vrijednosti i
