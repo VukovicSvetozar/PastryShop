@@ -257,27 +257,21 @@ potrošene. Na taj način menadzer ima mogućnost preciznog vođenje evidencije 
 
 &nbsp;&nbsp;&nbsp;&nbsp;Ova sekcija menadžeru omogućava brz i pregledan uvid u ključne poslovne pokazatelje kroz intuitivne panele i grafičke prikaze.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Na ekranu se nalaze polja za odabir datuma ***„Od"*** i ***„Do"***, kao i dugme ***„Statistika"*** za generisanje podataka za željeni period. 
+&nbsp;&nbsp;&nbsp;&nbsp;Na ekranu se nalaze polja za odabir datuma ***Od*** i ***Do***, kao i dugme ***Statistika*** za generisanje podataka za željeni period. 
 
-&nbsp;&nbsp;&nbsp;&nbsp;Polja za datume su opciona:
+&nbsp;&nbsp;&nbsp;&nbsp;Polja za datume su opciona: prazno polje znači da nema vremenskog ograničenja za taj kraj perioda, ako je unesen samo datum *Od*, prikazuju se podaci od tog datuma pa nadalje, ako je unesen samo datum *Do*, prikazuju se podaci zaključno s tim datumom.
 
--   Prazno polje znači da nema vremenskog ograničenja za taj kraj perioda.
--   Ako je unesen samo datum „Od", prikazuju se podaci od tog datuma pa nadalje.
--   Ako je unesen samo datum „Do", prikazuju se podaci zaključno s tim datumom
-
-&nbsp;&nbsp;&nbsp;&nbsp;Pritiskom na ***„Statistika"***, sistem prvo provjerava ispravnost unesenih datuma. Ako su validni, podaci se učitavaju i ažuriraju svi paneli, grafikoni i lista najprodavanijih proizvoda. U slučaju neispravnog unosa (npr. datum u budućnosti ili pogrešan interval), polja
-se označavaju greškom i pojavljuje se dijalog upozorenja. Pretraga se neće izvršiti dok se greške ne isprave.
+&nbsp;&nbsp;&nbsp;&nbsp;Pritiskom na dugme ***Statistika***, sistem prvo provjerava ispravnost unesenih datuma. Ako su validni, podaci se učitavaju i ažuriraju se svi paneli, grafikoni i lista najprodavanijih proizvoda. U slučaju neispravnog unosa (npr. datum u budućnosti ili pogrešan interval), polja se označavaju greškom i pojavljuje se dijalog upozorenja. Pretraga se neće izvršiti sve dok se greške ne isprave.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Ispod trake za filtriranje nalaze se informativni paneli sa pregledom najvažnijih metrika:
 
--   **Narudžbe:** prikaz ukupnog broja narudžbi, dodatno grupisan po statusima: *Završene, Otkazane* i *Na čekanju*.
--   **Artikli:** pregled ukupnog broja artikala, razvrstanih po kategorijama: *Hrana, Piće* i *Pribor*.
--   **Prihod:** ukupan prihod ostvaren u odabranom periodu.
--   
-&nbsp;&nbsp;&nbsp;&nbsp;Dostupni su i grafikoni koji olakšavaju praćenje kretanja:
+-   ***Narudžbe*** - prikaz ukupnog broja narudžbi, dodatno grupisan po statusima: *Završene, Otkazane* i *Na čekanju*.
+-   ***Artikli*** - pregled ukupnog broja artikala, razvrstanih po kategorijama: *Hrana, Piće* i *Pribor*.
+-   ***Prihod*** - ukupan prihod ostvaren u odabranom periodu.
 
--   **Linijski grafikon:** prikazuje tendenciju prodaje artikala i broja narudžbi na nedeljnom nivou.
--   **Stubičasti grafikon:** prikazuje kretanje prihoda u istom periodu.
+&nbsp;&nbsp;&nbsp;&nbsp;Dostupni su i grafikoni koji olakšavaju praćenje kretanja:  
+*Linijski grafikon:* prikazuje tendenciju prodaje artikala i broja narudžbi na nedeljnom nivou;  
+*Stubičasti grafikon:* prikazuje kretanje prihoda u istom periodu.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Na ekranu se takođe nalazi lista ***najprodavanijih proizvoda*** sa sličicama i nazivima, sortirana po broju prodatih artikala.
 
@@ -285,7 +279,7 @@ se označavaju greškom i pojavljuje se dijalog upozorenja. Pretraga se neće iz
 
 &nbsp;&nbsp;&nbsp;&nbsp;Sekcija *Zalihe* omogućava menadžeru potpuni pregled stanja proizvoda u skladištu i svih promjena koje su izvršene.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Na početku korisnik: bira proizvod, definiše vremenski period putem polja „*Od*" i „*Do*", pokreće generisanje izvještaja klikom na dugme ***Izvještaj***.
+&nbsp;&nbsp;&nbsp;&nbsp;Na početku korisnik: bira proizvod, definiše vremenski period putem polja *Od* i *Do*, pokreće generisanje izvještaja klikom na dugme ***Izvještaj***.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Sistem automatski provjerava validnost unesenih podataka:
 -   datum ne smije biti u budućnosti,
