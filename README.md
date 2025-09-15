@@ -453,6 +453,10 @@ Svi prikazi odnose se na konkretnog blagajnika (prema *korisničkom ID-u*) za te
 
 &nbsp;&nbsp;&nbsp;&nbspNa većim ekranima sadržaj koji uključuje liste proizvoda ili navigacione ikonice organizovan je u više kolona za maksimalnu iskorišćenost prostora, dok se na manjim ekranima automatski prebacuje na manji broj kolona. Po potrebi se pojedine slike mogu sakriti na manjim širinama ekrana kako bi se uštedio prostor i sačuvao pregledan raspored.  
 &nbsp;&nbsp;&nbsp;&nbsp;*Primjer primjene responzivnosti*:  
-<img src="images/33_zajednicke_responzivnost.png" alt="responzivnost" width="300"/> <img src="images/34_zajednicke_responzivnost.png" alt="responzivnost" width="300"/>  
-<img src="images/35_zajednicke_responzivnost.png" alt="responzivnost" width="300"/> <img src="images/36_zajednicke_responzivnost.png" alt="responzivnost" width="300"/>
+<p align="center">
+<img src="images/33_zajednicke_responzivnost.png" alt="responzivnost" width="500"/> <img src="images/34_zajednicke_responzivnost.png" alt="responzivnost" width="500"/>  
+</p>
+<p align="center">
+<img src="images/35_zajednicke_responzivnost.png" alt="responzivnost" width="400"/> <img src="images/36_zajednicke_responzivnost.png" alt="responzivnost" width="400"/>
+</p>
 
