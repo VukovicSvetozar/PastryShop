@@ -1,3 +1,17 @@
+
+<br>
+<br>
+<br>
+<div align="center">
+  <h1>Pastry Shop </h1> 
+  <h3>(korisničko uputstvo)</h3>
+</div>
+<br>
+<br>
+<br>
+
+<div style="page-break-before: always;"></div>
+
 # **Uvod**  
 &nbsp;&nbsp;&nbsp;&nbsp;***PastryShop*** je desktop WPF aplikacija osmišljena da pojednostavi i unaprijedi svakodnevno poslovanje malih i srednjih pekara, poslastičarnica i srodnih objekata sa brzim prometom robe.  
 Cilj ovog korisničkog uputstva je da na jasan i praktičan način predstavi početna podešavanja, svakodnevne operacije, kao i napredne funkcije aplikacije, omogućavajući brzo uvođenje u rad i korištenje svih njenih prednosti.
