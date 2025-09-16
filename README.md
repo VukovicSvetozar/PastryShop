@@ -4,7 +4,6 @@
 <br>
 <div align="center">
   <h1>Pastry Shop </h1> 
-  <h3>(korisničko uputstvo)</h3>
 </div>
 <br>
 <br>
