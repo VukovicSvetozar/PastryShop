@@ -339,8 +339,8 @@ polja.
 &nbsp;&nbsp;&nbsp;&nbsp;Ovakav tok, od izbora proizvoda i datuma, preko generisanja izvještaja, do preglednog prikaza zaliha, transakcija, izmjena i sažetka, omogućava menadžeru efikasno praćenje stanja skladišta i donošenje informisanih odluka o poslovanju objekta koji koristi PastryShop aplikaciju.
 
 <p align="center">
-  <img src="images/15_menadzer_izvjestaji.png" alt="izvjestaj" height="300" width="500"/>
-  <img src="images/16_menadzer_izvjestaji.png" alt="izvjestaj" height="300" width="500"/>
+  <img src="images/15_menadzer_izvjestaji.png" alt="izvjestaj" height="300" width="450"/>
+  <img src="images/16_menadzer_izvjestaji.png" alt="izvjestaj" height="300" width="450"/>
 </p>
 <br clear="all"/>  
 
