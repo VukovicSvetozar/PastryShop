@@ -92,11 +92,11 @@ Razlozi mogu biti: netačno korisničko ime ili lozinka; nalog nije aktivan; nek
 ## **Upravljanje korisnicima**  
 
 ### **Pregled korisnika**  
-<img src="images/03_menadzer_korisnici.png" alt="pregled korisnika" height="250" width="350" align="right" style="margin-right: 15px;"/>
+<img src="images/03_menadzer_korisnici.png" alt="pregled korisnika" height="250" width="350" align="right" style="margin-left: 15px;"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Menadžer ima pristup svim korisnicima aplikacije, što omogućava jednostavno praćenje i uređivanje njihovih naloga.  
-Dostupna je tabela koja prikazuje ***osnovne informacije*** o svakom korisniku: *ID, korisničko ime, tip korisnika* (*Menadžer* ili *Blagajnik*), kao i dostupne akcije kroz ikone za *detaljan pregled naloga, promjenu statusa, promjenu lozinke* i slične radnje.
+Dostupna je tabela koja prikazuje ***osnovne informacije*** o svakom korisniku: *ID, korisničko ime, tip korisnika*, kao i dostupne akcije kroz ikone za *detaljan pregled naloga, promjenu statusa, promjenu lozinke* itd.
 
 &nbsp;&nbsp;&nbsp;&nbsp;***Polje za pretragu*** omogućava brzo pronalaženje korisnika (*Tab* ili *F3* prebacuje fokus na polje), dok padajući meni omogućava ***filtriranje po statusu*** (*Ctrl + F*).  
 
@@ -104,13 +104,13 @@ Dostupna je tabela koja prikazuje ***osnovne informacije*** o svakom korisniku: 
 <br clear="right"/> 
 
 ### **Dodavanje korisnika**  
-&nbsp;&nbsp;&nbsp;&nbsp;Dugme ***Dodaj*** u gornjem desnom uglu glavnog ekrana otvara prozor sa formularom za kreiranje novog korisničkog naloga (*Ctrl + N*).
+&nbsp;&nbsp;&nbsp;&nbsp;Dugme ***Dodaj*** u gornjem desnom uglu glavnog ekrana otvara prozor sa formularom za kreiranje novog korisničkog naloga (*Ctrl + N*).  
 &nbsp;&nbsp;&nbsp;&nbsp;Formular sadrži *osnovna, zajednička polja* koja se popunjavaju za sve korisnike, dok se *specifična polja* pojavljuju u zavisnosti od izabranog tipa korisnika.
 
 <p align="center">
-  <img src="images/04_menadzer_korisnici.png" alt="dodaj korisnika" height="300" width="400"/>
+  <img src="images/04_menadzer_korisnici.png" alt="dodaj korisnika" height="280" width="370"/>
 </p>
-<br clear="all"/> 
+<br clear="all"/>
 
 **Zajednička polja**
 
@@ -126,13 +126,14 @@ Dostupna je tabela koja prikazuje ***osnovne informacije*** o svakom korisniku: 
 
 **Specijalna polja - Menadžer**  
 
-&nbsp;&nbsp;&nbsp;&nbsp;Prikazuju se samo kada je izabran Manager:
+&nbsp;&nbsp;&nbsp;&nbsp;Prikazuju se samo kada je izabran menadžer:
 
 -   *Odjeljenje* - tekstualno polje koje dozvoljava samo unos slova, brojeva i razmake.
+<div style="page-break-before: always;"></div>
 
 **Specijalna polja - Blagajnik**  
 
-&nbsp;&nbsp;&nbsp;&nbsp;Prikazuju se samo kada je izabran Cashier:
+&nbsp;&nbsp;&nbsp;&nbsp;Prikazuju se samo kada je izabran blagajnik:
 
 -   *ID kase* - numeričko polje koje prihvata samo cijele brojeve,
 -   *Početak smjene* - omogućava prikaz kalendara za odabir datum i vremena; ne može biti u prošlosti,
@@ -186,12 +187,13 @@ Menadžer može ***promijeniti ulogu*** odabranog korisnika klikom na odgovaraju
   <img src="images/08_menadzer_proizvodi.png" alt="pregled proizvoda" height="300" width="400"/>
 </p>
 <br clear="all"/> 
+<div style="page-break-before: always;"></div>
 
 ### **Dodavanje novih proizvoda**  
 &nbsp;&nbsp;&nbsp;&nbsp;Dugme ***Dodaj*** u gornjem desnom uglu glavnog ekrana otvara prozor sa formularom za kreiranje novog proizvoda (*Ctrl + N*).  
 Forma obuhvata osnovna polja koja se popunjavaju za sve proizvode, dok se dodatna, specifična polja prikazuju u zavisnosti od odabranog tipa (Hrana, Piće ili Pribor).  
 
-<img src="images/10_menadzer_proizvodi.png" alt="dodaj proizvod" height="250" width="350" align="right" style="margin-right: 15px;"/>
+<img src="images/10_menadzer_proizvodi.png" alt="dodaj proizvod" height="250" width="350" align="right" style="margin-left: 15px;"/>
 
 <!--  -->
 
@@ -202,8 +204,7 @@ Forma obuhvata osnovna polja koja se popunjavaju za sve proizvode, dok se dodatn
 -   *Opis* - prošireno tekstualno polje za detaljan opis,
 -   *Cijena* - numeričko polje koje mora biti popunjeno i ne smije sadržati negativnu vrijednost,
 -   *Slika proizvoda* - dugme za odabir fotografije; nakon izbora prikazuje se pregled slike. Podržani formati: *.jpg, .jpeg, .png*.
-
-<br clear="right"/> 
+<br clear="right"/>
 
 **Polja za tip Hrana**
 
@@ -234,7 +235,7 @@ Forma obuhvata osnovna polja koja se popunjavaju za sve proizvode, dok se dodatn
 
 ### **Prikaz detalja proizvoda**  
 
-<img src="images/11_menadzer_proizvodi.png" alt="detalji proizvoda" height="250" width="350" align="right" style="margin-right: 15px;"/>
+<img src="images/11_menadzer_proizvodi.png" alt="detalji proizvoda" height="250" width="350" align="right" style="margin-left: 15px;"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Menadžer ima mogućnost detaljnog ***pregleda odabranog proizvoda***, sa svim relevantnim informacijama prikazanim na jednom mjestu. Pored osnovnih podataka (*naziv, tip, opis, cijena* i *popust*), prikazuju se i *datumi kreiranja* i *posljednje izmjene*, kao i vizuelni prikaz *slike proizvoda* radi lakše identifikacije.  
@@ -249,7 +250,7 @@ Forma obuhvata osnovna polja koja se popunjavaju za sve proizvode, dok se dodatn
 <img src="images/12_menadzer_proizvodi.png" alt="uredi podatke proizvoda" height="250" width="350" align="right" style="margin-left: 15px;"/>
 
 <!--  -->
-&nbsp;&nbsp;&nbsp;&nbsp;Klikom na odgovarajuću ikonicu za odabrani proizvod otvara se modalni prozor za ***izmjenu*** njegovih ***osnovnih podataka***. U ovom prozoru menadžer može mijenjati **cijenu proizvoda*, dodavati ili uklanjati *popust*, te označiti proizvod kao *istaknuti*. Polja prikazuju postojeće vrijednosti i omogućavaju direktnu izmjenu.
+&nbsp;&nbsp;&nbsp;&nbsp;Klikom na odgovarajuću ikonicu za odabrani proizvod otvara se modalni prozor za ***izmjenu*** njegovih ***osnovnih podataka***. U ovom prozoru menadžer može mijenjati *cijenu proizvoda*, dodavati ili uklanjati *popust*, te označiti proizvod kao *istaknuti*. Polja prikazuju postojeće vrijednosti i omogućavaju direktnu izmjenu.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Primjenjuju se ista pravila i ograničenja kao kod dodavanja novog proizvoda. Polja vrše automatsku provjeru unosa i onemogućavaju
 spremanje dok vrijednosti nisu ispravne (npr. cijena i popust moraju biti numerički podaci, ne smiju biti negativni). Tek nakon unosa validnih podataka izmjene se mogu potvrditi klikom na dugme ***Sačuvaj*** ili pritiskom na *Enter*, dok dugme ***Otkaži*** zatvara prozor bez promjena.
@@ -264,7 +265,7 @@ spremanje dok vrijednosti nisu ispravne (npr. cijena i popust moraju biti numeri
 
 &nbsp;&nbsp;&nbsp;&nbsp;Omogućeno je mijenjanje *naziva, opisa, slike*, kao i specifičnih atributa u zavisnosti od tipa proizvoda.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Sistem automatski provjerava tačnost unosa i ne dozvoljava čuvanje dok podaci nisu validni. Kada su sve vrijednosti ispravne, izmjene se mogu potvrditi klikom na dugme ***Sačuvaj*** ili pritiskom na *Enter*.
+&nbsp;&nbsp;&nbsp;&nbsp;Sistem provjerava tačnost unosa i ne dozvoljava čuvanje ako podaci nisu validni. Kada su sve vrijednosti ispravne, izmjene se mogu potvrditi klikom na dugme ***Sačuvaj*** ili pritiskom na *Enter*.  
 <br clear="right"/> 
 
 ### **Aktiviranje / deaktiviranje proizvoda**  
@@ -292,17 +293,17 @@ spremanje dok vrijednosti nisu ispravne (npr. cijena i popust moraju biti numeri
 -   *Datum dodavanja:* - prikazuje datum i vrijeme kada je stavka dodata,
 -   *Aktivno:* - čekboks za aktivaciju ili deaktivaciju stavke.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Ispod panela nalazi se dugme ***Dodaj zalihe*** za kreiranje nove stavke, kao i dugme ***Zatvori*** koje zatvara ekran bez čuvanja promjena.
-
-<p align="center">
-  <img src="images/14_menadzer_zalihe.png" alt="zalihe proizvoda" height="300" width="400"/>
-</p>
-<br clear="all"/> 
+&nbsp;&nbsp;&nbsp;&nbsp;Ispod panela nalazi se dugme ***Dodaj zalihe*** za kreiranje nove stavke, kao i dugme ***Zatvori*** koje zatvara ekran bez čuvanja promjena.  
 
 &nbsp;&nbsp;&nbsp;&nbsp;Ako datum isteka postoji i nalazimo se unutar broja dana za upozorenje, data stavka se automatski označava na poseban način (drugačija boja stavke) što omogućava menadžeru prepoznavanje kritičnih zaliha i pravovremenu reakciju.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Ovaj interfejs pruža sveobuhvatnu kontrolu nad zalihama proizvoda, omogućavajući precizno praćenje svake serije nabavke. Daje detaljan uvid u status svih stavki kako aktivnih tako i svih neaktivnih stavki bilo da im je promjenjen status, da je istekao rok ili da su jednostavno
-potrošene. Na taj način menadzer ima mogućnost preciznog vođenje evidencije i analize o svim zalihama proizvoda.
+potrošene. Na taj način menadzer ima mogućnost preciznog vođenje evidencije i analize o svim zalihama proizvoda.  
+
+<p align="center">
+  <img src="images/14_menadzer_zalihe.png" alt="zalihe proizvoda" height="280" width="380"/>
+</p>
+<br clear="all"/> 
 
 ## **Statiskika i izvještaji kod menadžera**  
 
@@ -326,6 +327,7 @@ potrošene. Na taj način menadzer ima mogućnost preciznog vođenje evidencije 
 *Stubičasti grafikon:* prikazuje kretanje prihoda u istom periodu.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Na ekranu se takođe nalazi lista ***najprodavanijih proizvoda*** sa sličicama i nazivima, sortirana po broju prodatih artikala.
+<div style="page-break-before: always;"></div>
 
 ### **Zalihe**  
 &nbsp;&nbsp;&nbsp;&nbsp;Sekcija *Zalihe* omogućava menadžeru potpuni pregled stanja proizvoda u skladištu i svih promjena koje su izvršene.
@@ -426,6 +428,7 @@ U slučaju da proizvod nije dostupan za prodaju, da nema dovoljno zaliha ili je 
 <br clear="right"/>
 &nbsp;&nbsp;&nbsp;&nbsp;Radi dodatne sigurnosti, potrebno je potvrditi operaciju kroz dijalog.  
 &nbsp;&nbsp;&nbsp;&nbsp;Ako je operacija bila uspješna, korpa se prazni i prikazuje se adekvatna poruka. Ukoliko je korpa bila prazna prilikom pokušaja plaćanja, korisnik dobija odgovarajuće obavještenje.  
+<div style="page-break-before: always;"></div>
 
 ## **Porudžbine**  
 
@@ -461,7 +464,7 @@ Svi prikazi odnose se na konkretnog blagajnika (prema *korisničkom ID-u*) za te
 
 &nbsp;&nbsp;&nbsp;&nbsp;Na ekranu se nalazi i lista *najprodavanijih proizvoda*.
 <p align="center">
-  <img src="images/21_blagajnik_izvjestaji.png" alt="izvjestaj" height="300" width="400"/>
+  <img src="images/21_blagajnik_izvjestaji.png" alt="izvjestaj" height="280" width="380"/>
 </p>
 <br clear="all"/>  
 <div style="page-break-before: always;"></div>
@@ -491,12 +494,13 @@ Svi prikazi odnose se na konkretnog blagajnika (prema *korisničkom ID-u*) za te
 &nbsp;&nbsp;&nbsp;&nbsp;Korisnik dobija informativnu poruku o rezultatu („*Tema i jezik promijenjeni*", „*Tema promijenjena*", „*Jezik promijenjen*" ili „*Nema promjena*").
 
 &nbsp;&nbsp;&nbsp;&nbsp;Odabrane postavke (tema i jezik) se automatski čuvaju za datog korisnika pa su pri svakoj njegovoj narednoj prijavi dostupne prethodno odabrane opcije.  
+<div style="page-break-before: always;"></div>  
 
 &nbsp;&nbsp;&nbsp;&nbsp;*Primjeri različitih tema*:  
 
 <p align="center">
   <img src="images/23_zajednicke_teme.png" alt="teme" height="250" width="330"/>
-  <img src="images/26_zajednicke_teme.png" alt="teme" height="300" width="330"/>
+  <img src="images/26_zajednicke_teme.png" alt="teme" height="250" width="330"/>
 </p>
 <br clear="all"/>  
 <p align="center">
@@ -509,14 +513,14 @@ Svi prikazi odnose se na konkretnog blagajnika (prema *korisničkom ID-u*) za te
   <img src="images/28_zajednicke_teme.png" alt="teme" height="250" width="330"/>
 </p>
 <br clear="all"/>  
-
+<div style="page-break-before: always;"></div>  
 
 *Primjer internacionalizacije*:
 <p align="center">
   <img src="images/30_zajednicke_jezik.png" alt="jezik" height="250" width="330"/>
   <img src="images/31_zajednicke_jezik.png" alt="jezik" height="250" width="330"/>
 </p>
-<br clear="all"/>  
+<br clear="all"/>
 
 ##  **Profil korisnika**  
 &nbsp;&nbsp;&nbsp;&nbsp;Prilikom otvaranja stranice ***Profil korisnika***, trenutni podaci su već učitani, što omogućava pregled i eventualnu izmjenu postojećih informacija.
@@ -541,7 +545,8 @@ Svi prikazi odnose se na konkretnog blagajnika (prema *korisničkom ID-u*) za te
 ## **Responzivni dizajn**  
 &nbsp;&nbsp;&nbsp;&nbsp;Pastry Shop aplikacija je dizajnirana sa fokusom na responzivni dizajn, osiguravajući ugodno korisničko iskustvo na desktop i laptop uređajima. Interfejs se automatski prilagođava veličini i rezoluciji ekrana, tako da sadržaj uvek izgleda i funkcioniše besprekorno.
 
-&nbsp;&nbsp;&nbsp;&nbspNa većim ekranima sadržaj koji uključuje liste proizvoda ili navigacione ikonice organizovan je u više kolona za maksimalnu iskorišćenost prostora, dok se na manjim ekranima automatski prebacuje na manji broj kolona. Po potrebi se pojedine slike mogu sakriti na manjim širinama ekrana kako bi se uštedio prostor i sačuvao pregledan raspored.  
+&nbsp;&nbsp;&nbsp;&nbsp;Na većim ekranima sadržaj koji uključuje liste proizvoda ili navigacione ikonice organizovan je u više kolona za maksimalnu iskorišćenost prostora, dok se na manjim ekranima automatski prebacuje na manji broj kolona. Po potrebi se pojedine slike mogu sakriti na manjim širinama ekrana kako bi se uštedio prostor i sačuvao pregledan raspored.  
+
 &nbsp;&nbsp;&nbsp;&nbsp;*Primjer primjene responzivnosti*:  
 <p align="center">
   <img src="images/33_zajednicke_responzivnost.png" alt="responzivnost" height="250" width="330"/> 
