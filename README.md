@@ -94,7 +94,7 @@ Dostupna je tabela koja prikazuje ***osnovne informacije*** o svakom korisniku: 
 &nbsp;&nbsp;&nbsp;&nbsp;Formular sadrži *osnovna, zajednička polja* koja se popunjavaju za sve korisnike, dok se *specifična polja* pojavljuju u zavisnosti od izabranog tipa korisnika.
 
 <p align="center">
-  <img src="images/04_menadzer_korisnici.png" alt="dodaj korisnika" height="300" width="500" align="center"/>
+  <img src="images/04_menadzer_korisnici.png" alt="dodaj korisnika" height="300" width="500"/>
 </p>
 <br clear="all"/> 
 
@@ -170,7 +170,7 @@ Menadžer može ***promijeniti ulogu*** odabranog korisnika klikom na odgovaraju
 
 &nbsp;&nbsp;&nbsp;&nbsp;***Polje za pretragu*** omogućava brzo pronalaženje artikala (*Tab* ili *F3* prebacuju fokus na pretragu). Za ***filtriranje*** se koriste padajući meni za odabir ***po tipu proizvoda*** (*Ctrl + F*) i ***meni Atributi*** (*Ctrl + L*), sa opcijama poput *Sniženo*, *Istaknuto* i *Dostupno*.
 <p align="center">
-  <img src="images/08_menadzer_proizvodi.png" alt="pregled proizvoda" height="300" width="500" align="center"/>
+  <img src="images/08_menadzer_proizvodi.png" alt="pregled proizvoda" height="300" width="500"/>
 </p>
 <br clear="all"/> 
 
@@ -272,7 +272,6 @@ spremanje dok vrijednosti nisu ispravne (npr. cijena i popust moraju biti numeri
 &nbsp;&nbsp;&nbsp;&nbsp;Menadžer može potvrtiti izvršene promjene koristeći dugme ***Sačuvaj***, poništiti izmjene sa dugmetom ***Odbaci*** ili ukloniti selektovanu stavku klikom na dugme ***Obriši***.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Dostupan je i klizač koji omogućava ***filtriranje*** serija zaliha prema njihovom statusu (*aktivno / neaktivno*).
-<img src="images/14_menadzer_zalihe.png" alt="zalihe proizvoda" height="300" width="300"/>
 &nbsp;&nbsp;&nbsp;&nbsp;Desni panel prikazuje ***detalje*** izabrane stavke, uključujući *količinu, datum isteka, broj dana za upozorenje* i *datum dodavanja*. Polja imaju automatsku validaciju:
 
 -   *Količina:* - obavezno polje, mora biti cio broj veći od nule,
@@ -282,6 +281,11 @@ spremanje dok vrijednosti nisu ispravne (npr. cijena i popust moraju biti numeri
 -   *Aktivno:* - čekboks za aktivaciju ili deaktivaciju stavke.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Ispod panela nalazi se dugme ***Dodaj zalihe*** za kreiranje nove stavke, kao i dugme ***Zatvori*** koje zatvara ekran bez čuvanja promjena.
+
+<p align="center">
+  <img src="images/14_menadzer_zalihe.png" alt="zalihe proizvoda" height="300" width="500"/>
+</p>
+<br clear="all"/> 
 
 &nbsp;&nbsp;&nbsp;&nbsp;Ako datum isteka postoji i nalazimo se unutar broja dana za upozorenje, data stavka se automatski označava na poseban način (drugačija boja stavke) što omogućava menadžeru prepoznavanje kritičnih zaliha i pravovremenu reakciju.
 
@@ -333,7 +337,13 @@ polja.
 &nbsp;&nbsp;&nbsp;&nbsp;Tabele podržavaju sortiranje, a prazni prikazi uvijek obavještavaju korisnika da nema podataka za trenutne kriterijume.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Ovakav tok, od izbora proizvoda i datuma, preko generisanja izvještaja, do preglednog prikaza zaliha, transakcija, izmjena i sažetka, omogućava menadžeru efikasno praćenje stanja skladišta i donošenje informisanih odluka o poslovanju objekta koji koristi PastryShop aplikaciju.
-<img src="images/15_menadzer_izvjestaji.png" alt="izvjestaj" height="300" width="300"/> <img src="images/16_menadzer_izvjestaji.png" alt="izvjestaj" height="300" width="300"/>
+
+<p align="center">
+  <img src="images/15_menadzer_izvjestaji.png" alt="izvjestaj" height="300" width="500"/>
+  <img src="images/16_menadzer_izvjestaji.png" alt="izvjestaj" height="300" width="500"/>
+</p>
+<br clear="all"/>  
+
 # Blagajnik
 
 &nbsp;&nbsp;&nbsp;&nbsp;Uloga blagajnika je da osigura brzo i precizno upravljanje prodajom i naplatom u pekarskom ili slastičarskom objektu.  
@@ -370,29 +380,31 @@ Po uspješnoj prijavi na sistem prikazuje se ***početni ekran za blagajnika (PO
 &nbsp;&nbsp;&nbsp;&nbsp;U gornjem dijelu ekrana dostupni su alati za filtriranje i brzu pretragu proizvoda: padajući meni za ***izbor tipa proizvoda***: hrana, piće, pribor (prečica je *Ctrl + T*), tekstualno polje za ***pretragu po nazivu ili tipu*** proizvoda (fokus na dato polje se aktivira pritiskom na *F3*), te tri ***prekidača za filtriranje***: *Dostupno* (*Ctrl + A*), *Istaknuto* (*Ctrl + F*) i *Sniženo* (*Ctrl + D*). Kombinacijom navedenih opcija korisnik može jednostavno fokusirati prikaz na željene artikle.
 
 ### Lista proizvoda
+<img src="images/17_blagajnik_pos.png" alt="blagajnik pos" height="300" width="500" align="left"/>
 
+<!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;U centralnom dijelu ekrana prikazani su proizvodi kao kartice koje se mogu slobodno skrolovati.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Svaka kartica sadrži: *naziv proizvoda, opis* (kao tooltip), *cijenu*, kao i dugme za ***dodavanje proizvoda u korpu*** (***+***). Pritiskom na „***+***" sistem provjerava da li je proizvod dostupan, da li ga ima na stanju, te sprečava dodavanje istog proizvoda više puta.  
 U slučaju da proizvod nije dostupan za prodaju, da nema dovoljno zaliha ili je već u korpi, prikazuje se kratko obavještenje o tome.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Ukoliko je dodavanje uspješno, korpa se odmah osvježava i prikazuje se dodati proizvod.
-<img src="images/17_blagajnik_pos.png" alt="blagajnik pos" height="300" width="300"/>
+
+<br clear="left"/>  
+
 ### Korpa
 
-&nbsp;&nbsp;&nbsp;&nbsp;U korpi se prikazuju svi odabrani proizvodi sa *slikom*, *nazivom* i *cijenom*. *Količina* se može mijenjati pomoću *plus/minus* dugmadi, a postoji i dugme za *uklanjanje proizvoda* iz korpe.
-
-&nbsp;&nbsp;&nbsp;&nbsp;Promjene količine se odmah odražavaju na cijenu proizvoda i ukupan iznos korpe.
-
-&nbsp;&nbsp;&nbsp;&nbsp;Pokušaj povećanja količine iznad raspoloživog stanja prikazuje kratkotrajni vizualni indikator (popup) koji signalizira da je dostignut limit zaliha. Uklanjanjem proizvoda iz korpe ukupan iznos se automatski osvježava.
-
-&nbsp;&nbsp;&nbsp;&nbsp;Za svaku od opcija plaćanja traži se potvrda kroz dijalog.
-
+&nbsp;&nbsp;&nbsp;&nbsp;U korpi se prikazuju svi odabrani proizvodi sa *slikom*, *nazivom* i *cijenom*. *Količina* se može mijenjati pomoću *plus/minus* dugmadi, a postoji i dugme za *uklanjanje proizvoda* iz korpe.  
+&nbsp;&nbsp;&nbsp;&nbsp;Promjene količine se odmah odražavaju na cijenu proizvoda i ukupan iznos korpe.  
+&nbsp;&nbsp;&nbsp;&nbsp;Pokušaj povećanja količine iznad raspoloživog stanja prikazuje kratkotrajni vizualni indikator (popup) koji signalizira da je dostignut limit zaliha. Uklanjanjem proizvoda iz korpe ukupan iznos se automatski osvježava.  
+&nbsp;&nbsp;&nbsp;&nbsp;Za svaku od opcija plaćanja traži se potvrda kroz dijalog.  
 &nbsp;&nbsp;&nbsp;&nbsp;Ako je operacija uspješna, korpa se prazni i prikazuje se odgovarajuća informativna poruka o uspjehu. Ako je korpa prazna pri pokušaju plaćanja, korisnik dobija odgovarajuće obavještenje.
 
 ### Ukupan iznos i opcije plaćanja
+<img src="images/18_blagajnik_pos.png" alt="blagajnik pos" height="300" width="500" align="right"/>
 
-&nbsp;&nbsp;&nbsp;&nbsp;Ispod liste dodatih proizvoda prikazuje se ***ukupni iznos korpe*** uz oznaku valute.
+<!--  -->
+&nbsp;&nbsp;&nbsp;&nbsp;Ispod liste dodatih proizvoda prikazuje se ***ukupni iznos korpe*** uz oznaku valute.  
 
 &nbsp;&nbsp;&nbsp;&nbsp;Blagajniku su dostupne tri opcije plaćanja:
 
@@ -400,22 +412,22 @@ U slučaju da proizvod nije dostupan za prodaju, da nema dovoljno zaliha ili je 
 - ***Keš*** (*Pay Cash*) - plaćanje se vrši gotovinom (*Ctrl + G*),
 - ***Kartica*** (*Pay Card*) - otvara se dijalog za unos broja kartice; nakon potvrde evidentira se plaćanje karticom (*Ctrl + N*).
 
-&nbsp;&nbsp;&nbsp;&nbsp;Bez obzira na odabranu opciju, svaka transakcija kreira porudžbinu, evidentira plaćanje i smanjuje količine proizvoda u zalihama.
+&nbsp;&nbsp;&nbsp;&nbsp;Bez obzira na odabranu opciju, svaka transakcija kreira porudžbinu, evidentira plaćanje i smanjuje količine proizvoda u zalihama.  
+<br clear="right"/>
+&nbsp;&nbsp;&nbsp;&nbsp;Radi dodatne sigurnosti, potrebno je potvrditi operaciju kroz dijalog.  
+&nbsp;&nbsp;&nbsp;&nbsp;Ako je operacija bila uspješna, korpa se prazni i prikazuje se adekvatna poruka. Ukoliko je korpa bila prazna prilikom pokušaja plaćanja, korisnik dobija odgovarajuće obavještenje.  
 
-&nbsp;&nbsp;&nbsp;&nbsp;Radi dodatne sigurnosti, potrebno je potvrditi operaciju kroz dijalog.
-
-&nbsp;&nbsp;&nbsp;&nbsp;Ako je operacija bila uspješna, korpa se prazni i prikazuje se adekvatna poruka. Ukoliko je korpa bila prazna prilikom pokušaja plaćanja, korisnik dobija odgovarajuće obavještenje.
-<img src="images/18_blagajnik_pos.png" alt="blagajnik pos" height="300" width="300"/>
 ## Porudžbine.
+<img src="images/20_blagajnik_porudzbine.png" alt="blagajnik porudžbine" height="300" width="500" align="right"/>
 
-&nbsp;&nbsp;&nbsp;&nbsp;U centralnom dijelu ekrana nalazi se padajući meni za ***filtriranje porudžbina*** na osnovu tipa (*Sve, Kompletirane, Otkazane, Na čekanju*). Za pristup meniju moguće je koristiti prečicu *Ctrl + T*.
+<!--  -->
+&nbsp;&nbsp;&nbsp;&nbsp;U centralnom dijelu ekrana nalazi se padajući meni za ***filtriranje porudžbina*** na osnovu tipa (*Sve, Kompletirane, Otkazane, Na čekanju*). Za pristup meniju moguće je koristiti prečicu *Ctrl + T*.  
 
-&nbsp;&nbsp;&nbsp;&nbsp;Sve porudžbine koje je blagajnik realizovao u posljednja 24 časa su prikazane u tabeli sa kolonama: *ID, Datum, Ukupna cijena* i *Status*. Tabela podržava sortiranje kolona. U slučaju da nema porudžbina umjesto tabele se prikazuje poruka: "*Nema podataka*".
+&nbsp;&nbsp;&nbsp;&nbsp;Sve porudžbine koje je blagajnik realizovao u posljednja 24 časa su prikazane u tabeli sa kolonama: *ID, Datum, Ukupna cijena* i *Status*. Tabela podržava sortiranje kolona. U slučaju da nema porudžbina umjesto tabele se prikazuje poruka: "*Nema podataka*".  
 
-&nbsp;&nbsp;&nbsp;&nbsp;Na desnoj strani ekrana se nalazi bočni panel za ***prikaz detalja*** odabrane porudžbine. Odabirom reda u tabeli desni panel učitava i prikazuje stavke te porudžbine što uključuje: *naziv proizvoda, količinu, cijenu po jedinici* i *ukupnu cijenu stavke*.
+&nbsp;&nbsp;&nbsp;&nbsp;Na desnoj strani ekrana se nalazi bočni panel za ***prikaz detalja*** odabrane porudžbine. Odabirom reda u tabeli desni panel učitava i prikazuje stavke te porudžbine što uključuje: *naziv proizvoda, količinu, cijenu po jedinici* i *ukupnu cijenu stavke*. Ispod popisa stavki prikazan je ukupni iznos izabrane porudžbine.
+<br clear="left"/>  
 
-&nbsp;&nbsp;&nbsp;&nbsp;Ispod popisa stavki prikazan je ukupni iznos izabrane porudžbine.
-<img src="images/20_blagajnik_porudzbine.png" alt="blagajnik porudžbine" height="300" width="300"/>
 &nbsp;&nbsp;&nbsp;&nbsp;Za odabranu porudžbinu su omogućene sledeće funkcionalnosti:
 
 - ***Otkaži*** (*Cancel*) - dozvoljeno je da se otkažu već kreiran porudžbine; prikazuje se dijalog za potvrdu poslije čega se vraćaju zalihe artikala za sve stavke porudžbine; u slučaju da je porudžbina bila na čekanju, njen status postaje "*Otkazana*", a u slučaju da je već bila kompletirana status postaje "*Refundirana*" i izvršava se povrat sredstava (stanje novca se umanjuje); nije dozvoljeno ponovo otkazati već otkazanu porudžbinu; omogućena je prečica: *Ctrl + L*.
@@ -438,7 +450,12 @@ Svi prikazi odnose se na konkretnog blagajnika (prema *korisničkom ID-u*) za te
 &nbsp;&nbsp;&nbsp;&nbsp;Linijski grafikon prikazuje *sedmični broj stavki* i *porudžbina* vezanih za rad blagajnika, dok stubičasti grafikon prikazuje kretanje *prihoda* u istom periodu.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Na ekranu se nalazi i lista *najprodavanijih proizvoda*.
-<img src="images/21_blagajnik_izvjestaji.png" alt="izvjestaj" height="300" width="300"/>
+<p align="center">
+  <img src="images/21_blagajnik_izvjestaji.png" alt="izvjestaj" height="300" width="500"/>
+</p>
+<br clear="all"/>  
+
+
 # Zajedničke funkcionalnosti
 
 &nbsp;&nbsp;&nbsp;&nbsp;Ovo poglavlje opisuje funkcije koje su dostupne i menadžeru i blagajniku:
@@ -456,21 +473,49 @@ Svi prikazi odnose se na konkretnog blagajnika (prema *korisničkom ID-u*) za te
 &nbsp;&nbsp;&nbsp;&nbsp;Padajući meniji za izbor jezika i teme sadrže odgovarajuće ikonice uz svaku opciju, dok su nazivi prilagođeni trenutno aktivnom jeziku aplikacije, čime se postiže dodatna jasnoća.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Klikom na dugme ***Sačuvaj*** aplikacija upoređuje odabrane postavke jezika i teme sa prethodnim vrijednostima i odmah primjenjuje eventualne promjene. Omogućeno je promijeniti samo temu, samo jezik, ili oboje istovremeno.
-<img src="images/22_zajednicke_teme.png" alt="teme" height="300" width="300"/>  <img src="images/29_zajednicke_jezik.png" alt="jezik" height="300" width="300"/>
+<p align="center">
+  <img src="images/22_zajednicke_teme.png" alt="teme" height="300" width="500"/>
+  <img src="images/29_zajednicke_jezik.png" alt="jezik" height="300" width="500"/>
+</p>
+<br clear="all"/>  
+
 &nbsp;&nbsp;&nbsp;&nbsp;Korisnik dobija informativnu poruku o rezultatu („*Tema i jezik promijenjeni*", „*Tema promijenjena*", „*Jezik promijenjen*" ili „*Nema promjena*").
 
 &nbsp;&nbsp;&nbsp;&nbsp;Odabrane postavke (tema i jezik) se automatski čuvaju za datog korisnika pa su pri svakoj njegovoj narednoj prijavi dostupne prethodno odabrane opcije.  
 
-&nbsp;&nbsp;&nbsp;&nbsp;*Primjeri različitih tema*:
-<img src="images/23_zajednicke_teme.png" alt="teme" height="300" width="300"/> <img src="images/24_zajednicke_teme.png" alt="teme" height="300" width="300"/> <img src="images/25_zajednicke_teme.png" alt="teme" height="300" width="300"/>  
-<img src="images/26_zajednicke_teme.png" alt="teme" height="300" width="300"/> <img src="images/27_zajednicke_teme.png" alt="teme" height="300" width="300"/> <img src="images/28_zajednicke_teme.png" alt="teme" height="300" width="300"/>
-&nbsp;&nbsp;&nbsp;&nbsp;*Primjer internacionalizacije*:
-<img src="images/30_zajednicke_jezik.png" alt="jezik" height="300" width="300"/> <img src="images/31_zajednicke_jezik.png" alt="jezik" height="300" width="300"/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Primjeri različitih tema*:  
+
+<p align="center">
+  <img src="images/23_zajednicke_teme.png" alt="teme" height="300" width="500"/>
+  <img src="images/26_zajednicke_teme.png" alt="teme" height="300" width="500"/>
+</p>
+<br clear="all"/>  
+<p align="center">
+  <img src="images/24_zajednicke_teme.png" alt="teme" height="300" width="500"/>
+  <img src="images/27_zajednicke_teme.png" alt="teme" height="300" width="500"/>
+</p>
+<br clear="all"/>  
+<p align="center">
+  <img src="images/25_zajednicke_teme.png" alt="teme" height="300" width="500"/>
+  <img src="images/28_zajednicke_teme.png" alt="teme" height="300" width="500"/>
+</p>
+<br clear="all"/>  
+
+
+*Primjer internacionalizacije*:
+<p align="center">
+  <img src="images/30_zajednicke_jezik.png" alt="jezik" height="300" width="500"/>
+  <img src="images/31_zajednicke_jezik.png" alt="jezik" height="300" width="500"/>
+</p>
+<br clear="all"/>  
 
 ##  Profil korisnika
 
 &nbsp;&nbsp;&nbsp;&nbsp;Prilikom otvaranja stranice ***Profil korisnika***, trenutni podaci su već učitani, što omogućava pregled i eventualnu izmjenu postojećih informacija.
 
+<img src="images/32_zajednicke_profil.png" alt="profil korisnika" height="300" width="500" align="right"/>
+
+<!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Korisnik može promijeniti sljedeće podatke:
 
 - ***Korisničko ime*** - obavezno polje; dozvoljeni znakovi su slova i cifre, postoji ograničenje dužine, a ime mora biti jedinstveno.+,
@@ -483,7 +528,8 @@ Svi prikazi odnose se na konkretnog blagajnika (prema *korisničkom ID-u*) za te
 
 - ***Sačuvaj*** - vrši validaciju unesenih vrijednosti i u slučaju da su podaci ispravni, čuva izmjene u profilu korisnika (*Ctrl + S*),
 - ***Poništi*** - vraća prethodno aktivne vrijednosti, poništavajući sve nedavne izmjene (*Ctrl + R*).
-<img src="images/32_zajednicke_profil.png" alt="profil korisnika" height="300" width="300"/>
+<br clear="right"/>
+
 ## Responzivni dizajn
 
 &nbsp;&nbsp;&nbsp;&nbsp;Pastry Shop aplikacija je dizajnirana sa fokusom na responzivni dizajn, osiguravajući ugodno korisničko iskustvo na desktop i laptop uređajima. Interfejs se automatski prilagođava veličini i rezoluciji ekrana, tako da sadržaj uvek izgleda i funkcioniše besprekorno.
@@ -491,9 +537,11 @@ Svi prikazi odnose se na konkretnog blagajnika (prema *korisničkom ID-u*) za te
 &nbsp;&nbsp;&nbsp;&nbspNa većim ekranima sadržaj koji uključuje liste proizvoda ili navigacione ikonice organizovan je u više kolona za maksimalnu iskorišćenost prostora, dok se na manjim ekranima automatski prebacuje na manji broj kolona. Po potrebi se pojedine slike mogu sakriti na manjim širinama ekrana kako bi se uštedio prostor i sačuvao pregledan raspored.  
 &nbsp;&nbsp;&nbsp;&nbsp;*Primjer primjene responzivnosti*:  
 <p align="center">
-<img src="images/33_zajednicke_responzivnost.png" alt="responzivnost" height="400" width="500"/> <img src="images/34_zajednicke_responzivnost.png" alt="responzivnost" height="400" width="400"/>  
+  <img src="images/33_zajednicke_responzivnost.png" alt="responzivnost" height="400" width="500"/> 
+  <img src="images/34_zajednicke_responzivnost.png" alt="responzivnost" height="400" width="400"/>  
 </p>
 <p align="center">
-<img src="images/35_zajednicke_responzivnost.png" alt="responzivnost"  height="400" width="500"/> <img src="images/36_zajednicke_responzivnost.png" alt="responzivnost"  height="400" width="400"/>
+  <img src="images/35_zajednicke_responzivnost.png" alt="responzivnost"  height="400" width="500"/> 
+  <img src="images/36_zajednicke_responzivnost.png" alt="responzivnost"  height="400" width="400"/>
 </p>
 
