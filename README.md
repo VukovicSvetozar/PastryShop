@@ -129,18 +129,18 @@ U suprotnom se prikazuje odgovarajući dijalog upozorenja. Takođe, poruke o gre
 
 ### Prikaz detalja korisnika  
 
-<img src="images/05_menadzer_korisnici.png" alt="prikaz detalja korisnika" height="300" width="500"  align="right"/>
+<img src="images/05_menadzer_korisnici.png" alt="prikaz detalja korisnika" height="300" width="500" align="right"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Za selektovanog korisnika, klikom na odgovarajuću ikonicu otvara se prozor sa ***detaljnim informacijama*** o tom korisniku.  
-Prozor prikazuje osnovne podatke, uključujući *profilnu sliku, tip korisnika, korisničko ime, ime i prezime, broj telefona i adresu, datum zaposlenja, platu i posljednju prijavu u sistem*, kao i dodatne podatke prema tipu korisnika: *odjeljenje* za menadžera ili *ID kase* i *smjene* za blagajnika.
+Prozor prikazuje osnovne podatke, uključujući profilnu sliku, tip korisnika, korisničko ime, ime i prezime, broj telefona i adresu, datum zaposlenja, platu i posljednju prijavu u sistem, kao i dodatne podatke prema tipu korisnika: odjeljenje za menadžera ili ID kase i smjene za blagajnika.
 <br clear="right"/> 
 
 ### Uređivanje korisnika  
 &nbsp;&nbsp;&nbsp;&nbsp;Klikom na odgovarajuću ikonicu za odabranog korisnika otvara se prozor za ***uređivanje osnovnih podataka*** vezanih za poslovanje. U ovom prozoru moguće je mijenjati *platu* zaposlenog, a u zavisnosti od tipa korisnika, dozvoljena je izmjena *odjeljenja* za menadžera ili *ID kase, početka i kraja smjene* za blagajnika.  
 
 &nbsp;&nbsp;&nbsp;&nbsp;Primjenjuju se ista pravila i ograničenja kao kod unosa novog korisnika. Polja vrše automatsku provjeru unosa i onemogućavaju spremanje dok vrijednosti nisu ispravne. Tek nakon unosa validnih podataka izmjene se mogu potvrditi klikom na dugme ili pritiskom na *Enter*.
-<img src="images/09_menadzer_korisnici.png" alt="uređivanje korisnika" height="300" width="300"/>
+
 ### Promjena tipa korisnika (Menadžer ↔ Blagajnik)
 
 Menadžer može ***promijeniti ulogu*** odabranog korisnika klikom na odgovarajuću ikonicu. Prije izvršenja promjene, sistem traži potvrdu od menadžera. Ako se promjena potvrdi, uloga se ažurira, a sistem po potrebi popunjava ili resetuje polja specifična za novu ulogu.
@@ -169,11 +169,19 @@ Menadžer može ***promijeniti ulogu*** odabranog korisnika klikom na odgovaraju
 &nbsp;&nbsp;&nbsp;&nbsp;Menadžer ima mogućnost pregleda svih proizvoda koji čine asortiman poslovnog objekta, uz jasno organizovan prikaz za lakše upravljanje. U pregledu se prikazuju ***osnovne informacije*** o svakom artiklu: *ID, naziv, tip proizvoda* (*Hrana, Piće, Pribor*), *količina na stanju*, kao i dostupne akcije kroz ikonice za *detaljan pregled*, *uređivanje podataka* o odabranom proizvodu, *promjenu statusa* ili otvaranje prozora za *upravljanje zalihama*.
 
 &nbsp;&nbsp;&nbsp;&nbsp;***Polje za pretragu*** omogućava brzo pronalaženje artikala (*Tab* ili *F3* prebacuju fokus na pretragu). Za ***filtriranje*** se koriste padajući meni za odabir ***po tipu proizvoda*** (*Ctrl + F*) i ***meni Atributi*** (*Ctrl + L*), sa opcijama poput *Sniženo*, *Istaknuto* i *Dostupno*.
-<img src="images/08_menadzer_proizvodi.png" alt="pregled proizvoda" height="300" width="300"/>
-### Dodavanje novih proizvoda
+<p align="center">
+  <img src="images/08_menadzer_proizvodi.png" alt="pregled proizvoda" height="300" width="500" align="center"/>
+</p>
+<br clear="all"/> 
+
+### Dodavanje novih proizvoda  
 &nbsp;&nbsp;&nbsp;&nbsp;Dugme ***Dodaj*** u gornjem desnom uglu glavnog ekrana otvara prozor sa formularom za kreiranje novog proizvoda (*Ctrl + N*).  
-Forma obuhvata osnovna polja koja se popunjavaju za sve proizvode, dok se dodatna, specifična polja prikazuju u zavisnosti od odabranog tipa (Hrana, Piće ili Pribor).
-<img src="images/10_menadzer_proizvodi.png" alt="dodaj proizvod" height="300" width="300"/>
+Forma obuhvata osnovna polja koja se popunjavaju za sve proizvode, dok se dodatna, specifična polja prikazuju u zavisnosti od odabranog tipa (Hrana, Piće ili Pribor).  
+
+<img src="images/10_menadzer_proizvodi.png" alt="dodaj proizvod" height="300" width="500" align="right"/>
+
+<!--  -->
+
 **Zajednička polja**
 
 -   *Tip proizvoda* - padajući meni sa obaveznim izborom: *Hrana*, *Piće* ili *Pribor*,
@@ -181,6 +189,8 @@ Forma obuhvata osnovna polja koja se popunjavaju za sve proizvode, dok se dodatn
 -   *Opis* - prošireno tekstualno polje za detaljan opis,
 -   *Cijena* - numeričko polje koje mora biti popunjeno i ne smije sadržati negativnu vrijednost,
 -   *Slika proizvoda* - dugme za odabir fotografije; nakon izbora prikazuje se pregled slike. Podržani formati: *.jpg, .jpeg, .png*.
+
+<br clear="right"/> 
 
 **Polja za tip Hrana**
 
@@ -209,26 +219,41 @@ Forma obuhvata osnovna polja koja se popunjavaju za sve proizvode, dok se dodatn
 &nbsp;&nbsp;&nbsp;&nbsp;Dugme ***Dodaj*** pokreće provjeru svih vidljivih polja. Ako su podaci ispravni, novi proizvod se sprema u bazu i prikazuje se informativna poruka o uspjehu. Ako postoje greške, korisnik dobija upozorenje, a neispravna polja bivaju jasno označena.  
 &nbsp;&nbsp;&nbsp;&nbsp;Dugme ***Otkaži*** zatvara formu bez čuvanja promjena.
 
-### Prikaz detalja proizvoda
+### Prikaz detalja proizvoda  
+
+<img src="images/11_menadzer_proizvodi.png" alt="detalji proizvoda" height="300" width="500" align="right"/>
+
+<!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Menadžer ima mogućnost detaljnog ***pregleda odabranog proizvoda***, sa svim relevantnim informacijama prikazanim na jednom mjestu. Pored osnovnih podataka (*naziv, tip, opis, cijena* i *popust*), prikazuju se i *datumi kreiranja* i *posljednje izmjene*, kao i vizuelni prikaz *slike proizvoda* radi lakše identifikacije.  
 
 &nbsp;&nbsp;&nbsp;&nbsp;Prozor sadrži oznake (chipove) koje jasno ističu status proizvoda: *dostupan, nedostupan* ili *istaknut*.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Specifični atributi prikazuju se zavisno od tipa proizvoda: za hranu (*vrsta hrane, težina, kalorije, kvarljivost*), za piće (*zapremina, alkoholno/bezalkoholno*), a za pribor (*materijal, dimenzije, višekratna upotreba*).
-<img src="images/11_menadzer_proizvodi.png" alt="detalji proizvoda" height="300" width="300"/>
-### Uređivanje osnovnih podataka proizvoda
+<br clear="right"/> 
+
+### Uređivanje osnovnih podataka proizvoda  
+
+<img src="images/12_menadzer_proizvodi.png" alt="uredi podatke proizvoda" height="300" width="500" align="right"/>
+
+<!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Klikom na odgovarajuću ikonicu za odabrani proizvod otvara se modalni prozor za ***izmjenu*** njegovih ***osnovnih podataka***. U ovom prozoru menadžer može mijenjati **cijenu proizvoda*, dodavati ili uklanjati *popust*, te označiti proizvod kao *istaknuti*. Polja prikazuju postojeće vrijednosti i omogućavaju direktnu izmjenu.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Primjenjuju se ista pravila i ograničenja kao kod dodavanja novog proizvoda. Polja vrše automatsku provjeru unosa i onemogućavaju
 spremanje dok vrijednosti nisu ispravne (npr. cijena i popust moraju biti numerički podaci, ne smiju biti negativni). Tek nakon unosa validnih podataka izmjene se mogu potvrditi klikom na dugme ***Sačuvaj*** ili pritiskom na *Enter*, dok dugme ***Otkaži*** zatvara prozor bez promjena.
-<img src="images/12_menadzer_proizvodi.png" alt="uredi podatke proizvoda" height="300" width="300"/>
-### Uređivanje detalja proizvoda
+<br clear="right"/>
+
+### Uređivanje detalja proizvoda  
+
+<img src="images/13_menadzer_proizvodi.png" alt="uredi profil proizvoda" height="300" width="500" align="right"/>
+
+<!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Dostupna je opcija za ***uređivanje profila proizvoda***. Potrebno je odabrati proizvod i kliknuti na odgovarajuću ikonicu.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Omogućeno je mijenjanje *naziva, opisa, slike*, kao i specifičnih atributa u zavisnosti od tipa proizvoda.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Sistem automatski provjerava tačnost unosa i ne dozvoljava čuvanje dok podaci nisu validni. Kada su sve vrijednosti ispravne, izmjene se mogu potvrditi klikom na dugme ***Sačuvaj*** ili pritiskom na *Enter*.
-<img src="images/13_menadzer_proizvodi.png" alt="uredi profil proizvoda" height="300" width="300"/>
+<br clear="right"/> 
+
 ### Aktiviranje / deaktiviranje proizvoda
 &nbsp;&nbsp;&nbsp;&nbsp;Menadžer može privremeno ***sakriti*** ili ponovo ***prikazati*** proizvod u aktivnoj listi bez brisanja podataka. Prije promjene statusa sistem traži potvrdu radi sprječavanja grešaka.
 
