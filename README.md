@@ -54,7 +54,7 @@ Cilj ovog korisničkog uputstva je da na jasan i praktičan način predstavi po�
 Zaposleni dobijaju lozinku i preporuka je da je, radi sigurnosti, promijene pri prvoj prijavi. Korisnici se prijavljuju putem svojih jedinstvenih
 kredencijala. Po pokretanju aplikacije otvara se ekran za prijavu sa poljima za unos ***korisničkog imena*** i ***lozinke***. Navigacija između polja omogućena je tasterom *Tab*. Polja su obavezna, a dozvoljen je jedino unos slova i cifara. Definisan je minimalni i maksimalni broj unesenih karaktera.
 
-<img src="images/01_prijava.png" alt="Dijagram" height="250" width="350" align="left" style="margin-left: 15px;"/>
+<img src="images/01_prijava.png" alt="Dijagram" height="250" width="350" align="left" style="margin-right: 15px;"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Korisnicima je na raspolaganju ***opcija promjene jezika***, pri čemu se odabrani jezik primjenjuje samo na stranicu za prijavu. Kao prečica može da se koristi kombinacija tastera *Ctrl + L* kojom se otvara padajući meni za izbor jezika.  
@@ -143,7 +143,7 @@ U suprotnom se prikazuje odgovarajući dijalog upozorenja. Takođe, poruke o gre
 
 ### **Prikaz detalja korisnika**  
 
-<img src="images/05_menadzer_korisnici.png" alt="prikaz detalja korisnika" height="250" width="350" align="right" style="margin-right: 15px;"/>
+<img src="images/05_menadzer_korisnici.png" alt="prikaz detalja korisnika" height="250" width="350" align="right" style="margin-left: 15px;"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Za selektovanog korisnika, klikom na odgovarajuću ikonicu otvara se prozor sa ***detaljnim informacijama*** o tom korisniku.  
@@ -234,7 +234,7 @@ Forma obuhvata osnovna polja koja se popunjavaju za sve proizvode, dok se dodatn
 
 ### **Prikaz detalja proizvoda**  
 
-<img src="images/11_menadzer_proizvodi.png" alt="detalji proizvoda" height="250" width="350" align="right" style="margin-left: 15px;"/>
+<img src="images/11_menadzer_proizvodi.png" alt="detalji proizvoda" height="250" width="350" align="right" style="margin-right: 15px;"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Menadžer ima mogućnost detaljnog ***pregleda odabranog proizvoda***, sa svim relevantnim informacijama prikazanim na jednom mjestu. Pored osnovnih podataka (*naziv, tip, opis, cijena* i *popust*), prikazuju se i *datumi kreiranja* i *posljednje izmjene*, kao i vizuelni prikaz *slike proizvoda* radi lakše identifikacije.  
@@ -246,7 +246,7 @@ Forma obuhvata osnovna polja koja se popunjavaju za sve proizvode, dok se dodatn
 
 ### **Uređivanje osnovnih podataka proizvoda**  
 
-<img src="images/12_menadzer_proizvodi.png" alt="uredi podatke proizvoda" height="250" width="350" align="right" style="margin-right: 15px;"/>
+<img src="images/12_menadzer_proizvodi.png" alt="uredi podatke proizvoda" height="250" width="350" align="right" style="margin-left: 15px;"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Klikom na odgovarajuću ikonicu za odabrani proizvod otvara se modalni prozor za ***izmjenu*** njegovih ***osnovnih podataka***. U ovom prozoru menadžer može mijenjati **cijenu proizvoda*, dodavati ili uklanjati *popust*, te označiti proizvod kao *istaknuti*. Polja prikazuju postojeće vrijednosti i omogućavaju direktnu izmjenu.
@@ -257,7 +257,7 @@ spremanje dok vrijednosti nisu ispravne (npr. cijena i popust moraju biti numeri
 
 ### **Uređivanje detalja proizvoda**  
 
-<img src="images/13_menadzer_proizvodi.png" alt="uredi profil proizvoda" height="250" width="350" align="right" style="margin-right: 15px;"/>
+<img src="images/13_menadzer_proizvodi.png" alt="uredi profil proizvoda" height="250" width="350" align="right" style="margin-left: 15px;"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Dostupna je opcija za ***uređivanje profila proizvoda***. Potrebno je odabrati proizvod i kliknuti na odgovarajuću ikonicu.
@@ -390,7 +390,7 @@ polja.
 
 ### **Lista proizvoda**  
 
-<img src="images/17_blagajnik_pos.png" alt="blagajnik pos" height="250" width="350" align="left" style="margin-left: 15px;"/>
+<img src="images/17_blagajnik_pos.png" alt="blagajnik pos" height="250" width="350" align="left" style="margin-right: 15px;"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;U centralnom dijelu ekrana prikazani su proizvodi kao kartice koje se mogu slobodno skrolovati.
@@ -411,7 +411,7 @@ U slučaju da proizvod nije dostupan za prodaju, da nema dovoljno zaliha ili je 
 
 ### **Ukupan iznos i opcije plaćanja**  
 
-<img src="images/18_blagajnik_pos.png" alt="blagajnik pos" height="250" width="350" align="right" style="margin-right: 15px;"/>
+<img src="images/18_blagajnik_pos.png" alt="blagajnik pos" height="250" width="350" align="right" style="margin-left: 15px;"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Ispod liste dodatih proizvoda prikazuje se ***ukupni iznos korpe*** uz oznaku valute.  
@@ -521,7 +521,7 @@ Svi prikazi odnose se na konkretnog blagajnika (prema *korisničkom ID-u*) za te
 ##  **Profil korisnika**  
 &nbsp;&nbsp;&nbsp;&nbsp;Prilikom otvaranja stranice ***Profil korisnika***, trenutni podaci su već učitani, što omogućava pregled i eventualnu izmjenu postojećih informacija.
 
-<img src="images/32_zajednicke_profil.png" alt="profil korisnika" height="250" width="350" align="right" style="margin-right: 15px;"/>
+<img src="images/32_zajednicke_profil.png" alt="profil korisnika" height="250" width="350" align="right" style="margin-left: 15px;"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Korisnik može promijeniti sljedeće podatke:
