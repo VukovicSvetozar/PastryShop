@@ -41,7 +41,7 @@ Cilj ovog korisničkog uputstva je da na jasan i praktičan način predstavi po�
 Zaposleni dobijaju lozinku i preporuka je da je, radi sigurnosti, promijene pri prvoj prijavi. Korisnici se prijavljuju putem svojih jedinstvenih
 kredencijala. Po pokretanju aplikacije otvara se ekran za prijavu sa poljima za unos ***korisničkog imena*** i ***lozinke***. Navigacija između polja omogućena je tasterom *Tab*. Polja su obavezna, a dozvoljen je jedino unos slova i cifara. Definisan je minimalni i maksimalni broj unesenih karaktera.
 
-<img src="images/01_prijava.png" alt="Dijagram" height="300" width="500" align="left"/>
+<img src="images/01_prijava.png" alt="Dijagram" height="300" width="400" align="left"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Korisnicima je na raspolaganju ***opcija promjene jezika***, pri čemu se odabrani jezik primjenjuje samo na stranicu za prijavu. Kao prečica može da se koristi kombinacija tastera *Ctrl + L* kojom se otvara padajući meni za izbor jezika.  
@@ -79,7 +79,7 @@ Razlozi mogu biti: netačno korisničko ime ili lozinka; nalog nije aktivan; nek
 ## **Upravljanje korisnicima**  
 
 ### **Pregled korisnika**  
-<img src="images/03_menadzer_korisnici.png" alt="pregled korisnika" height="300" width="500" align="right"/>
+<img src="images/03_menadzer_korisnici.png" alt="pregled korisnika" height="300" width="400" align="right"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Menadžer ima pristup svim korisnicima aplikacije, što omogućava jednostavno praćenje i uređivanje njihovih naloga.  
@@ -95,7 +95,7 @@ Dostupna je tabela koja prikazuje ***osnovne informacije*** o svakom korisniku: 
 &nbsp;&nbsp;&nbsp;&nbsp;Formular sadrži *osnovna, zajednička polja* koja se popunjavaju za sve korisnike, dok se *specifična polja* pojavljuju u zavisnosti od izabranog tipa korisnika.
 
 <p align="center">
-  <img src="images/04_menadzer_korisnici.png" alt="dodaj korisnika" height="300" width="500"/>
+  <img src="images/04_menadzer_korisnici.png" alt="dodaj korisnika" height="300" width="400"/>
 </p>
 <br clear="all"/> 
 
@@ -130,7 +130,7 @@ U suprotnom se prikazuje odgovarajući dijalog upozorenja. Takođe, poruke o gre
 
 ### **Prikaz detalja korisnika**  
 
-<img src="images/05_menadzer_korisnici.png" alt="prikaz detalja korisnika" height="300" width="500" align="right"/>
+<img src="images/05_menadzer_korisnici.png" alt="prikaz detalja korisnika" height="300" width="400" align="right"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Za selektovanog korisnika, klikom na odgovarajuću ikonicu otvara se prozor sa ***detaljnim informacijama*** o tom korisniku.  
@@ -170,7 +170,7 @@ Menadžer može ***promijeniti ulogu*** odabranog korisnika klikom na odgovaraju
 
 &nbsp;&nbsp;&nbsp;&nbsp;***Polje za pretragu*** omogućava brzo pronalaženje artikala (*Tab* ili *F3* prebacuju fokus na pretragu). Za ***filtriranje*** se koriste padajući meni za odabir ***po tipu proizvoda*** (*Ctrl + F*) i ***meni Atributi*** (*Ctrl + L*), sa opcijama poput *Sniženo*, *Istaknuto* i *Dostupno*.
 <p align="center">
-  <img src="images/08_menadzer_proizvodi.png" alt="pregled proizvoda" height="300" width="500"/>
+  <img src="images/08_menadzer_proizvodi.png" alt="pregled proizvoda" height="300" width="400"/>
 </p>
 <br clear="all"/> 
 
@@ -178,7 +178,7 @@ Menadžer može ***promijeniti ulogu*** odabranog korisnika klikom na odgovaraju
 &nbsp;&nbsp;&nbsp;&nbsp;Dugme ***Dodaj*** u gornjem desnom uglu glavnog ekrana otvara prozor sa formularom za kreiranje novog proizvoda (*Ctrl + N*).  
 Forma obuhvata osnovna polja koja se popunjavaju za sve proizvode, dok se dodatna, specifična polja prikazuju u zavisnosti od odabranog tipa (Hrana, Piće ili Pribor).  
 
-<img src="images/10_menadzer_proizvodi.png" alt="dodaj proizvod" height="300" width="500" align="right"/>
+<img src="images/10_menadzer_proizvodi.png" alt="dodaj proizvod" height="300" width="400" align="right"/>
 
 <!--  -->
 
@@ -221,7 +221,7 @@ Forma obuhvata osnovna polja koja se popunjavaju za sve proizvode, dok se dodatn
 
 ### **Prikaz detalja proizvoda**  
 
-<img src="images/11_menadzer_proizvodi.png" alt="detalji proizvoda" height="300" width="500" align="right"/>
+<img src="images/11_menadzer_proizvodi.png" alt="detalji proizvoda" height="300" width="400" align="right"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Menadžer ima mogućnost detaljnog ***pregleda odabranog proizvoda***, sa svim relevantnim informacijama prikazanim na jednom mjestu. Pored osnovnih podataka (*naziv, tip, opis, cijena* i *popust*), prikazuju se i *datumi kreiranja* i *posljednje izmjene*, kao i vizuelni prikaz *slike proizvoda* radi lakše identifikacije.  
@@ -233,7 +233,7 @@ Forma obuhvata osnovna polja koja se popunjavaju za sve proizvode, dok se dodatn
 
 ### **Uređivanje osnovnih podataka proizvoda**  
 
-<img src="images/12_menadzer_proizvodi.png" alt="uredi podatke proizvoda" height="300" width="500" align="right"/>
+<img src="images/12_menadzer_proizvodi.png" alt="uredi podatke proizvoda" height="300" width="400" align="right"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Klikom na odgovarajuću ikonicu za odabrani proizvod otvara se modalni prozor za ***izmjenu*** njegovih ***osnovnih podataka***. U ovom prozoru menadžer može mijenjati **cijenu proizvoda*, dodavati ili uklanjati *popust*, te označiti proizvod kao *istaknuti*. Polja prikazuju postojeće vrijednosti i omogućavaju direktnu izmjenu.
@@ -244,7 +244,7 @@ spremanje dok vrijednosti nisu ispravne (npr. cijena i popust moraju biti numeri
 
 ### **Uređivanje detalja proizvoda**  
 
-<img src="images/13_menadzer_proizvodi.png" alt="uredi profil proizvoda" height="300" width="500" align="right"/>
+<img src="images/13_menadzer_proizvodi.png" alt="uredi profil proizvoda" height="300" width="400" align="right"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Dostupna je opcija za ***uređivanje profila proizvoda***. Potrebno je odabrati proizvod i kliknuti na odgovarajuću ikonicu.
@@ -282,7 +282,7 @@ spremanje dok vrijednosti nisu ispravne (npr. cijena i popust moraju biti numeri
 &nbsp;&nbsp;&nbsp;&nbsp;Ispod panela nalazi se dugme ***Dodaj zalihe*** za kreiranje nove stavke, kao i dugme ***Zatvori*** koje zatvara ekran bez čuvanja promjena.
 
 <p align="center">
-  <img src="images/14_menadzer_zalihe.png" alt="zalihe proizvoda" height="300" width="500"/>
+  <img src="images/14_menadzer_zalihe.png" alt="zalihe proizvoda" height="300" width="400"/>
 </p>
 <br clear="all"/> 
 
@@ -336,8 +336,8 @@ polja.
 &nbsp;&nbsp;&nbsp;&nbsp;Ovakav tok, od izbora proizvoda i datuma, preko generisanja izvještaja, do preglednog prikaza zaliha, transakcija, izmjena i sažetka, omogućava menadžeru efikasno praćenje stanja skladišta i donošenje informisanih odluka o poslovanju objekta koji koristi PastryShop aplikaciju.
 
 <p align="center">
-  <img src="images/15_menadzer_izvjestaji.png" alt="izvjestaj" height="300" width="500"/>
-  <img src="images/16_menadzer_izvjestaji.png" alt="izvjestaj" height="300" width="500"/>
+  <img src="images/15_menadzer_izvjestaji.png" alt="izvjestaj" height="300" width="400"/>
+  <img src="images/16_menadzer_izvjestaji.png" alt="izvjestaj" height="300" width="400"/>
 </p>
 <br clear="all"/>  
 <div style="page-break-before: always;"></div>
@@ -377,7 +377,7 @@ polja.
 
 ### **Lista proizvoda**  
 
-<img src="images/17_blagajnik_pos.png" alt="blagajnik pos" height="300" width="500" align="left"/>
+<img src="images/17_blagajnik_pos.png" alt="blagajnik pos" height="300" width="400" align="left"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;U centralnom dijelu ekrana prikazani su proizvodi kao kartice koje se mogu slobodno skrolovati.
@@ -398,7 +398,7 @@ U slučaju da proizvod nije dostupan za prodaju, da nema dovoljno zaliha ili je 
 
 ### **Ukupan iznos i opcije plaćanja**  
 
-<img src="images/18_blagajnik_pos.png" alt="blagajnik pos" height="300" width="500" align="right"/>
+<img src="images/18_blagajnik_pos.png" alt="blagajnik pos" height="300" width="400" align="right"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Ispod liste dodatih proizvoda prikazuje se ***ukupni iznos korpe*** uz oznaku valute.  
@@ -416,7 +416,7 @@ U slučaju da proizvod nije dostupan za prodaju, da nema dovoljno zaliha ili je 
 
 ## **Porudžbine**  
 
-<img src="images/20_blagajnik_porudzbine.png" alt="blagajnik porudžbine" height="300" width="500" align="right"/>
+<img src="images/20_blagajnik_porudzbine.png" alt="blagajnik porudžbine" height="300" width="400" align="right"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;U centralnom dijelu ekrana nalazi se padajući meni za ***filtriranje porudžbina*** na osnovu tipa (*Sve, Kompletirane, Otkazane, Na čekanju*). Za pristup meniju moguće je koristiti prečicu *Ctrl + T*.  
@@ -448,7 +448,7 @@ Svi prikazi odnose se na konkretnog blagajnika (prema *korisničkom ID-u*) za te
 
 &nbsp;&nbsp;&nbsp;&nbsp;Na ekranu se nalazi i lista *najprodavanijih proizvoda*.
 <p align="center">
-  <img src="images/21_blagajnik_izvjestaji.png" alt="izvjestaj" height="300" width="500"/>
+  <img src="images/21_blagajnik_izvjestaji.png" alt="izvjestaj" height="300" width="400"/>
 </p>
 <br clear="all"/>  
 <div style="page-break-before: always;"></div>
@@ -470,8 +470,8 @@ Svi prikazi odnose se na konkretnog blagajnika (prema *korisničkom ID-u*) za te
 
 &nbsp;&nbsp;&nbsp;&nbsp;Klikom na dugme ***Sačuvaj*** aplikacija upoređuje odabrane postavke jezika i teme sa prethodnim vrijednostima i odmah primjenjuje eventualne promjene. Omogućeno je promijeniti samo temu, samo jezik, ili oboje istovremeno.
 <p align="center">
-  <img src="images/22_zajednicke_teme.png" alt="teme" height="300" width="500"/>
-  <img src="images/29_zajednicke_jezik.png" alt="jezik" height="300" width="500"/>
+  <img src="images/22_zajednicke_teme.png" alt="teme" height="300" width="400"/>
+  <img src="images/29_zajednicke_jezik.png" alt="jezik" height="300" width="400"/>
 </p>
 <br clear="all"/>  
 
@@ -482,33 +482,33 @@ Svi prikazi odnose se na konkretnog blagajnika (prema *korisničkom ID-u*) za te
 &nbsp;&nbsp;&nbsp;&nbsp;*Primjeri različitih tema*:  
 
 <p align="center">
-  <img src="images/23_zajednicke_teme.png" alt="teme" height="300" width="500"/>
-  <img src="images/26_zajednicke_teme.png" alt="teme" height="300" width="500"/>
+  <img src="images/23_zajednicke_teme.png" alt="teme" height="300" width="400"/>
+  <img src="images/26_zajednicke_teme.png" alt="teme" height="300" width="400"/>
 </p>
 <br clear="all"/>  
 <p align="center">
-  <img src="images/24_zajednicke_teme.png" alt="teme" height="300" width="500"/>
-  <img src="images/27_zajednicke_teme.png" alt="teme" height="300" width="500"/>
+  <img src="images/24_zajednicke_teme.png" alt="teme" height="300" width="400"/>
+  <img src="images/27_zajednicke_teme.png" alt="teme" height="300" width="400"/>
 </p>
 <br clear="all"/>  
 <p align="center">
-  <img src="images/25_zajednicke_teme.png" alt="teme" height="300" width="500"/>
-  <img src="images/28_zajednicke_teme.png" alt="teme" height="300" width="500"/>
+  <img src="images/25_zajednicke_teme.png" alt="teme" height="300" width="400"/>
+  <img src="images/28_zajednicke_teme.png" alt="teme" height="300" width="400"/>
 </p>
 <br clear="all"/>  
 
 
 *Primjer internacionalizacije*:
 <p align="center">
-  <img src="images/30_zajednicke_jezik.png" alt="jezik" height="300" width="500"/>
-  <img src="images/31_zajednicke_jezik.png" alt="jezik" height="300" width="500"/>
+  <img src="images/30_zajednicke_jezik.png" alt="jezik" height="300" width="400"/>
+  <img src="images/31_zajednicke_jezik.png" alt="jezik" height="300" width="400"/>
 </p>
 <br clear="all"/>  
 
 ##  **Profil korisnika**  
 &nbsp;&nbsp;&nbsp;&nbsp;Prilikom otvaranja stranice ***Profil korisnika***, trenutni podaci su već učitani, što omogućava pregled i eventualnu izmjenu postojećih informacija.
 
-<img src="images/32_zajednicke_profil.png" alt="profil korisnika" height="300" width="500" align="right"/>
+<img src="images/32_zajednicke_profil.png" alt="profil korisnika" height="300" width="400" align="right"/>
 
 <!--  -->
 &nbsp;&nbsp;&nbsp;&nbsp;Korisnik može promijeniti sljedeće podatke:
@@ -531,10 +531,10 @@ Svi prikazi odnose se na konkretnog blagajnika (prema *korisničkom ID-u*) za te
 &nbsp;&nbsp;&nbsp;&nbspNa većim ekranima sadržaj koji uključuje liste proizvoda ili navigacione ikonice organizovan je u više kolona za maksimalnu iskorišćenost prostora, dok se na manjim ekranima automatski prebacuje na manji broj kolona. Po potrebi se pojedine slike mogu sakriti na manjim širinama ekrana kako bi se uštedio prostor i sačuvao pregledan raspored.  
 &nbsp;&nbsp;&nbsp;&nbsp;*Primjer primjene responzivnosti*:  
 <p align="center">
-  <img src="images/33_zajednicke_responzivnost.png" alt="responzivnost" height="400" width="500"/> 
+  <img src="images/33_zajednicke_responzivnost.png" alt="responzivnost" height="400" width="400"/> 
   <img src="images/34_zajednicke_responzivnost.png" alt="responzivnost" height="400" width="400"/>  
 </p>
 <p align="center">
-  <img src="images/35_zajednicke_responzivnost.png" alt="responzivnost"  height="400" width="500"/> 
+  <img src="images/35_zajednicke_responzivnost.png" alt="responzivnost"  height="400" width="400"/> 
   <img src="images/36_zajednicke_responzivnost.png" alt="responzivnost"  height="400" width="400"/>
 </p>
