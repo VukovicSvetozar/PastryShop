@@ -349,8 +349,8 @@ polja.
 &nbsp;&nbsp;&nbsp;&nbsp;Ovakav tok, od izbora proizvoda i datuma, preko generisanja izvještaja, do preglednog prikaza zaliha, transakcija, izmjena i sažetka, omogućava menadžeru efikasno praćenje stanja skladišta i donošenje informisanih odluka o poslovanju objekta koji koristi PastryShop aplikaciju.
 
 <p align="center">
-  <img src="images/15_menadzer_izvjestaji.png" alt="izvjestaj" height="300" width="400"/>
-  <img src="images/16_menadzer_izvjestaji.png" alt="izvjestaj" height="300" width="400"/>
+  <img src="images/15_menadzer_izvjestaji.png" alt="izvjestaj" height="250" width="330"/>
+  <img src="images/16_menadzer_izvjestaji.png" alt="izvjestaj" height="250" width="330"/>
 </p>
 <br clear="all"/>  
 <div style="page-break-before: always;"></div>
@@ -483,8 +483,8 @@ Svi prikazi odnose se na konkretnog blagajnika (prema *korisničkom ID-u*) za te
 
 &nbsp;&nbsp;&nbsp;&nbsp;Klikom na dugme ***Sačuvaj*** aplikacija upoređuje odabrane postavke jezika i teme sa prethodnim vrijednostima i odmah primjenjuje eventualne promjene. Omogućeno je promijeniti samo temu, samo jezik, ili oboje istovremeno.
 <p align="center">
-  <img src="images/22_zajednicke_teme.png" alt="teme" height="300" width="400"/>
-  <img src="images/29_zajednicke_jezik.png" alt="jezik" height="300" width="400"/>
+  <img src="images/22_zajednicke_teme.png" alt="teme" height="250" width="330"/>
+  <img src="images/29_zajednicke_jezik.png" alt="jezik" height="250" width="330"/>
 </p>
 <br clear="all"/>  
 
@@ -495,26 +495,26 @@ Svi prikazi odnose se na konkretnog blagajnika (prema *korisničkom ID-u*) za te
 &nbsp;&nbsp;&nbsp;&nbsp;*Primjeri različitih tema*:  
 
 <p align="center">
-  <img src="images/23_zajednicke_teme.png" alt="teme" height="300" width="400"/>
-  <img src="images/26_zajednicke_teme.png" alt="teme" height="300" width="400"/>
+  <img src="images/23_zajednicke_teme.png" alt="teme" height="250" width="330"/>
+  <img src="images/26_zajednicke_teme.png" alt="teme" height="300" width="330"/>
 </p>
 <br clear="all"/>  
 <p align="center">
-  <img src="images/24_zajednicke_teme.png" alt="teme" height="300" width="400"/>
-  <img src="images/27_zajednicke_teme.png" alt="teme" height="300" width="400"/>
+  <img src="images/24_zajednicke_teme.png" alt="teme" height="250" width="330"/>
+  <img src="images/27_zajednicke_teme.png" alt="teme" height="250" width="330"/>
 </p>
 <br clear="all"/>  
 <p align="center">
-  <img src="images/25_zajednicke_teme.png" alt="teme" height="300" width="400"/>
-  <img src="images/28_zajednicke_teme.png" alt="teme" height="300" width="400"/>
+  <img src="images/25_zajednicke_teme.png" alt="teme" height="250" width="330"/>
+  <img src="images/28_zajednicke_teme.png" alt="teme" height="250" width="330"/>
 </p>
 <br clear="all"/>  
 
 
 *Primjer internacionalizacije*:
 <p align="center">
-  <img src="images/30_zajednicke_jezik.png" alt="jezik" height="300" width="400"/>
-  <img src="images/31_zajednicke_jezik.png" alt="jezik" height="300" width="400"/>
+  <img src="images/30_zajednicke_jezik.png" alt="jezik" height="250" width="330"/>
+  <img src="images/31_zajednicke_jezik.png" alt="jezik" height="250" width="330"/>
 </p>
 <br clear="all"/>  
 
@@ -544,10 +544,10 @@ Svi prikazi odnose se na konkretnog blagajnika (prema *korisničkom ID-u*) za te
 &nbsp;&nbsp;&nbsp;&nbspNa većim ekranima sadržaj koji uključuje liste proizvoda ili navigacione ikonice organizovan je u više kolona za maksimalnu iskorišćenost prostora, dok se na manjim ekranima automatski prebacuje na manji broj kolona. Po potrebi se pojedine slike mogu sakriti na manjim širinama ekrana kako bi se uštedio prostor i sačuvao pregledan raspored.  
 &nbsp;&nbsp;&nbsp;&nbsp;*Primjer primjene responzivnosti*:  
 <p align="center">
-  <img src="images/33_zajednicke_responzivnost.png" alt="responzivnost" height="400" width="400"/> 
-  <img src="images/34_zajednicke_responzivnost.png" alt="responzivnost" height="400" width="400"/>  
+  <img src="images/33_zajednicke_responzivnost.png" alt="responzivnost" height="250" width="330"/> 
+  <img src="images/34_zajednicke_responzivnost.png" alt="responzivnost" height="250" width="250"/>  
 </p>
 <p align="center">
-  <img src="images/35_zajednicke_responzivnost.png" alt="responzivnost"  height="400" width="400"/> 
-  <img src="images/36_zajednicke_responzivnost.png" alt="responzivnost"  height="400" width="400"/>
+  <img src="images/35_zajednicke_responzivnost.png" alt="responzivnost"  height="250" width="330"/> 
+  <img src="images/36_zajednicke_responzivnost.png" alt="responzivnost"  height="250" width="250"/>
 </p>
